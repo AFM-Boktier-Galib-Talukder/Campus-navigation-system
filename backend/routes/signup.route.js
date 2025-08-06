@@ -1,20 +1,20 @@
 const express = require('express')
-const router = express.Router()
+const signUpRouter = express.Router()
 const {
   GetAllUsers,
   GetUserById,
   UpdateUserById,
   DeleteUserById,
   CreateNewUser,
-} = require('../controllers/user.controller')
+} = require('../controllers/signup.controller')
 
 //Routes
-router.route('/').get(GetAllUsers).post(CreateNewUser)
+signUpRouter.route('/').get(GetAllUsers).post(CreateNewUser)
 
-router
+signUpRouter
   .route('/:id')
   .get(GetUserById)
   .patch(UpdateUserById)
   .delete(DeleteUserById)
 
-module.exports = router
+module.exports = signUpRouter
