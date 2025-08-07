@@ -3,6 +3,7 @@ const {
   buildGraph,
   findShortestPath,
   generateDirections,
+  generateDistance,
 } = require('../utils/pathfinder.utils')
 
 async function getAllNodes(req, res) {
@@ -29,8 +30,9 @@ async function getShortestPath(req, res) {
       return res.status(404).json({ error: 'No path found' })
     }
 
+    const distance = generateDistance(path)
     const directions = generateDirections(graph, path)
-    res.json({ path, distance: path.length - 1, directions })
+    res.json({ path, distance, directions })
   } catch (err) {
     res.status(500).json({ error: 'Pathfinding failed' })
   }
