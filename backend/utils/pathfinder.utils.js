@@ -67,7 +67,7 @@ function floorDistance(path) {
 }
 
 function generateDistance(path) {
-  distance = `${0.33 * (path.length - 1) + floorDistance(path)} minutes`
+  distance = `${(0.33 * (path.length - 1) + floorDistance(path)).toFixed(2)} minutes`
   // console.log(distance)
   return distance
 }

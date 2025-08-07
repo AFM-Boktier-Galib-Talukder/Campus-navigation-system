@@ -32,7 +32,7 @@ async function getShortestPath(req, res) {
 
     const distance = generateDistance(path)
     const directions = generateDirections(graph, path)
-    res.json({ path, distance, directions })
+    res.json({ path, distance, directions }) //http://localhost:1490/api/floor/path?start=0&end=14
   } catch (err) {
     res.status(500).json({ error: 'Pathfinding failed' })
   }
