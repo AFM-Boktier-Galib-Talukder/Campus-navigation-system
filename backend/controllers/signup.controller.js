@@ -26,6 +26,7 @@ async function CreateNewUser(req, res) {
       name: body.name,
       email: body.email,
       password: body.password,
+      role: body.role,
     })
 
     console.log('Result', result)

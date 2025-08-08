@@ -1,1 +1,9 @@
 @import "tailwindcss";
+/* In your global CSS file */
+.font-inknut {
+  font-family: "Inknut Antiqua", serif;
+}
+
+.font-inria {
+  font-family: "Inria Sans", sans-serif;
+}
