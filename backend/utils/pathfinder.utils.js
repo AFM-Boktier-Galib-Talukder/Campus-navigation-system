@@ -27,6 +27,8 @@ function findShortestPath(graph, start, end) {
   return [] // No path found
 }
 
+
+
 function generateDirections(graph, path) {
   const directions = []
   for (let i = 0; i < path.length - 1; i++) {

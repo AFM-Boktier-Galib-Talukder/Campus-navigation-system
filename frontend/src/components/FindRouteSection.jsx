@@ -1,24 +1,114 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function FindRouteSection() {
+function FindRouteSection({ onPathFound }) {
   const [startPoint, setStartPoint] = useState("");
   const [endPoint, setEndPoint] = useState("");
-  const [transportOption, setTransportOption] = useState("Lift");
+  const [transportOption, setTransportOption] = useState("lift");
 
-  const handleFindRoute = () => {
-    if (!startPoint || !endPoint) {
-      alert('Please enter both start and end points');
+  const [startSuggestions, setStartSuggestions] = useState([]);
+  const [endSuggestions, setEndSuggestions] = useState([]);
+  const [startNoResults, setStartNoResults] = useState(false);
+  const [endNoResults, setEndNoResults] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedStartDot, setSelectedStartDot] = useState(null);
+  const [selectedEndDot, setSelectedEndDot] = useState(null);
+  const [showStartDropdown, setShowStartDropdown] = useState(false);
+  const [showEndDropdown, setShowEndDropdown] = useState(false);
+
+  const API_BASE = "http://localhost:1490/api/floor";
+
+  async function fetchSuggestions(query) {
+    const url = `${API_BASE}/search?q=${encodeURIComponent(query)}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Search failed");
+    const data = await res.json();
+    return data.results || [];
+  }
+
+  // Debounced search for start input
+  useEffect(() => {
+    if (!showStartDropdown) return;
+    const q = startPoint.trim();
+    if (!q) {
+      setStartSuggestions([]);
+      setStartNoResults(false);
+      setSelectedStartDot(null);
       return;
     }
-    
-    console.log('Route search:', {
-      start: startPoint,
-      end: endPoint,
-      transport: transportOption
-    });
-    
-    // This would typically call the navigation API
-    alert(`Finding route from ${startPoint} to ${endPoint} via ${transportOption}`);
+    const t = setTimeout(async () => {
+      try {
+        const results = await fetchSuggestions(q);
+        setStartSuggestions(results);
+        setStartNoResults(results.length === 0);
+      } catch (_) {
+        setStartSuggestions([]);
+        setStartNoResults(true);
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [startPoint, showStartDropdown]);
+
+  // Debounced search for end input
+  useEffect(() => {
+    if (!showEndDropdown) return;
+    const q = endPoint.trim();
+    if (!q) {
+      setEndSuggestions([]);
+      setEndNoResults(false);
+      return;
+    }
+    const t = setTimeout(async () => {
+      try {
+        const results = await fetchSuggestions(q);
+        setEndSuggestions(results);
+        setEndNoResults(results.length === 0);
+      } catch (_) {
+        setEndSuggestions([]);
+        setEndNoResults(true);
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [endPoint, showEndDropdown]);
+
+  const handleSelectStart = (label, dot) => {
+    setStartPoint(label);
+    setSelectedStartDot(dot);
+    setStartSuggestions([]);
+    setStartNoResults(false);
+    setShowStartDropdown(false);
+  };
+
+  const handleSelectEnd = (label, dot) => {
+    setEndPoint(label);
+    setSelectedEndDot(dot);
+    setEndSuggestions([]);
+    setEndNoResults(false);
+    setShowEndDropdown(false);
+  };
+
+  const handleFindRoute = async (e) => {
+    e?.preventDefault();
+    if (!startPoint.trim() || !endPoint.trim() || !transportOption) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const startParam = selectedStartDot != null ? String(selectedStartDot) : startPoint.trim();
+      const endParam = selectedEndDot != null ? String(selectedEndDot) : endPoint.trim();
+      const url = `${API_BASE}/path?start=${encodeURIComponent(startParam)}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(transportOption)}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      if (!res.ok) {
+        onPathFound?.({ error: data?.error || 'Failed to find path' });
+        return;
+      }
+      onPathFound?.(data);
+    } catch (err) {
+      onPathFound?.({ error: 'Something went wrong while finding the route' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const transportOptions = [
@@ -32,7 +122,7 @@ function FindRouteSection() {
       label: "Lift" 
     },
     { 
-      id: "stairs", 
+      id: "stair", 
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
@@ -59,7 +149,7 @@ function FindRouteSection() {
         </div>
 
         {/* Route Search Form */}
-        <div className="p-6">
+        <form className="p-6" onSubmit={handleFindRoute}>
           <div className="space-y-6">
             {/* Start Point */}
             <div>
@@ -73,10 +163,30 @@ function FindRouteSection() {
                 type="text"
                 id="start-point"
                 value={startPoint}
-                onChange={(e) => setStartPoint(e.target.value)}
+                onChange={(e) => { setStartPoint(e.target.value); setSelectedStartDot(null); setShowStartDropdown(true); }}
+                onFocus={() => { if (startPoint.trim()) setShowStartDropdown(true); }}
+                onBlur={() => { setTimeout(() => setShowStartDropdown(false), 120); }}
                 className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
-                placeholder="Current location or select..."
+                placeholder="Type room and select..."
+                required
               />
+              {showStartDropdown && (startSuggestions.length > 0 || startNoResults) && (
+                <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                  {startSuggestions.map((s) => (
+                    <button
+                      key={`${s.label}-${s.dot}`}
+                      type="button"
+                      onMouseDown={() => handleSelectStart(s.label, s.dot)}
+                      className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                  {startNoResults && startSuggestions.length === 0 && (
+                    <div className="px-4 py-2 text-sm text-gray-500">NO Rooms Found</div>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* End Point */}
@@ -91,10 +201,30 @@ function FindRouteSection() {
                 type="text"
                 id="end-point"
                 value={endPoint}
-                onChange={(e) => setEndPoint(e.target.value)}
+                onChange={(e) => { setEndPoint(e.target.value); setSelectedEndDot(null); setShowEndDropdown(true); }}
+                onFocus={() => { if (endPoint.trim()) setShowEndDropdown(true); }}
+                onBlur={() => { setTimeout(() => setShowEndDropdown(false), 120); }}
                 className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
-                placeholder="Search for building, room, or facility..."
+                placeholder="Type room and select..."
+                required
               />
+              {showEndDropdown && (endSuggestions.length > 0 || endNoResults) && (
+                <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                  {endSuggestions.map((s) => (
+                    <button
+                      key={`${s.label}-${s.dot}`}
+                      type="button"
+                      onMouseDown={() => handleSelectEnd(s.label, s.dot)}
+                      className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                  {endNoResults && endSuggestions.length === 0 && (
+                    <div className="px-4 py-2 text-sm text-gray-500">NO Rooms Found</div>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Transport Options */}
@@ -109,22 +239,22 @@ function FindRouteSection() {
                 {transportOptions.map((option) => (
                   <div
                     key={option.id}
-                    onClick={() => setTransportOption(option.label)}
+                    onClick={() => setTransportOption(option.id)}
                     className={`flex-1 text-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
-                      transportOption === option.label
+                      transportOption === option.id
                         ? 'bg-gradient-to-br from-red-400 to-yellow-400 border-orange-500 text-white shadow-lg transform scale-105'
                         : 'border-orange-300 hover:border-orange-400 hover:bg-orange-50 text-gray-700'
                     }`}
                   >
                     <div className="flex justify-center mb-2">
                       <div className={`w-8 h-8 flex items-center justify-center ${
-                        transportOption === option.label ? 'text-white' : 'text-orange-500'
+                        transportOption === option.id ? 'text-white' : 'text-orange-500'
                       }`}>
                         {option.icon}
                       </div>
                     </div>
                     <div className={`text-sm font-medium ${
-                      transportOption === option.label ? 'text-white' : 'text-gray-700'
+                      transportOption === option.id ? 'text-white' : 'text-gray-700'
                     }`}>
                       {option.label}
                     </div>
@@ -135,13 +265,14 @@ function FindRouteSection() {
 
             {/* Find Route Button */}
             <button
-              onClick={handleFindRoute}
+              type="submit"
+              disabled={isSubmitting}
               className="w-full bg-gradient-to-br from-red-400 to-yellow-400 text-white py-4 px-6 rounded-xl font-semibold text-base hover:from-red-500 hover:to-yellow-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl border border-orange-300"
             >
-              Find Route
+              {isSubmitting ? 'Finding...' : 'Find Route'}
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
