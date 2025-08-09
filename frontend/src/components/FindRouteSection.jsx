@@ -7,39 +7,43 @@ function FindRouteSection() {
 
   const handleFindRoute = () => {
     if (!startPoint || !endPoint) {
-      alert('Please enter both start and end points');
+      alert("Please enter both start and end points");
       return;
     }
-    
-    console.log('Route search:', {
+
+    console.log("Route search:", {
       start: startPoint,
       end: endPoint,
-      transport: transportOption
+      transport: transportOption,
     });
-    
+
     // This would typically call the navigation API
     alert(`Finding route from ${startPoint} to ${endPoint} via ${transportOption}`);
   };
 
   const transportOptions = [
-    { 
-      id: "lift", 
+    {
+      id: "lift",
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
         </svg>
-      ), 
-      label: "Lift" 
+      ),
+      label: "Lift",
     },
-    { 
-      id: "stairs", 
+    {
+      id: "stairs",
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
+          <path
+            fillRule="evenodd"
+            d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          />
         </svg>
-      ), 
-      label: "Stairs" 
-    }
+      ),
+      label: "Stairs",
+    },
   ];
 
   return (
@@ -63,7 +67,7 @@ function FindRouteSection() {
           <div className="space-y-6">
             {/* Start Point */}
             <div>
-              <label htmlFor="start-point" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <label htmlFor="start-point" className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
                 <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
@@ -74,14 +78,14 @@ function FindRouteSection() {
                 id="start-point"
                 value={startPoint}
                 onChange={(e) => setStartPoint(e.target.value)}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="focus:outline-none w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="Current location or select..."
               />
             </div>
 
             {/* End Point */}
             <div>
-              <label htmlFor="end-point" className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <label htmlFor="end-point" className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
                 <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
@@ -92,14 +96,14 @@ function FindRouteSection() {
                 id="end-point"
                 value={endPoint}
                 onChange={(e) => setEndPoint(e.target.value)}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="focus:outline-none w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="Search for building, room, or facility..."
               />
             </div>
 
             {/* Transport Options */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <label className=" text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
                 <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                 </svg>
@@ -112,22 +116,16 @@ function FindRouteSection() {
                     onClick={() => setTransportOption(option.label)}
                     className={`flex-1 text-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
                       transportOption === option.label
-                        ? 'bg-gradient-to-br from-red-400 to-yellow-400 border-orange-500 text-white shadow-lg transform scale-105'
-                        : 'border-orange-300 hover:border-orange-400 hover:bg-orange-50 text-gray-700'
+                        ? "bg-gradient-to-br from-red-400 to-yellow-400 border-orange-500 text-white shadow-lg transform scale-105"
+                        : "border-orange-300 hover:border-orange-400 hover:bg-orange-50 text-gray-700"
                     }`}
                   >
                     <div className="flex justify-center mb-2">
-                      <div className={`w-8 h-8 flex items-center justify-center ${
-                        transportOption === option.label ? 'text-white' : 'text-orange-500'
-                      }`}>
+                      <div className={`w-8 h-8 flex items-center justify-center ${transportOption === option.label ? "text-white" : "text-orange-500"}`}>
                         {option.icon}
                       </div>
                     </div>
-                    <div className={`text-sm font-medium ${
-                      transportOption === option.label ? 'text-white' : 'text-gray-700'
-                    }`}>
-                      {option.label}
-                    </div>
+                    <div className={`text-sm font-medium ${transportOption === option.label ? "text-white" : "text-gray-700"}`}>{option.label}</div>
                   </div>
                 ))}
               </div>

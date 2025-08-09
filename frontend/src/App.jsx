@@ -7,6 +7,7 @@ import Library from "./pages/Library";
 import Amenities from "./pages/Amenities";
 import Request from "./pages/Request";
 import AdminDashboard from "./pages/AdminDashboard";
+import Navigation from "./pages/Navigation";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/amenities" element={<Amenities />} />
         <Route path="/request" element={<Request />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/navigation" element={<Navigation />} />
       </Routes>
     </Router>
   );
