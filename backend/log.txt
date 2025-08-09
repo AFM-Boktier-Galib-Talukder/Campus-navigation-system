@@ -32,3 +32,9 @@
 1754740079319 : ::1 POST : /api/signup
 
 1754740103858 : ::1 POST : /api/signup
+
+1754751994449 : ::1 POST : /api/login
+
+1754751994530 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1754751994547 : ::1 GET : /api/signup/68972de3784897036748da6a
