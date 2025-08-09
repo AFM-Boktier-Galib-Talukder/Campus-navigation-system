@@ -2,3 +2,33 @@
 1754706168957 : ::1 POST : /api/signup
 
 1754706239536 : ::1 POST : /api/login
+
+1754727535289 : ::1 POST : /api/login
+
+1754727572890 : ::1 GET : /api/signup
+
+1754727652743 : ::1 POST : /api/login
+
+1754727674688 : ::1 POST : /api/login
+
+1754727692387 : ::1 POST : /api/signup
+
+1754727756186 : ::1 POST : /api/signup
+
+1754727771367 : ::1 POST : /api/signup
+
+1754727775948 : ::1 POST : /api/signup
+
+1754727790267 : ::1 POST : /api/signup
+
+1754727806568 : ::1 POST : /api/signup
+
+1754739993261 : ::1 POST : /api/signup
+
+1754740035437 : ::1 POST : /api/signup
+
+1754740066455 : ::1 POST : /api/signup
+
+1754740079319 : ::1 POST : /api/signup
+
+1754740103858 : ::1 POST : /api/signup

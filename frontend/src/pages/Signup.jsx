@@ -12,6 +12,7 @@ const SignUp = () => {
   });
   const [message, setMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -40,7 +41,7 @@ const SignUp = () => {
         //Auto-redirect after 3 seconds
         setTimeout(() => {
           navigate("/login");
-        }, 3000);
+        }, 4000);
       }
     } catch (error) {
       setIsSuccess(false);
@@ -55,19 +56,22 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen max-h-lvh flex flex-col md:flex-row bg-orange-300 text-white overflow-hidden relative">
+    <div className="min-h-screen max-h-lvh flex flex-col md:flex-row bg-yellow-500/65 text-yellow-200 overflow-hidden relative">
       {/* Left Side - Form */}
-      <div className="w-full md:w-1/2 bg-orange-500 rounded-r-full flex items-center justify-center p-8" style={{ fontFamily: "'Inria Sans', sans-serif" }}>
+      <div
+        className="w-full md:w-1/2 bg-orange-500 rounded-r-full flex items-center justify-center p-8 relative overflow-hidden form-container"
+        style={{ fontFamily: "'Inria Sans', sans-serif" }}
+      >
         <div className="w-full max-w-md ">
           <h1
-            className="relative bottom-4 text-5xl font-bold text-center mb-2"
+            className="relative bottom-4 text-5xl font-bold text-center mb-2 gradient-header"
             style={{
               fontFamily: "'Inknut Antiqua', serif",
             }}
           >
             Sign up
           </h1>
-          <p className="text-center mb-6">Hey, Enter your details to create your account</p>
+          <p className="text-center mb-6 typing-animation">Hey, Enter your details to create your account</p>
 
           {message && (
             <div className={`mb-4 p-3 rounded-md ${isSuccess ? "bg-green-500" : "bg-red-500"}`}>
@@ -80,15 +84,15 @@ const SignUp = () => {
             </div>
           )}
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+          <form className="space-y-4 mt-10" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="name" className="font-medium block text-sm mb-1">
+              <label htmlFor="name" className="font-bold block text-lg mb-1">
                 User Name
               </label>
               <input
                 type="text"
                 id="name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-3 focus:ring-orange-200 text-gray-800"
+                className="w-full px-4 py-2 border border-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white"
                 placeholder="Enter your username"
                 required
                 value={formData.name}
@@ -97,13 +101,13 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-1">
+              <label htmlFor="email" className="font-bold block text-lg mb-1">
                 Email
               </label>
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-3 focus:ring-orange-200 text-gray-800"
+                className="w-full px-4 py-2 border border-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white"
                 placeholder="Enter your email"
                 required
                 value={formData.email}
@@ -112,27 +116,55 @@ const SignUp = () => {
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium mb-1">
+              <label htmlFor="password" className="font-bold block text-lg mb-1">
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-3 focus:ring-orange-200 text-gray-800"
-                placeholder="Enter your password"
-                required
-                minLength="6"
-                value={formData.password}
-                onChange={handleChange}
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  className="w-full px-4 py-2 pr-12 border border-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white"
+                  placeholder="Enter your password"
+                  required
+                  minLength="6"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-300 hover:text-white focus:outline-none"
+                >
+                  {showPassword ? (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"
+                      />
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
 
             <button
               type="submit"
-              className="w-full text-orange-600 bg-white text-xl font-extrabold py-2 px-4 rounded-md hover:bg-orange-600 hover:text-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 relative overflow-hidden group"
+              className="w-full bg-gradient-to-r from-orange-600 to-yellow-200 text-2xl font-extrabold py-2 px-4 rounded-md hover:from-yellow-400 hover:to-orange-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 relative overflow-hidden group button-shine glowing-text"
             >
               Sign up
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-3000 ease-out"></div>
             </button>
           </form>
         </div>
@@ -140,8 +172,12 @@ const SignUp = () => {
       {/* Right Side - Content with Floating Particles */}
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-2 text-center relative" style={{ fontFamily: "'Inria Sans', sans-serif" }}>
         <div className="relative top-20 flex items-center space-x-2 z-20">
-          <p className="text-lg">Already have an account?</p>
-          <button onClick={() => navigate("/login")} className="text-orange-500 font-bold hover:underline" style={{ fontFamily: "'Inknut Antiqua', serif" }}>
+          <p className="text-xl text-yellow-100">Already have an account?</p>
+          <button
+            onClick={() => navigate("/login")}
+            className="text-orange-500/80  text-xl font-bold underline hover:text-2xl"
+            style={{ fontFamily: "'Inknut Antiqua', serif" }}
+          >
             Login
           </button>
         </div>
@@ -226,12 +262,44 @@ const SignUp = () => {
           }
         }
 
-        @keyframes text-shimmer {
+        @keyframes typing {
           0% {
-            background-position: 100% center;
+            width: 0;
+          }
+          50% {
+            width: 100%;
           }
           100% {
-            background-position: 0% center;
+            width: 0;
+          }
+        }
+
+        @keyframes blink-caret {
+          from,
+          to {
+            border-color: transparent;
+          }
+          50% {
+            border-color: white;
+          }
+        }
+
+        @keyframes form-shine {
+          0% {
+            transform: translateX(-150%);
+          }
+          100% {
+            transform: translateX(150%);
+          }
+        }
+
+        @keyframes text-glow {
+          0%,
+          100% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+          }
+          50% {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6);
           }
         }
 
@@ -249,14 +317,6 @@ const SignUp = () => {
 
         .animate-float-4 {
           animation: float-4 13s ease-in-out infinite;
-        }
-
-        .animate-text-shimmer {
-          animation: text-shimmer 3s linear infinite;
-        }
-
-        .animation-delay-100 {
-          animation-delay: 0.1s;
         }
 
         .animation-delay-200 {
@@ -281,6 +341,59 @@ const SignUp = () => {
 
         .animation-delay-700 {
           animation-delay: 0.7s;
+        }
+
+        /* Header with white glow */
+        .gradient-header {
+          background: linear-gradient(180deg, #fffff0, #ffe100);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Typing Animation */
+        .typing-animation {
+          overflow: hidden;
+          border-right: 3px solid white;
+          white-space: nowrap;
+          margin: 0 auto;
+          letter-spacing: 0.05em;
+          animation: typing 7.5s ease-in-out infinite, blink-caret 0.75s step-end infinite;
+        }
+
+        /* Enhanced Button Shine Effect */
+        .button-shine:hover {
+          transform: scale(1.02);
+          box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        /* Glowing Button Text */
+        .glowing-text {
+          color: #ffffff;
+          animation: text-glow 2s ease-in-out infinite;
+        }
+
+        .glowing-text:hover {
+          color: #ffffff;
+        }
+
+        /* Form Container Shine Effect */
+        .form-container::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -150%;
+          width: 150%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), rgba(255, 215, 0, 0.3), transparent);
+          animation: form-shine 10s ease-out infinite;
+          z-index: 1;
+        }
+
+        .form-container > div {
+          position: relative;
+          z-index: 2;
         }
 
         /* Button shine effect */
