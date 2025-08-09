@@ -1,18 +1,35 @@
-import React from "react";
-import TypewriterText from "./TypewriterText";
+import React, { useMemo } from "react";
+import ImdadTypewriter from "./ImdadTypewriter";
 
-function Header({ userData }) {
+function Header({ userData, title }) {
+  const slogans = useMemo(() => ([
+    "Navigate BRAC like a pro.",
+    "Your campus, your compass.",
+    "Find your way, the BRAC way.",
+    "Where every path leads to learning.",
+    "From classroom to café — we’ve got you.",
+    "Discover BRAC, step by step.",
+    "Campus life, simplified.",
+    "Your guide to every corner of BRAC.",
+    "Explore. Learn. Belong.",
+    "Never lost, always learning.",
+  ]), []);
+
+  // Rotation is handled by ImdadTypewriter
+
   return (
     <header className="flex justify-between items-center p-8 bg-gradient-to-br from-orange-50 to-yellow-50 backdrop-blur-xl border-b border-orange-200/30 shadow-lg">
       <div className="flex-1">
         <h1 className="text-4xl font-bold font-inknut bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent">
-          Welcome to BRAC-NAV
+          {title || 'Welcome to BRAC-NAV'}
         </h1>
         <p className="text-gray-600 text-lg font-medium">
-          <TypewriterText 
-            text="Your intelligent campus navigation companion" 
-            speed={50}
+          <ImdadTypewriter
+            messages={slogans}
+            speed={120}
+            pauseMs={4000}
             className="text-gray-600 text-lg font-medium"
+            random
           />
         </p>
       </div>

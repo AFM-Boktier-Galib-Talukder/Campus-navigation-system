@@ -83,7 +83,7 @@ function Request() {
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? 'ml-70' : 'ml-20'}`}>
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Request" />
 
         {/* Main Content Area */}
         

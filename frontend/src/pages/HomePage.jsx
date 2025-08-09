@@ -86,7 +86,7 @@ function HomePage() {
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? 'ml-70' : 'ml-20'}`}>
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Welcome to BRAC-NAV" />
 
         {/* Main Content Area - Two Column Layout */}
         <div className="flex h-full">

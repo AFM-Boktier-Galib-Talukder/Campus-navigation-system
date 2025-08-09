@@ -81,7 +81,7 @@ function FacultyDesk() {
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? 'ml-70' : 'ml-20'}`}>
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Faculty Desk" />
 
         {/* Main Content Area - Two Column Layout */}
         <div className="flex h-full">
