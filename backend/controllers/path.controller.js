@@ -24,6 +24,7 @@ async function getShortestPath(req, res) {
 
     const nodes = await FloorDesign.find({})
     const graph = buildGraph(nodes)
+    
     const path = findShortestPath(graph, parseInt(start), parseInt(end))
 
     if (path.length === 0) {
