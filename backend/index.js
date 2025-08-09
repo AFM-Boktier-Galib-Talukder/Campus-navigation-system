@@ -1,4 +1,6 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
 const { logReqRes } = require('./middlewares/index')
 const { connectMongoDB } = require('./connection')
 const signUpRouter = require('./routes/signup.route')
@@ -16,7 +18,9 @@ connectMongoDB()
   })
 
 //MiddleWare
-app.use(express.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
 app.use(logReqRes('log.txt'))
 
 //Routes

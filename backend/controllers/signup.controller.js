@@ -39,6 +39,18 @@ async function CreateNewUser(req, res) {
   }
 }
 
+async function GetUsersByEmail(req, res) {
+  try {
+    const user = await User.findOne({ email: req.params.email })
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' })
+    }
+    res.json(user)
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' })
+  }
+}
+
 //?Extra endpoints//////////////////////////////////////////////////
 async function GetAllUsers(req, res) {
   const allDbUsers = await User.find({})
@@ -71,4 +83,5 @@ module.exports = {
   UpdateUserById,
   DeleteUserById,
   CreateNewUser,
+  GetUsersByEmail,
 }

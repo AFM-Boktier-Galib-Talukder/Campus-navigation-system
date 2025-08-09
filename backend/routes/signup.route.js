@@ -6,6 +6,7 @@ const {
   UpdateUserById,
   DeleteUserById,
   CreateNewUser,
+  GetUsersByEmail,
 } = require('../controllers/signup.controller')
 
 //Routes
@@ -16,5 +17,7 @@ signUpRouter
   .get(GetUserById)
   .patch(UpdateUserById)
   .delete(DeleteUserById)
+
+signUpRouter.route('/email/:email').get(GetUsersByEmail)
 
 module.exports = signUpRouter
