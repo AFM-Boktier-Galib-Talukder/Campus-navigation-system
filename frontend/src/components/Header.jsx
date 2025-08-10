@@ -1,7 +1,25 @@
-import React from "react";
-import TypewriterText from "./TypewriterText";
+import React, { useMemo } from "react";
+import ImdadTypewriter from "./ImdadTypewriter";
 
-function Header({ userData }) {
+function Header({ userData, title }) {
+  const slogans = useMemo(
+    () => [
+      "Navigate BRAC like a pro.",
+      "Your campus, your compass.",
+      "Find your way, the BRAC way.",
+      "Where every path leads to learning.",
+      "From classroom to café — we’ve got you.",
+      "Discover BRAC, step by step.",
+      "Campus life, simplified.",
+      "Your guide to every corner of BRAC.",
+      "Explore. Learn. Belong.",
+      "Never lost, always learning.",
+    ],
+    []
+  );
+
+  // Rotation is handled by ImdadTypewriter
+
   return (
     <header className="header-container bg-gradient-to-br from-orange-600 to-yellow-400 flex justify-between items-center p-8 backdrop-blur-xl border-b border-orange-200/30 shadow-lg relative">
       <div className="flex-1 z-10">
@@ -9,10 +27,10 @@ function Header({ userData }) {
           className="gradient-header relative text-4xl font-bold font-inknut  bg-clip-text text-transparent"
           style={{ fontFamily: "'Inknut Antiqua', serif" }}
         >
-          Welcome to BRACU-NAV
+          {title || "Welcome to Campus-NAV"}
         </h1>
-        <p className="mt-2">
-          <TypewriterText text="Your intelligent campus navigation companion" speed={50} className="text-yellow-200 text-lg font-medium" />
+        <p className="text-yellow-200 text-lg font-medium">
+          <ImdadTypewriter messages={slogans} speed={120} pauseMs={4000} className="text-yellow-200 text-lg font-medium" random />
         </p>
       </div>
 

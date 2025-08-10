@@ -138,13 +138,14 @@ function FacultyDesk() {
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Faculty Desk" />
 
         {/* Main Content Area - Two Column Layout */}
         <div className="flex h-full">
           {/* Left Column - Main Content */}
           <div className="flex-1 p-8">
             {/* Faculty Desk Content */}
+
             <div className="mb-8">
               <div className="text-2xl mb-3 font-bold font-inknut whitespace-nowrap">
                 <span className="bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent">Faculty Desk</span>

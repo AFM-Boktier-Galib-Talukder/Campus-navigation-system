@@ -1,0 +1,194 @@
+[
+  {
+    "dot": 10,
+    "connection": [11],
+    "left": "",
+    "right": "",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 11,
+    "connection": [12, 10],
+    "left": "helpDesk",
+    "right": "medicalCenter",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 12,
+    "connection": [13, 11],
+    "left": "1A1C",
+    "right": "1B4C",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 13,
+    "connection": [14, 12],
+    "left": "fireExist1",
+    "right": "1B5C",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 14,
+    "connection": [15, 13,24],
+    "left": "stair1",
+    "right": "1B6T",
+    "up": 24,
+    "down": null
+  },
+  {
+    "dot": 15,
+    "connection": [16, 14],
+    "left": "1A2C",
+    "right": "1B7C",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 16,
+    "connection": [17, 15, 26],
+    "left": "1A3C",
+    "right": "lift1",
+    "up": 26,
+    "down": null
+  },
+  {
+    "dot": 17,
+    "connection": [18, 16],
+    "left": "FW1",
+    "right": "MW1",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 18,
+    "connection": [17],
+    "left": "",
+    "right": "",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 21,
+    "connection": [22],
+    "left": "2A1C",
+    "right": "2B4L",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 22,
+    "connection": [23, 21],
+    "left": "2A2C",
+    "right": "2B5L",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 23,
+    "connection": [24, 22],
+    "left": "fireExist2",
+    "right": "2B6T",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 24,
+    "connection": [25, 23, 34, 14],
+    "left": "stair2",
+    "right": "2B7C",
+    "up": 34,
+    "down": 14
+  },
+  {
+    "dot": 25,
+    "connection": [26, 24],
+    "left": "faculty",
+    "right": "2B8C",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 26,
+    "connection": [27, 25, 36, 16],
+    "left": "2A3C",
+    "right": "lift2",
+    "up": 36,
+    "down": 16
+  },
+  {
+    "dot": 27,
+    "connection": [26],
+    "left": "FW2",
+    "right": "MW2",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 31,
+    "connection": [32],
+    "left": "3A1C",
+    "right": "3B4L",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 32,
+    "connection": [33, 31],
+    "left": "3A2C",
+    "right": "3B5L",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 33,
+    "connection": [34, 32],
+    "left": "fireExist3",
+    "right": "3B6T",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 34,
+    "connection": [35, 33, 24],
+    "left": "stair3",
+    "right": "3B7C",
+    "up": null,
+    "down": 24
+  },
+  {
+    "dot": 35,
+    "connection": [36, 34],
+    "left": "library",
+    "right": "3B8C",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 36,
+    "connection": [37, 35, 26],
+    "left": "3A3C",
+    "right": "lift3",
+    "up": null,
+    "down": 26
+  },
+  {
+    "dot": 37,
+    "connection": [38, 36],
+    "left": "FW3",
+    "right": "MW3",
+    "up": null,
+    "down": null
+  },
+  {
+    "dot": 38,
+    "connection": [37],
+    "left": "",
+    "right": "",
+    "up": null,
+    "down": null
+  }
+]
