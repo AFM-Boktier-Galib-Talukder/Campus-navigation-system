@@ -1,0 +1,162 @@
+[
+  {
+    "department": "Computer Science",
+    "faculty": "Dr. John Smith",
+    "initial": "JSH",
+    "office": "4G05",
+    "email": "john.smith@bracu.ac.bd",
+    "phone": "+880-2-9844051"
+  },
+  {
+    "department": "Electrical Engineering",
+    "faculty": "Dr. Sarah Johnson",
+    "initial": "SJH",
+    "office": "3B12",
+    "email": "sarah.johnson@bracu.ac.bd",
+    "phone": "+880-2-9844052"
+  },
+  {
+    "department": "Business Administration",
+    "faculty": "Dr. Michael Brown",
+    "initial": "MBR",
+    "office": "5A08",
+    "email": "michael.brown@bracu.ac.bd",
+    "phone": "+880-2-9844053"
+  },
+  {
+    "department": "Mathematics",
+    "faculty": "Dr. Emily Davis",
+    "initial": "EDS",
+    "office": "2C15",
+    "email": "emily.davis@bracu.ac.bd",
+    "phone": "+880-2-9844054"
+  },
+  {
+    "department": "Physics",
+    "faculty": "Dr. Robert Wilson",
+    "initial": "RWL",
+    "office": "3D07",
+    "email": "robert.wilson@bracu.ac.bd",
+    "phone": "+880-2-9844055"
+  },
+  {
+    "department": "Chemistry",
+    "faculty": "Dr. Lisa Anderson",
+    "initial": "LAN",
+    "office": "4B11",
+    "email": "lisa.anderson@bracu.ac.bd",
+    "phone": "+880-2-9844056"
+  },
+  {
+    "department": "Computer Science",
+    "faculty": "Dr. Ahmed Rahman",
+    "initial": "ARH",
+    "office": "4G12",
+    "email": "ahmed.rahman@bracu.ac.bd",
+    "phone": "+880-2-9844057"
+  },
+  {
+    "department": "Economics",
+    "faculty": "Dr. Jennifer Lee",
+    "initial": "JLE",
+    "office": "5C04",
+    "email": "jennifer.lee@bracu.ac.bd",
+    "phone": "+880-2-9844058"
+  },
+  {
+    "department": "English Literature",
+    "faculty": "Dr. David Thompson",
+    "initial": "DTH",
+    "office": "2A18",
+    "email": "david.thompson@bracu.ac.bd",
+    "phone": "+880-2-9844059"
+  },
+  {
+    "department": "Mechanical Engineering",
+    "faculty": "Dr. Fatima Khan",
+    "initial": "FKH",
+    "office": "6B09",
+    "email": "fatima.khan@bracu.ac.bd",
+    "phone": "+880-2-9844060"
+  },
+  {
+    "department": "Psychology",
+    "faculty": "Dr. Mark Rodriguez",
+    "initial": "MRD",
+    "office": "3A14",
+    "email": "mark.rodriguez@bracu.ac.bd",
+    "phone": "+880-2-9844061"
+  },
+  {
+    "department": "Biology",
+    "faculty": "Dr. Aisha Patel",
+    "initial": "APT",
+    "office": "4C06",
+    "email": "aisha.patel@bracu.ac.bd",
+    "phone": "+880-2-9844062"
+  },
+  {
+    "department": "Architecture",
+    "faculty": "Dr. James Mitchell",
+    "initial": "JMT",
+    "office": "7A03",
+    "email": "james.mitchell@bracu.ac.bd",
+    "phone": "+880-2-9844063"
+  },
+  {
+    "department": "Civil Engineering",
+    "faculty": "Dr. Rashida Begum",
+    "initial": "RBG",
+    "office": "6C16",
+    "email": "rashida.begum@bracu.ac.bd",
+    "phone": "+880-2-9844064"
+  },
+  {
+    "department": "Marketing",
+    "faculty": "Dr. Christopher Clark",
+    "initial": "CCL",
+    "office": "5B13",
+    "email": "christopher.clark@bracu.ac.bd",
+    "phone": "+880-2-9844065"
+  },
+  {
+    "department": "Environmental Science",
+    "faculty": "Dr. Nadia Hassan",
+    "initial": "NHS",
+    "office": "8A10",
+    "email": "nadia.hassan@bracu.ac.bd",
+    "phone": "+880-2-9844066"
+  },
+  {
+    "department": "Philosophy",
+    "faculty": "Dr. William Garcia",
+    "initial": "WGR",
+    "office": "2B20",
+    "email": "william.garcia@bracu.ac.bd",
+    "phone": "+880-2-9844067"
+  },
+  {
+    "department": "Statistics",
+    "faculty": "Dr. Samina Akter",
+    "initial": "SAK",
+    "office": "3E05",
+    "email": "samina.akter@bracu.ac.bd",
+    "phone": "+880-2-9844068"
+  },
+  {
+    "department": "Electrical Engineering",
+    "faculty": "Dr. Peter Johnson",
+    "initial": "PJH",
+    "office": "3B18",
+    "email": "peter.johnson@bracu.ac.bd",
+    "phone": "+880-2-9844069"
+  },
+  {
+    "department": "Finance",
+    "faculty": "Dr. Marium Sheikh",
+    "initial": "MSH",
+    "office": "5D07",
+    "email": "marium.sheikh@bracu.ac.bd",
+    "phone": "+880-2-9844070"
+  }
+]
