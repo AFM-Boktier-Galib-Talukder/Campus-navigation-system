@@ -1,25 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const NavigationComponent = ({ navigationSteps = [] }) => {
+const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
   const [showCongratulations, setShowCongratulations] = useState(false);
+  const [showRouteInfo, setShowRouteInfo] = useState(false);
 
   // Default steps if no steps provided
-  const defaultSteps = [
-    { direction: "start", message: "Ready to begin your journey", angle: 0 },
-    { direction: "forward", message: "Walk straight for 100 meters", angle: 0 },
-    { direction: "right", message: "Turn right towards the library", angle: 90 },
-    { direction: "forward", message: "Continue straight for 50 meters", angle: 0 },
-    { direction: "left", message: "Turn left at the fountain", angle: -90 },
-    { direction: "up", message: "Go to the second floor", angle: 0 },
-    { direction: "destination", message: "You have reached your destination!", angle: 0 },
-  ];
+  const defaultSteps = [{ direction: "start", message: "Use the 'Find Your Route' section to plan your journey", angle: 0 }];
 
   const steps = navigationSteps.length > 0 ? navigationSteps : defaultSteps;
   const currentNav = steps[currentStep];
-  const isDestination = currentStep === steps.length - 1;
+  const isDestination = currentStep === steps.length - 1 && steps[currentStep]?.direction === "destination";
   const isStart = currentStep === 0;
+  const hasRouteData = pathData !== null;
+
+  // Reset to first step when new route is found and show route info for 4 seconds
+  useEffect(() => {
+    if (navigationSteps.length > 0) {
+      setCurrentStep(0);
+      setIsNavigating(false);
+      setShowCongratulations(false);
+      setShowRouteInfo(true);
+
+      // Hide route info after 4 seconds
+      const timer = setTimeout(() => {
+        setShowRouteInfo(false);
+      }, 4000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [navigationSteps]);
 
   const getDirectionIcon = (direction) => {
     const icons = {
@@ -79,18 +90,53 @@ const NavigationComponent = ({ navigationSteps = [] }) => {
     }
   };
 
-  const getButtonText = () => {
-    if (isStart) return "Get Started";
-    if (isDestination) return "Final Destination";
-    return "Next";
+  const handleReset = () => {
+    setCurrentStep(0);
+    setIsNavigating(false);
+    setShowCongratulations(false);
   };
+
+  const getButtonText = () => {
+    if (isStart && !hasRouteData) return "Plan Your Route →";
+    if (isStart && hasRouteData) return "Start Navigation";
+    if (isDestination) return "Route Complete ✓";
+    return "Next Step";
+  };
+
+  const getEstimatedInfo = () => {
+    if (!pathData) return { stepsLeft: "?", time: "?", distance: "?" };
+
+    const stepsLeft = steps.length - currentStep - 1;
+
+    // Calculate remaining time based on steps completed
+    const totalTimeInMinutes = parseFloat(pathData.time) || 0;
+    const timePerStep = totalTimeInMinutes / (steps.length - 1); // -1 because start step doesn't count
+    const remainingTime = Math.max(0, totalTimeInMinutes - currentStep * timePerStep);
+
+    // Calculate remaining distance based on steps completed
+    const totalDistanceInMeters = parseInt(pathData.distance) || 0;
+    const distancePerStep = totalDistanceInMeters / (steps.length - 1); // -1 because start step doesn't count
+    const remainingDistance = Math.max(0, totalDistanceInMeters - currentStep * distancePerStep);
+
+    return {
+      stepsLeft,
+      time: remainingTime > 0 ? `${remainingTime.toFixed(1)} min` : "0 min",
+      distance: remainingDistance > 0 ? `${Math.round(remainingDistance)} m` : "0 m",
+    };
+  };
+
+  const estimatedInfo = getEstimatedInfo();
 
   return (
     <div className="flex-1 p-5 max-h-10/12">
       {/* Navigation Container - Matching FindRouteSection Height */}
       <div
         className={`h-full rounded-3xl overflow-hidden relative shadow-2xl transition-all duration-1000 ${
-          isDestination ? "bg-gradient-to-br from-emerald-400 to-green-500" : "bg-gradient-to-br from-orange-400 to-yellow-400"
+          isDestination
+            ? "bg-gradient-to-br from-emerald-400 to-green-500"
+            : hasRouteData
+            ? "bg-gradient-to-br from-orange-400 to-yellow-400"
+            : "bg-gradient-to-br from-gray-400 to-gray-500"
         }`}
       >
         {/* Congratulations Banner */}
@@ -104,14 +150,43 @@ const NavigationComponent = ({ navigationSteps = [] }) => {
           </div>
         )}
 
+        {/* Route Info Banner - Show for 4 seconds when route is available */}
+        {hasRouteData && showRouteInfo && !showCongratulations && (
+          <div
+            className="absolute top-0 left-0 right-0 bg-white/20 backdrop-blur-lg p-4 border-b border-white/30 z-10 transition-all duration-500 ease-out"
+            style={{
+              animation: "slideDown 0.5s ease-out",
+            }}
+          >
+            <div className="text-center text-white">
+              <div className="text-sm font-semibold">Route Information</div>
+              <div className="text-xs">
+                Total Distance: {pathData.distance} • Estimated Time: {pathData.time}
+              </div>
+            </div>
+            <style jsx>{`
+              @keyframes slideDown {
+                from {
+                  transform: translateY(-100%);
+                  opacity: 0;
+                }
+                to {
+                  transform: translateY(0);
+                  opacity: 1;
+                }
+              }
+            `}</style>
+          </div>
+        )}
+
         {/* Main Navigation Content */}
-        <div className="absolute inset-0 flex items-center justify-center p-8">
+        <div className={`absolute inset-0 flex items-center justify-center p-8 ${showRouteInfo ? "pt-20" : ""} transition-all duration-300`}>
           <div className="flex flex-col items-center space-y-6 h-full justify-center">
             {/* Compass Circle */}
             <div className="relative">
               <div
                 className={`w-48 h-48 rounded-full border-4 border-white/30 backdrop-blur-xl flex items-center justify-center transition-all duration-700 ${
-                  isDestination ? "bg-white/20" : "bg-white/10"
+                  isDestination ? "bg-white/20" : hasRouteData ? "bg-white/10" : "bg-white/5"
                 } ${isNavigating ? "animate-pulse" : ""}`}
               >
                 {/* Direction Display */}
@@ -129,66 +204,102 @@ const NavigationComponent = ({ navigationSteps = [] }) => {
                   <div className="absolute bottom-6 left-6 text-white/50 text-xs font-bold">↓DOWN</div>
                 </div>
 
-                {/* Multiple Pulsing Rings */}
-                <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></div>
-                <div className="absolute inset-2 rounded-full border-2 border-white/10 animate-ping" style={{ animationDelay: "0.5s" }}></div>
+                {/* Multiple Pulsing Rings - only show when active route */}
+                {hasRouteData && (
+                  <>
+                    <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></div>
+                    <div className="absolute inset-2 rounded-full border-2 border-white/10 animate-ping" style={{ animationDelay: "0.5s" }}></div>
+                  </>
+                )}
               </div>
 
-              {/* Step Counter */}
-              <div className="absolute -top-4 -right-4 bg-white/30 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center text-white font-bold border-2 border-white/40 text-lg">
-                {currentStep + 1}
-              </div>
+              {/* Step Counter - only show when route is active */}
+              {hasRouteData && (
+                <div className="absolute -top-4 -right-4 bg-white/30 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center text-white font-bold border-2 border-white/40 text-lg">
+                  {currentStep + 1}
+                </div>
+              )}
             </div>
 
-            {/* Additional Info - Moved above message */}
+            {/* Route Stats - Show estimated info */}
             <div className="flex space-x-4 text-white/90">
               <div className="text-center bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/20">
-                <div className="text-xl font-bold">{steps.length - currentStep - 1}</div>
+                <div className="text-xl font-bold">{estimatedInfo.stepsLeft}</div>
                 <div className="text-xs font-semibold">Steps Left</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/20">
-                <div className="text-xl font-bold">~{(steps.length - currentStep) * 2}</div>
-                <div className="text-xs font-semibold">Minutes</div>
+                <div className="text-xl font-bold">{estimatedInfo.time}</div>
+                <div className="text-xs font-semibold">Time</div>
               </div>
               <div className="text-center bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/20">
-                <div className="text-xl font-bold">{(steps.length - currentStep) * 50}m</div>
+                <div className="text-xl font-bold">{estimatedInfo.distance}</div>
                 <div className="text-xs font-semibold">Distance</div>
               </div>
             </div>
 
             {/* Direction Message Box */}
             <div className="bg-white/20 backdrop-blur-xl rounded-2xl p-6 border-2 border-white/30 transform hover:scale-105 transition-all duration-300 max-w-lg">
-              <p className="text-white text-lg font-semibold text-center leading-relaxed">{currentNav.message}</p>
-
-              {/* Enhanced Progress Bar */}
-              <div className="mt-4 bg-white/20 rounded-full h-2 overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-white to-white/80 rounded-full h-2 transition-all duration-500 shadow-lg"
-                  style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
-                ></div>
+              {/* Split message into multiple lines for better readability */}
+              <div className="text-white text-lg font-semibold text-center leading-relaxed">
+                {currentNav.message
+                  .split(/[.\n]/)
+                  .filter((sentence) => sentence.trim())
+                  .map((sentence, index) => (
+                    <div key={index} className="mb-2 last:mb-0">
+                      {sentence.trim()}
+                      {index < currentNav.message.split(/[.\n]/).filter((sentence) => sentence.trim()).length - 1 ? "." : ""}
+                    </div>
+                  ))}
               </div>
 
-              {/* Progress Text */}
-              <div className="mt-2 text-center text-white/80 text-sm">
-                Step {currentStep + 1} of {steps.length}
-              </div>
+              {/* Enhanced Progress Bar - only show when route is active */}
+              {hasRouteData && (
+                <>
+                  <div className="mt-4 bg-white/20 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="bg-gradient-to-r from-white to-white/80 rounded-full h-2 transition-all duration-500 shadow-lg"
+                      style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
+                    ></div>
+                  </div>
+
+                  {/* Progress Text */}
+                  <div className="mt-2 text-center text-white/80 text-sm">
+                    Step {currentStep + 1} of {steps.length}
+                  </div>
+                </>
+              )}
             </div>
 
-            {/* Action Button */}
-            <button
-              onClick={handleNext}
-              disabled={isDestination}
-              className={`px-8 py-3 rounded-2xl font-bold text-lg border-3 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg ${
-                isDestination
-                  ? "bg-white/30 text-white border-white/50 cursor-not-allowed opacity-75"
-                  : "bg-white/20 text-white border-white/40 backdrop-blur-lg hover:bg-white/30 hover:border-white/60 hover:-translate-y-1 hover:shadow-xl"
-              }`}
-            >
-              <span className="flex items-center space-x-2">
-                <span>{getButtonText()}</span>
-                {!isDestination && <span className="text-2xl">→</span>}
-              </span>
-            </button>
+            {/* Action Buttons */}
+            <div className="flex space-x-4">
+              {/* Main Action Button */}
+              <button
+                onClick={hasRouteData ? handleNext : undefined}
+                disabled={(!hasRouteData && isStart) || isDestination}
+                className={`px-8 py-3 rounded-2xl font-bold text-lg border-3 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg ${
+                  isDestination
+                    ? "bg-white/30 text-white border-white/50 cursor-not-allowed opacity-75"
+                    : !hasRouteData && isStart
+                    ? "bg-white/10 text-white/70 border-white/30 cursor-not-allowed opacity-50"
+                    : "bg-white/20 text-white border-white/40 backdrop-blur-lg hover:bg-white/30 hover:border-white/60 hover:-translate-y-1 hover:shadow-xl"
+                }`}
+              >
+                <span className="flex items-center space-x-2">
+                  <span>{getButtonText()}</span>
+                  {hasRouteData && !isDestination && <span className="text-2xl">→</span>}
+                </span>
+              </button>
+
+              {/* Reset Button - show when route is complete or in progress */}
+              {hasRouteData && currentStep > 0 && (
+                <button
+                  onClick={handleReset}
+                  className="px-6 py-3 rounded-2xl font-bold text-sm border-2 bg-white/10 text-white border-white/30 backdrop-blur-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                >
+                  ↺ Reset
+                </button>
+              )}
+            </div>
           </div>
         </div>
 

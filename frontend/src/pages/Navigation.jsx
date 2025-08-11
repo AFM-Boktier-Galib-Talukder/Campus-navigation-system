@@ -9,20 +9,10 @@ function Navigation() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState("navigation");
   const [userData, setUserData] = useState(null);
+  const [navigationSteps, setNavigationSteps] = useState([]);
+  const [pathData, setPathData] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-
-  // Sample navigation steps - can be passed as props or fetched from API
-  const navigationSteps = [
-    { direction: "start", message: "Ready to begin your journey to the library", angle: 0 },
-    { direction: "forward", message: "Walk straight for 100 meters towards the main entrance", angle: 0 },
-    { direction: "right", message: "Turn right at the information desk", angle: 90 },
-    { direction: "forward", message: "Continue straight through the corridor for 50 meters", angle: 0 },
-    { direction: "left", message: "Turn left at the fountain towards the academic building", angle: -90 },
-    { direction: "up", message: "Take the stairs to the second floor", angle: 0 },
-    { direction: "right", message: "Turn right after reaching the second floor", angle: 90 },
-    { direction: "destination", message: "Welcome to the University Library! You have arrived.", angle: 0 },
-  ];
 
   // Get user data from location state or fetch from API
   useEffect(() => {
@@ -56,6 +46,76 @@ function Navigation() {
 
     fetchUserData();
   }, [location.state?.userId]);
+
+  // Handle path found from FindRouteSection
+  const handlePathFound = (data) => {
+    if (data.error) {
+      // Handle error case
+      console.error("Path finding error:", data.error);
+      setNavigationSteps([
+        {
+          direction: "start",
+          message: `Error: ${data.error}`,
+          angle: 0,
+        },
+      ]);
+      setPathData(null);
+      return;
+    }
+
+    // Convert backend directions to navigation steps format
+    const steps = [];
+
+    // Add start step
+    steps.push({
+      direction: "start",
+      message: "Ready to begin your journey",
+      angle: 0,
+    });
+
+    // Convert directions to navigation steps
+    data.directions.forEach((direction, _) => {
+      let stepDirection = "forward";
+      let angle = 0;
+
+      // Parse direction text to determine step type
+      const lowerDirection = direction.toLowerCase();
+      if (lowerDirection.includes("go up") || lowerDirection.includes("using lift") || lowerDirection.includes("using stair")) {
+        stepDirection = "up";
+        angle = 0;
+      } else if (lowerDirection.includes("go down")) {
+        stepDirection = "down";
+        angle = 0;
+      } else if (lowerDirection.includes("left")) {
+        stepDirection = "left";
+        angle = -90;
+      } else if (lowerDirection.includes("right")) {
+        stepDirection = "right";
+        angle = 90;
+      } else if (lowerDirection.includes("reach your destination")) {
+        stepDirection = "destination";
+        angle = 0;
+      }
+
+      steps.push({
+        direction: stepDirection,
+        message: direction.replace(/\n/g, " "), // Remove line breaks for better display
+        angle: angle,
+      });
+    });
+
+    // Add final destination step if not already present
+    if (steps[steps.length - 1].direction !== "destination") {
+      steps.push({
+        direction: "destination",
+        message: "You have reached your destination!",
+        angle: 0,
+      });
+    }
+
+    setNavigationSteps(steps);
+    setPathData(data);
+  };
 
   const handleNavClick = (itemId) => {
     setActiveNavItem(itemId);
@@ -102,10 +162,10 @@ function Navigation() {
         {/* Main Content Area - Two Column Layout */}
         <div className="flex h-full">
           {/* Left Column - Navigation Component */}
-          <NavigationComponent navigationSteps={navigationSteps} />
+          <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
 
           {/* Right Column - Find Your Route Section */}
-          <FindRouteSection />
+          <FindRouteSection onPathFound={handlePathFound} />
         </div>
       </div>
     </div>
