@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
-function FindRouteSection({ onPathFound }) {
+function FindRouteSection({ onPathFound, onRouteComputed }) {
   const [startPoint, setStartPoint] = useState("");
   const [endPoint, setEndPoint] = useState("");
   const [transportOption, setTransportOption] = useState("lift");
@@ -16,6 +17,8 @@ function FindRouteSection({ onPathFound }) {
   const [showEndDropdown, setShowEndDropdown] = useState(false);
 
   const API_BASE = "http://localhost:1490/api/floor";
+  const navigate = useNavigate();
+  const location = useLocation();
 
   async function fetchSuggestions(query) {
     const url = `${API_BASE}/search?q=${encodeURIComponent(query)}`;
@@ -101,11 +104,29 @@ function FindRouteSection({ onPathFound }) {
       const data = await res.json();
       if (!res.ok) {
         onPathFound?.({ error: data?.error || "Failed to find path" });
+        onRouteComputed?.({ error: data?.error || "Failed to find path" });
         return;
       }
       onPathFound?.(data);
+      onRouteComputed?.(data);
+
+      // Always navigate to navigator page with result in state
+      const navState = {
+        routeResult: data,
+        form: {
+          startPoint,
+          endPoint,
+          transportOption,
+          selectedStartDot,
+          selectedEndDot,
+        },
+      };
+      const isAlreadyOnNavigation = location.pathname === "/navigation";
+      navigate("/navigation", { state: navState, replace: isAlreadyOnNavigation });
     } catch (err) {
-      onPathFound?.({ error: "Something went wrong while finding the route" });
+      const errorPayload = { error: "Something went wrong while finding the route" };
+      onPathFound?.(errorPayload);
+      onRouteComputed?.(errorPayload);
     } finally {
       setIsSubmitting(false);
     }

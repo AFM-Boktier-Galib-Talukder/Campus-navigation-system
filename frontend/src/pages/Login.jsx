@@ -34,6 +34,18 @@ const Login = () => {
       });
 
       if (loginResponse.data.status === "Success") {
+        try {
+          localStorage.setItem("userId", loginResponse.data.userId);
+          // Preload and cache user profile for consistent header rendering
+          try {
+            const userResp = await axios.get(
+              `http://localhost:1490/api/signup/${loginResponse.data.userId}`
+            );
+            if (userResp?.data) {
+              localStorage.setItem("user", JSON.stringify(userResp.data));
+            }
+          } catch (_) {}
+        } catch (_) {}
         // Redirect based on role
         if (loginResponse.data.role === "admin") {
           navigate("/admin-dashboard", { state: { userId: loginResponse.data.userId } });

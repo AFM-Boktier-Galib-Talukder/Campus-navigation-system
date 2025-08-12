@@ -62,6 +62,9 @@ function Library() {
       case "request":
         navigate("/request");
         break;
+      case "navigation":
+        navigate("/navigation");
+        break;
       default:
         break;
     }

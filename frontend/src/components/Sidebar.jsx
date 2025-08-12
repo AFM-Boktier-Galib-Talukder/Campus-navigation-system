@@ -44,6 +44,15 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
     },
     {
       icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2c-3.866 0-7 3.134-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 9a2 2 0 110-4 2 2 0 010 4z" />
+        </svg>
+      ),
+      text: "Navigator",
+      id: "navigation",
+    },
+    {
+      icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path
             fillRule="evenodd"
@@ -67,8 +76,8 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
     >
       {/* Logo Section - Fixed Height */}
       <div className="h-32 text-center border-b border-orange-200/30 flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100/50 to-yellow-100/50">
-        <div className={`flex items-center justify-center transition-all duration-500 ease-in-out ${isExpanded ? "w-full" : "w-full justify-center"}`}>
-          <div className="w-15 h-15 bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0 p-2">
+        <div className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "w-full justify-start px-2 gap-1" : "w-full justify-center"}`}>
+          <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" className="w-full h-full">
               <path
                 fill="currentColor"
@@ -79,12 +88,12 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
             </svg>
           </div>
           <div
-            className={`ml-4 text-left transition-all duration-500 ease-in-out ${
-              isExpanded ? "opacity-100 max-w-48 translate-x-0" : "opacity-0 max-w-0 translate-x-4"
+            className={`${isExpanded ? "ml-2" : "ml-0"} text-left transition-all duration-500 ease-in-out ${
+              isExpanded ? "opacity-100 max-w-48" : "opacity-0 max-w-0"
             }`}
           >
             <div className="text-2xl font-bold font-inknut whitespace-nowrap">
-              <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">BRACU-NAV</span>
+              <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">CAMPUS-NAV</span>
             </div>
             <div className="text-orange-400 text-xs uppercase tracking-wider whitespace-nowrap">Navigate Smart</div>
           </div>
@@ -95,17 +104,25 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
       <div className="flex flex-col h-full" style={{ height: "calc(100% - 8rem)" }}>
         <ul className="p-4 space-y-2 flex-1">
           {navItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className={`${isExpanded ? "w-full" : "w-full flex justify-center"}`}>
               <button
                 onClick={() => onNavClick(item.id)}
-                className={`w-full rounded-2xl transition-all duration-500 ease-in-out hover:bg-orange-200/50 hover:translate-x-2 hover:scale-105 flex items-center ${
-                  isExpanded ? "p-4 justify-start" : "p-0 justify-center mx-auto w-12 h-12"
-                } ${activeNavItem === item.id ? "bg-gradient-to-r from-red-400 to-yellow-400 text-white shadow-lg" : "text-gray-700 hover:text-gray-900"}`}
+                className={`${
+                  isExpanded
+                    ? "w-full p-4 justify-start"
+                    : "h-12 w-12 justify-center p-0"
+                } rounded-2xl flex items-center transition-colors duration-200 ease-out hover:bg-orange-200/50 ${
+                  activeNavItem === item.id
+                    ? "bg-gradient-to-r from-red-400 to-yellow-400 text-white shadow-lg"
+                    : "text-gray-700 hover:text-gray-900"
+                }`}
               >
                 <span className="w-6 h-6 flex items-center justify-center flex-shrink-0">{item.icon}</span>
                 <span
-                  className={`ml-4 font-medium text-left transition-all duration-500 ease-in-out whitespace-nowrap ${
-                    isExpanded ? "opacity-100 max-w-48 translate-x-0" : "opacity-0 max-w-0 translate-x-4"
+                  className={`${
+                    isExpanded
+                      ? "ml-4 inline-block font-medium text-left whitespace-nowrap"
+                      : "hidden"
                   }`}
                 >
                   {item.text}
@@ -122,7 +139,7 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
           }`}
         >
           <div className="text-center">
-            <div className="text-gray-600 text-xs mb-2">© 2024 BRAC-NAV</div>
+            <div className="text-gray-600 text-xs mb-2">© 2025 CAMPUS-NAV</div>
             <div className="text-gray-500 text-xs">All rights reserved</div>
             <div className="text-gray-400 text-xs mt-1">Version 1.0.0</div>
           </div>
