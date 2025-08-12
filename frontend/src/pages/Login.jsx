@@ -35,13 +35,17 @@ const Login = () => {
 
       if (loginResponse.data.status === "Success") {
         try {
+          // Per-tab storage to prevent cross-tab user bleed
+          sessionStorage.setItem("userId", loginResponse.data.userId);
+          // Also mirror to localStorage for backward compatibility with existing pages
           localStorage.setItem("userId", loginResponse.data.userId);
-          // Preload and cache user profile for consistent header rendering
+          // Preload and cache user profile (sessionStorage preferred)
           try {
             const userResp = await axios.get(
               `http://localhost:1490/api/signup/${loginResponse.data.userId}`
             );
             if (userResp?.data) {
+              sessionStorage.setItem("user", JSON.stringify(userResp.data));
               localStorage.setItem("user", JSON.stringify(userResp.data));
             }
           } catch (_) {}

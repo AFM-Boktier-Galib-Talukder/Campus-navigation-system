@@ -21,9 +21,9 @@ function Header({ userData, title }) {
         return;
       }
 
-      // Try from localStorage cache
+      // Try from sessionStorage cache first (per-tab isolation)
       try {
-        const cachedUserRaw = localStorage.getItem("user");
+        const cachedUserRaw = sessionStorage.getItem("user") || localStorage.getItem("user");
         if (cachedUserRaw) {
           const cachedUser = JSON.parse(cachedUserRaw);
           if (cachedUser && (cachedUser.name || cachedUser.email)) {
@@ -35,8 +35,8 @@ function Header({ userData, title }) {
         // ignore JSON errors
       }
 
-      // Otherwise, fetch by stored userId
-      const storedUserId = localStorage.getItem("userId");
+      // Otherwise, fetch by stored userId (prefer sessionStorage for per-tab isolation)
+      const storedUserId = sessionStorage.getItem("userId") || localStorage.getItem("userId");
       if (!storedUserId) {
         if (isMounted)
           setResolvedUser({ name: "User", email: "user@example.com" });
@@ -50,9 +50,9 @@ function Header({ userData, title }) {
         if (!resp.ok) throw new Error("Failed to load user");
         const user = await resp.json();
         if (isMounted) setResolvedUser(user);
-        // Cache for later
+        // Cache for later (sessionStorage only to avoid cross-tab bleed)
         try {
-          localStorage.setItem("user", JSON.stringify(user));
+          sessionStorage.setItem("user", JSON.stringify(user));
         } catch (_) {}
       } catch (_) {
         if (isMounted)
