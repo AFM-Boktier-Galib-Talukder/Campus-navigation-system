@@ -110,3 +110,89 @@
 1754999880046 : ::1 GET : /api/facultyDesk
 
 1754999880059 : ::1 GET : /api/facultyDesk
+
+1755000863913 : ::1 GET : /api/floor/search
+
+1755000866652 : ::1 GET : /api/floor/search
+
+1755000869819 : ::1 GET : /api/floor/path
+
+1755000875083 : ::1 GET : /api/floor/search
+
+1755000878941 : ::1 GET : /api/floor/search
+
+1755000882798 : ::1 GET : /api/floor/path
+
+1755000892977 : ::1 GET : /api/facultyDesk
+
+1755000893012 : ::1 GET : /api/facultyDesk
+
+1755001930598 : ::1 POST : /api/signup
+
+1755002010520 : ::1 GET : /api/signup/email/admin@g.bracu.ac.bd
+
+1755002586676 : ::1 GET : /api/signup/email/admin@g.bracu.ac.bd
+
+1755002637139 : ::1 POST : /api/signup
+
+1755002685002 : ::1 POST : /api/signup
+
+1755002707731 : ::1 POST : /api/signup
+
+1755002859097 : ::1 POST : /api/signup
+
+1755002860689 : ::1 POST : /api/signup
+
+1755002929317 : ::1 GET : /api/signup/email/admin@g.bracu.ac.bd
+
+1755003010330 : ::1 POST : /api/login
+
+1755003086116 : ::1 POST : /api/login
+
+1755003086132 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004238856 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004460501 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004460518 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004489129 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004489139 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004507986 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004508000 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004539961 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004539970 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004570041 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004570052 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1755004927758 : ::1 POST : /api/login
+
+1755004927815 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755004927910 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755004927915 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755004932064 : ::1 GET : /api/facultyDesk
+
+1755004932146 : ::1 GET : /api/facultyDesk
+
+1755005389320 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755005389366 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755008381434 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755008381553 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755009034843 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1755009034874 : ::1 GET : /api/signup/68972de3784897036748da6a
