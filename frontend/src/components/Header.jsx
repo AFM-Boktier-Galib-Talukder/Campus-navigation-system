@@ -111,13 +111,17 @@ function Header({ userData, title }) {
       </div>
 
       <style jsx>{`
+        /* Prevent shine/pseudo-element from causing page scrollbars */
+        .header-container {
+          overflow: hidden;
+        }
         /* Header Container Shine Effect */
         .header-container::before {
           content: "";
           position: absolute;
           top: 0;
-          left: -150%;
-          width: 150%;
+          left: -120%;
+          width: 140%;
           height: 100%;
           background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), rgba(255, 140, 0, 0.3), transparent);
           animation: shine 8s ease-out infinite;
@@ -134,12 +138,8 @@ function Header({ userData, title }) {
         }
 
         @keyframes shine {
-          0% {
-            transform: translateX(-150%);
-          }
-          100% {
-            transform: translateX(150%);
-          }
+          0% { transform: translateX(-120%); }
+          100% { transform: translateX(120%); }
         }
       `}</style>
     </header>
