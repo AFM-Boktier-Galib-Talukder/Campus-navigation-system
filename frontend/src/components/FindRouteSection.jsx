@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-function FindRouteSection({ onPathFound, onRouteComputed }) {
+function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
   const [startPoint, setStartPoint] = useState("");
   const [endPoint, setEndPoint] = useState("");
   const [transportOption, setTransportOption] = useState("lift");
@@ -16,7 +16,7 @@ function FindRouteSection({ onPathFound, onRouteComputed }) {
   const [showStartDropdown, setShowStartDropdown] = useState(false);
   const [showEndDropdown, setShowEndDropdown] = useState(false);
 
-  const API_BASE = "http://localhost:1490/api/floor";
+  const API_BASE = apiBaseOverride || "http://localhost:1490/api/floor";
   const navigate = useNavigate();
   const location = useLocation();
 
