@@ -8,6 +8,9 @@ import Amenities from "./pages/Amenities";
 import Request from "./pages/Request";
 import AdminDashboard from "./pages/AdminDashboard";
 import Navigation from "./pages/Navigation";
+import AdminMaps from "./pages/AdminMaps";
+import AdminEvents from "./pages/AdminEvents";
+import AdminRequests from "./pages/AdminRequests";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
         <Route path="/amenities" element={<Amenities />} />
         <Route path="/request" element={<Request />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/maps" element={<AdminMaps />} />
+        <Route path="/admin/events" element={<AdminEvents />} />
+        <Route path="/admin/request" element={<AdminRequests />} />
         <Route path="/navigation" element={<Navigation />} />
       </Routes>
     </Router>

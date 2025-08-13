@@ -1,17 +1,80 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import ImdadTypewriter from "./ImdadTypewriter";
 
 function Header({ userData, title }) {
+  const [resolvedUser, setResolvedUser] = useState(userData);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    async function ensureUser() {
+      // If parent provided data and it's not demo/placeholder, use it
+      const isProvidedRealUser = Boolean(
+        userData &&
+          (
+            (userData.name && userData.name !== "User") ||
+            (userData.email && userData.email !== "user@example.com")
+          )
+      );
+      if (isProvidedRealUser) {
+        if (isMounted) setResolvedUser(userData);
+        return;
+      }
+
+      // Try from sessionStorage cache first (per-tab isolation)
+      try {
+        const cachedUserRaw = sessionStorage.getItem("user") || localStorage.getItem("user");
+        if (cachedUserRaw) {
+          const cachedUser = JSON.parse(cachedUserRaw);
+          if (cachedUser && (cachedUser.name || cachedUser.email)) {
+            if (isMounted) setResolvedUser(cachedUser);
+            return;
+          }
+        }
+      } catch (_) {
+        // ignore JSON errors
+      }
+
+      // Otherwise, fetch by stored userId (prefer sessionStorage for per-tab isolation)
+      const storedUserId = sessionStorage.getItem("userId") || localStorage.getItem("userId");
+      if (!storedUserId) {
+        if (isMounted)
+          setResolvedUser({ name: "User", email: "user@example.com" });
+        return;
+      }
+
+      try {
+        const resp = await fetch(
+          `http://localhost:1490/api/signup/${storedUserId}`
+        );
+        if (!resp.ok) throw new Error("Failed to load user");
+        const user = await resp.json();
+        if (isMounted) setResolvedUser(user);
+        // Cache for later (sessionStorage only to avoid cross-tab bleed)
+        try {
+          sessionStorage.setItem("user", JSON.stringify(user));
+        } catch (_) {}
+      } catch (_) {
+        if (isMounted)
+          setResolvedUser({ name: "User", email: "user@example.com" });
+      }
+    }
+
+    ensureUser();
+    return () => {
+      isMounted = false;
+    };
+  }, [userData]);
   const slogans = useMemo(
     () => [
-      "Navigate BRAC like a pro.",
+      "Navigate Campus like a pro.",
       "Your campus, your compass.",
-      "Find your way, the BRAC way.",
+      "Find your way, the Campus way.",
       "Where every path leads to learning.",
       "From classroom to café — we’ve got you.",
-      "Discover BRAC, step by step.",
+      "Discover Campus, step by step.",
       "Campus life, simplified.",
-      "Your guide to every corner of BRAC.",
+      "Your guide to every corner of Campus.",
       "Explore. Learn. Belong.",
       "Never lost, always learning.",
     ],
@@ -42,19 +105,23 @@ function Header({ userData, title }) {
           </svg>
         </div>
         <div>
-          <div className="text-orange-500 font-bold">{userData?.name || "User"}</div>
-          <div className="text-orange-400/90 text-sm">{userData?.email || "user@example.com"}</div>
+          <div className="text-orange-500 font-bold">{resolvedUser?.name || "User"}</div>
+          <div className="text-orange-400/90 text-sm">{resolvedUser?.email || "user@example.com"}</div>
         </div>
       </div>
 
       <style jsx>{`
+        /* Prevent shine/pseudo-element from causing page scrollbars */
+        .header-container {
+          overflow: hidden;
+        }
         /* Header Container Shine Effect */
         .header-container::before {
           content: "";
           position: absolute;
           top: 0;
-          left: -150%;
-          width: 150%;
+          left: -120%;
+          width: 140%;
           height: 100%;
           background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), rgba(255, 140, 0, 0.3), transparent);
           animation: shine 8s ease-out infinite;
@@ -71,12 +138,8 @@ function Header({ userData, title }) {
         }
 
         @keyframes shine {
-          0% {
-            transform: translateX(-150%);
-          }
-          100% {
-            transform: translateX(150%);
-          }
+          0% { transform: translateX(-120%); }
+          100% { transform: translateX(120%); }
         }
       `}</style>
     </header>

@@ -6,6 +6,7 @@ const { connectMongoDB } = require('./connection')
 const signUpRouter = require('./routes/signup.route')
 const logInRouter = require('./routes/logIn.route')
 const floorRouter = require('./routes/floorDesign.route')
+const libraryRouter = require('./routes/library.route')
 const facultyDeskRouter = require('./routes/facultyDesk.route')
 
 const app = express()
@@ -26,6 +27,7 @@ app.use(logReqRes('log.txt'))
 
 //Routes
 app.use('/api/floor', floorRouter)
+app.use('/api/library', libraryRouter)
 app.use('/api/signup', signUpRouter)
 app.use('/api/login', logInRouter)
 app.use('/api/facultyDesk', facultyDeskRouter)

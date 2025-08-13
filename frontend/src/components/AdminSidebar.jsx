@@ -1,6 +1,6 @@
 import React from "react";
 
-function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavClick }) {
+function AdminSidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavClick }) {
   const navItems = [
     {
       icon: (
@@ -9,47 +9,25 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
         </svg>
       ),
       text: "Home",
-      id: "home",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-        </svg>
-      ),
-      text: "Faculty Desk",
-      id: "faculty_desk",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
-        </svg>
-      ),
-      text: "Library",
-      id: "library",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-      text: "Amenities",
-      id: "amenities",
+      id: "admin_home",
     },
     {
       icon: (
         <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2c-3.866 0-7 3.134-7 7 0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 9a2 2 0 110-4 2 2 0 010 4z" />
+          <path d="M3 5a2 2 0 012-2h14a2 2 0 012 2v11a2 2 0 01-2 2h-5l-4 3v-3H5a2 2 0 01-2-2V5z" />
         </svg>
       ),
-      text: "Navigator",
-      id: "navigation",
+      text: "Billboards",
+      id: "admin_billboards",
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 3a1 1 0 000 2h1v2H7a4 4 0 00-4 4v6a4 4 0 004 4h10a4 4 0 004-4V11a4 4 0 00-4-4h-2V5h1a1 1 0 100-2H8zm3 2h2v2h-2V5z" />
+        </svg>
+      ),
+      text: "Events",
+      id: "admin_events",
     },
     {
       icon: (
@@ -62,7 +40,7 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
         </svg>
       ),
       text: "Request",
-      id: "request",
+      id: "admin_request",
     },
   ];
 
@@ -74,7 +52,6 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {/* Logo Section - Fixed Height */}
       <div className="h-32 text-center border-b border-orange-200/30 flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100/50 to-yellow-100/50">
         <div className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "w-full justify-start px-2 gap-1" : "w-full justify-center"}`}>
           <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -93,14 +70,13 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
             }`}
           >
             <div className="text-2xl font-bold font-inknut whitespace-nowrap">
-              <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">CAMPUS-NAV</span>
+              <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">ADMIN</span>
             </div>
-            <div className="text-orange-400 text-xs uppercase tracking-wider whitespace-nowrap">Navigate Smart</div>
+            <div className="text-orange-400 text-xs uppercase tracking-wider whitespace-nowrap">Dashboard</div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Menu - Takes remaining space */}
       <div className="flex flex-col h-full" style={{ height: "calc(100% - 8rem)" }}>
         <ul className="p-4 space-y-2 flex-1">
           {navItems.map((item) => (
@@ -108,9 +84,7 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
               <button
                 onClick={() => onNavClick(item.id)}
                 className={`${
-                  isExpanded
-                    ? "w-full p-4 justify-start"
-                    : "h-12 w-12 justify-center p-0"
+                  isExpanded ? "w-full p-4 justify-start" : "h-12 w-12 justify-center p-0"
                 } rounded-2xl flex items-center transition-colors duration-200 ease-out hover:bg-orange-200/50 ${
                   activeNavItem === item.id
                     ? "bg-gradient-to-r from-red-400 to-yellow-400 text-white shadow-lg"
@@ -118,13 +92,7 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
                 }`}
               >
                 <span className="w-6 h-6 flex items-center justify-center flex-shrink-0">{item.icon}</span>
-                <span
-                  className={`${
-                    isExpanded
-                      ? "ml-4 inline-block font-medium text-left whitespace-nowrap"
-                      : "hidden"
-                  }`}
-                >
+                <span className={`${isExpanded ? "ml-4 inline-block font-medium text-left whitespace-nowrap" : "hidden"}`}>
                   {item.text}
                 </span>
               </button>
@@ -132,7 +100,6 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
           ))}
         </ul>
 
-        {/* Footer Section - Fixed at bottom, only visible when expanded */}
         <div
           className={`border-t border-orange-200/30 bg-gradient-to-br from-orange-100/30 to-yellow-100/30 p-4 transition-all duration-500 ease-in-out ${
             isExpanded ? "opacity-100" : "opacity-0"
@@ -140,9 +107,7 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
         >
           <div className="text-center">
             <div className="text-gray-600 text-xs mb-2">© 2025 CAMPUS-NAV</div>
-            <div className="text-gray-500 text-xs">All rights reserved</div>
-            <div className="text-gray-500 text-xs">Contact Admin@campusnav.com</div>
-            <div className="text-gray-400 text-xs mt-1">Version 1.0.0</div>
+            <div className="text-gray-500 text-xs">Admin Panel</div>
           </div>
         </div>
       </div>
@@ -150,4 +115,6 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
   );
 }
 
-export default Sidebar;
+export default AdminSidebar;
+
+

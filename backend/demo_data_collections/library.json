@@ -1,0 +1,36 @@
+[
+    {
+      "dot": 10,
+      "connection": [11],
+      "left": "book reception",
+      "right": "printing lab",
+      "up": null,
+      "down": null
+    },
+    {
+      "dot": 11,
+      "connection": [12, 10],
+      "left": "engineering",
+      "right": "arts",
+      "up": null,
+      "down": null
+    },
+    {
+      "dot": 12,
+      "connection": [13, 11],
+      "left": "science",
+      "right": "business",
+      "up": null,
+      "down": null
+    },
+    {
+      "dot": 13,
+      "connection": [12],
+      "left": "quiet rooms",
+      "right": "study areas",
+      "up": null,
+      "down": null
+    }
+   
+  ]
+  

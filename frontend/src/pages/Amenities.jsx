@@ -61,6 +61,9 @@ function Amenities() {
       case "request":
         navigate("/request");
         break;
+      case "navigation":
+        navigate("/navigation");
+        break;
       default:
         break;
     }
@@ -80,7 +83,7 @@ function Amenities() {
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? 'ml-70' : 'ml-20'}`}>
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Campus Amenities" />
 
         {/* Main Content Area */}
         <div className="p-8">

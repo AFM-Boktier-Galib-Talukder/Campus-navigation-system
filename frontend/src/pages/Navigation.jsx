@@ -3,26 +3,21 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import FindRouteSection from "../components/FindRouteSection";
-import NavigationComponent from "../components/NavigationComponent";
 
 function Navigation() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState("navigation");
   const [userData, setUserData] = useState(null);
+  const [routeResult, setRouteResult] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Sample navigation steps - can be passed as props or fetched from API
-  const navigationSteps = [
-    { direction: "start", message: "Ready to begin your journey to the library", angle: 0 },
-    { direction: "forward", message: "Walk straight for 100 meters towards the main entrance", angle: 0 },
-    { direction: "right", message: "Turn right at the information desk", angle: 90 },
-    { direction: "forward", message: "Continue straight through the corridor for 50 meters", angle: 0 },
-    { direction: "left", message: "Turn left at the fountain towards the academic building", angle: -90 },
-    { direction: "up", message: "Take the stairs to the second floor", angle: 0 },
-    { direction: "right", message: "Turn right after reaching the second floor", angle: 90 },
-    { direction: "destination", message: "Welcome to the University Library! You have arrived.", angle: 0 },
-  ];
+  // Initialize route result from navigation state if provided
+  useEffect(() => {
+    if (location.state?.routeResult) {
+      setRouteResult(location.state.routeResult);
+    }
+  }, [location.state]);
 
   // Get user data from location state or fetch from API
   useEffect(() => {
@@ -97,15 +92,52 @@ function Navigation() {
       {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Navigator" />
 
         {/* Main Content Area - Two Column Layout */}
         <div className="flex h-full">
-          {/* Left Column - Navigation Component */}
-          <NavigationComponent navigationSteps={navigationSteps} />
+          {/* Left Column - Shortest Path Result */}
+          <div className="flex-1 p-8">
+            {/* Result Box */}
+            {routeResult && !routeResult.error && (
+              <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-xl border border-orange-200 p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-3">Route Details</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                  <div className="p-4 rounded-xl border border-orange-100 bg-orange-50/50">
+                    <div className="text-gray-600">Path (dots)</div>
+                    <div className="font-mono text-gray-900 break-all">{Array.isArray(routeResult.path) ? routeResult.path.join(" → ") : "-"}</div>
+                  </div>
+                  <div className="p-4 rounded-xl border border-orange-100 bg-orange-50/50">
+                    <div className="text-gray-600">Estimated Time</div>
+                    <div className="text-gray-900 font-medium">{routeResult.distance || "-"}</div>
+                  </div>
+                  <div className="p-4 rounded-xl border border-orange-100 bg-orange-50/50">
+                    <div className="text-gray-600">Start / End Dots</div>
+                    <div className="text-gray-900 font-medium">{routeResult.startDot} → {routeResult.endDot}</div>
+                  </div>
+                </div>
+                {Array.isArray(routeResult.directions) && routeResult.directions.length > 0 && (
+                  <div className="mt-4">
+                    <div className="text-gray-700 font-medium mb-2">Turn-by-turn</div>
+                    <ul className="list-disc ml-6 space-y-1 text-gray-800">
+                      {routeResult.directions.map((d, i) => (
+                        <li key={i}>{d}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {routeResult?.error && (
+              <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-xl">
+                {routeResult.error}
+              </div>
+            )}
+          </div>
 
           {/* Right Column - Find Your Route Section */}
-          <FindRouteSection />
+          <FindRouteSection onPathFound={setRouteResult} onRouteComputed={setRouteResult} />
         </div>
       </div>
     </div>
