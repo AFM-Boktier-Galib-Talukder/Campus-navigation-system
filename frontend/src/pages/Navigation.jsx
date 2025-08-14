@@ -14,7 +14,6 @@ function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get user data from location state or fetch from API
   useEffect(() => {
     const fetchUserData = async () => {
       if (location.state?.userId) {
@@ -47,10 +46,8 @@ function Navigation() {
     fetchUserData();
   }, [location.state?.userId]);
 
-  // Handle path found from FindRouteSection
   const handlePathFound = (data) => {
     if (data.error) {
-      // Handle error case
       console.error("Path finding error:", data.error);
       setNavigationSteps([
         {
@@ -63,35 +60,39 @@ function Navigation() {
       return;
     }
 
-    // Convert backend directions to navigation steps format
     const steps = [];
 
-    // Add start step
     steps.push({
       direction: "start",
       message: "Ready to begin your journey",
       angle: 0,
     });
 
-    // Convert directions to navigation steps
-    data.directions.forEach((direction, _) => {
+    console.log(data.directions);
+
+    data.directions.forEach((direction) => {
       let stepDirection = "forward";
       let angle = 0;
 
-      // Parse direction text to determine step type
       const lowerDirection = direction.toLowerCase();
-      if (lowerDirection.includes("go up") || lowerDirection.includes("using lift") || lowerDirection.includes("using stair")) {
+      if (lowerDirection.includes("go up")) {
         stepDirection = "up";
         angle = 0;
       } else if (lowerDirection.includes("go down")) {
         stepDirection = "down";
         angle = 0;
-      } else if (lowerDirection.includes("left")) {
+      } else if (lowerDirection.includes("go ahead & turn left")) {
         stepDirection = "left";
-        angle = -90;
-      } else if (lowerDirection.includes("right")) {
+        angle = 270;
+      } else if (lowerDirection.includes("go ahead & turn right")) {
         stepDirection = "right";
         angle = 90;
+      } else if (lowerDirection.includes("move forward")) {
+        stepDirection = "forward";
+        angle = 0;
+      } else if (lowerDirection.includes("move backward")) {
+        stepDirection = "backward";
+        angle = 180;
       } else if (lowerDirection.includes("reach your destination")) {
         stepDirection = "destination";
         angle = 0;
@@ -99,12 +100,12 @@ function Navigation() {
 
       steps.push({
         direction: stepDirection,
-        message: direction.replace(/\n/g, " "), // Remove line breaks for better display
+        message: direction.replace(/\n/g, " "),
         angle: angle,
       });
     });
+    console.log(steps);
 
-    // Add final destination step if not already present
     if (steps[steps.length - 1].direction !== "destination") {
       steps.push({
         direction: "destination",
@@ -145,7 +146,6 @@ function Navigation() {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
-      {/* Collapsible Sidebar */}
       <Sidebar
         isExpanded={isSidebarExpanded}
         onMouseEnter={() => setIsSidebarExpanded(true)}
@@ -154,17 +154,12 @@ function Navigation() {
         onNavClick={handleNavClick}
       />
 
-      {/* Main Content */}
       <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
-        {/* Header */}
         <Header userData={userData} />
 
-        {/* Main Content Area - Two Column Layout */}
-        <div className="flex h-full">
-          {/* Left Column - Navigation Component */}
+        <div className="flex">
           <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
 
-          {/* Right Column - Find Your Route Section */}
           <FindRouteSection onPathFound={handlePathFound} />
         </div>
       </div>

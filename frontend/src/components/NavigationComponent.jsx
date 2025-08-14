@@ -6,7 +6,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [showRouteInfo, setShowRouteInfo] = useState(false);
 
-  // Default steps if no steps provided
   const defaultSteps = [{ direction: "start", message: "Use the 'Find Your Route' section to plan your journey", angle: 0 }];
 
   const steps = navigationSteps.length > 0 ? navigationSteps : defaultSteps;
@@ -15,7 +14,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   const isStart = currentStep === 0;
   const hasRouteData = pathData !== null;
 
-  // Reset to first step when new route is found and show route info for 4 seconds
   useEffect(() => {
     if (navigationSteps.length > 0) {
       setCurrentStep(0);
@@ -23,7 +21,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
       setShowCongratulations(false);
       setShowRouteInfo(true);
 
-      // Hide route info after 4 seconds
       const timer = setTimeout(() => {
         setShowRouteInfo(false);
       }, 4000);
@@ -36,9 +33,9 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
     const icons = {
       start: "🎯",
       forward: "↑",
-      backward: "↓",
-      left: "←",
-      right: "→",
+      backward: "↑",
+      left: "↑",
+      right: "↑",
       up: "⇡",
       down: "⇣",
       destination: "🏁",
@@ -81,7 +78,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
       setCurrentStep(currentStep + 1);
       setIsNavigating(true);
 
-      // Show congratulations when reaching destination
       if (currentStep === steps.length - 2) {
         setTimeout(() => {
           setShowCongratulations(true);
@@ -108,14 +104,12 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
 
     const stepsLeft = steps.length - currentStep - 1;
 
-    // Calculate remaining time based on steps completed
     const totalTimeInMinutes = parseFloat(pathData.time) || 0;
-    const timePerStep = totalTimeInMinutes / (steps.length - 1); // -1 because start step doesn't count
+    const timePerStep = totalTimeInMinutes / (steps.length - 1);
     const remainingTime = Math.max(0, totalTimeInMinutes - currentStep * timePerStep);
 
-    // Calculate remaining distance based on steps completed
     const totalDistanceInMeters = parseInt(pathData.distance) || 0;
-    const distancePerStep = totalDistanceInMeters / (steps.length - 1); // -1 because start step doesn't count
+    const distancePerStep = totalDistanceInMeters / (steps.length - 1);
     const remainingDistance = Math.max(0, totalDistanceInMeters - currentStep * distancePerStep);
 
     return {
@@ -128,18 +122,16 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   const estimatedInfo = getEstimatedInfo();
 
   return (
-    <div className="flex-1 p-5 max-h-10/12">
-      {/* Navigation Container - Matching FindRouteSection Height */}
+    <div className="flex-1 p-4">
       <div
         className={`h-full rounded-3xl overflow-hidden relative shadow-2xl transition-all duration-1000 ${
           isDestination
             ? "bg-gradient-to-br from-emerald-400 to-green-500"
             : hasRouteData
             ? "bg-gradient-to-br from-orange-400 to-yellow-400"
-            : "bg-gradient-to-br from-gray-400 to-gray-500"
+            : "bg-gradient-to-br from-gray-400 to-yellow-100"
         }`}
       >
-        {/* Congratulations Banner */}
         {showCongratulations && (
           <div
             className={`absolute top-0 left-0 right-0 backdrop-blur-lg p-6 transform translate-y-0 animate-bounce z-10 ${
@@ -150,7 +142,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
           </div>
         )}
 
-        {/* Route Info Banner - Show for 4 seconds when route is available */}
         {hasRouteData && showRouteInfo && !showCongratulations && (
           <div
             className="absolute top-0 left-0 right-0 bg-white/20 backdrop-blur-lg p-4 border-b border-white/30 z-10 transition-all duration-500 ease-out"
@@ -179,32 +170,26 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
           </div>
         )}
 
-        {/* Main Navigation Content */}
         <div className={`absolute inset-0 flex items-center justify-center p-8 ${showRouteInfo ? "pt-20" : ""} transition-all duration-300`}>
           <div className="flex flex-col items-center space-y-6 h-full justify-center">
-            {/* Compass Circle */}
             <div className="relative">
               <div
                 className={`w-48 h-48 rounded-full border-4 border-white/30 backdrop-blur-xl flex items-center justify-center transition-all duration-700 ${
                   isDestination ? "bg-white/20" : hasRouteData ? "bg-white/10" : "bg-white/5"
                 } ${isNavigating ? "animate-pulse" : ""}`}
               >
-                {/* Direction Display */}
                 <div className="text-white">{getDirectionDisplay(currentNav.direction)}</div>
 
-                {/* Enhanced Compass Points */}
                 <div className="absolute inset-0">
                   <div className="absolute top-3 left-1/2 transform -translate-x-1/2 text-white/70 text-base font-bold">N</div>
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/70 text-base font-bold">E</div>
                   <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 text-white/70 text-base font-bold">S</div>
                   <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70 text-base font-bold">W</div>
 
-                  {/* Up/Down indicators */}
                   <div className="absolute top-6 right-6 text-white/50 text-xs font-bold">↑UP</div>
                   <div className="absolute bottom-6 left-6 text-white/50 text-xs font-bold">↓DOWN</div>
                 </div>
 
-                {/* Multiple Pulsing Rings - only show when active route */}
                 {hasRouteData && (
                   <>
                     <div className="absolute inset-0 rounded-full border-2 border-white/20 animate-ping"></div>
@@ -213,7 +198,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
                 )}
               </div>
 
-              {/* Step Counter - only show when route is active */}
               {hasRouteData && (
                 <div className="absolute -top-4 -right-4 bg-white/30 backdrop-blur-lg rounded-full w-12 h-12 flex items-center justify-center text-white font-bold border-2 border-white/40 text-lg">
                   {currentStep + 1}
@@ -221,7 +205,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
               )}
             </div>
 
-            {/* Route Stats - Show estimated info */}
             <div className="flex space-x-4 text-white/90">
               <div className="text-center bg-white/10 backdrop-blur-lg rounded-xl p-3 border border-white/20">
                 <div className="text-xl font-bold">{estimatedInfo.stepsLeft}</div>
@@ -237,9 +220,7 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
               </div>
             </div>
 
-            {/* Direction Message Box */}
             <div className="bg-white/20 backdrop-blur-xl rounded-2xl p-6 border-2 border-white/30 transform hover:scale-105 transition-all duration-300 max-w-lg">
-              {/* Split message into multiple lines for better readability */}
               <div className="text-white text-lg font-semibold text-center leading-relaxed">
                 {currentNav.message
                   .split(/[.\n]/)
@@ -252,7 +233,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
                   ))}
               </div>
 
-              {/* Enhanced Progress Bar - only show when route is active */}
               {hasRouteData && (
                 <>
                   <div className="mt-4 bg-white/20 rounded-full h-2 overflow-hidden">
@@ -262,7 +242,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
                     ></div>
                   </div>
 
-                  {/* Progress Text */}
                   <div className="mt-2 text-center text-white/80 text-sm">
                     Step {currentStep + 1} of {steps.length}
                   </div>
@@ -270,9 +249,7 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
               )}
             </div>
 
-            {/* Action Buttons */}
             <div className="flex space-x-4">
-              {/* Main Action Button */}
               <button
                 onClick={hasRouteData ? handleNext : undefined}
                 disabled={(!hasRouteData && isStart) || isDestination}
@@ -290,7 +267,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
                 </span>
               </button>
 
-              {/* Reset Button - show when route is complete or in progress */}
               {hasRouteData && currentStep > 0 && (
                 <button
                   onClick={handleReset}
@@ -303,7 +279,6 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
           </div>
         </div>
 
-        {/* Enhanced Decorative Elements */}
         <div className="absolute top-4 right-4 text-white/20 text-6xl animate-spin" style={{ animationDuration: "10s" }}>
           ⚙️
         </div>

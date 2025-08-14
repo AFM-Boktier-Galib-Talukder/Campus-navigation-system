@@ -10,8 +10,8 @@ function floorDistance(path) {
 }
 
 function generateTime(path) {
-  const timePerNode = 0.53 // minutes per node
-  const floorChangePenalty = 1 // additional minutes per floor change
+  const timePerNode = 0.53
+  const floorChangePenalty = 1
   const totalTime =
     timePerNode * (path.length - 1) + floorDistance(path) * floorChangePenalty
   return `${totalTime.toFixed(2)} minutes`

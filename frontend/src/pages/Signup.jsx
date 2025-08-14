@@ -38,10 +38,9 @@ const SignUp = () => {
         setIsSuccess(true);
         setMessage("You are now registered. Please go to the login page to sign in.");
 
-        //Auto-redirect after 3 seconds
         setTimeout(() => {
           navigate("/login");
-        }, 4000);
+        }, 3000);
       }
     } catch (error) {
       setIsSuccess(false);
@@ -57,7 +56,6 @@ const SignUp = () => {
 
   return (
     <div className="min-h-screen max-h-lvh flex flex-col md:flex-row bg-yellow-500/65 text-yellow-200 overflow-hidden relative">
-      {/* Left Side - Form */}
       <div
         className="w-full md:w-1/2 bg-orange-500 rounded-r-full flex items-center justify-center p-8 relative overflow-hidden form-container"
         style={{ fontFamily: "'Inria Sans', sans-serif" }}
@@ -161,7 +159,7 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-orange-600 to-yellow-200 text-2xl font-extrabold py-2 px-4 rounded-md hover:from-yellow-400 hover:to-orange-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 relative overflow-hidden group button-shine glowing-text"
+              className="w-full cursor-pointer bg-gradient-to-r from-orange-600 to-yellow-200 text-2xl font-extrabold py-2 px-4 rounded-md hover:from-yellow-400 hover:to-orange-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 relative overflow-hidden group button-shine glowing-text"
             >
               Sign up
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-3000 ease-out"></div>
@@ -169,22 +167,20 @@ const SignUp = () => {
           </form>
         </div>
       </div>
-      {/* Right Side - Content with Floating Particles */}
+
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-2 text-center relative" style={{ fontFamily: "'Inria Sans', sans-serif" }}>
         <div className="relative top-20 flex items-center space-x-2 z-20">
           <p className="text-xl text-yellow-100">Already have an account?</p>
           <button
             onClick={() => navigate("/login")}
-            className="text-orange-500/80  text-xl font-bold underline hover:text-2xl"
+            className="text-orange-500/80  text-xl font-bold underline hover:text-2xl cursor-pointer"
             style={{ fontFamily: "'Inknut Antiqua', serif" }}
           >
             Login
           </button>
         </div>
 
-        {/* Particles Container */}
         <div className="relative w-full h-lvh">
-          {/* Floating Particles */}
           <div className="absolute top-[20%] left-[15%] w-18 h-18 bg-orange-600/60 rounded-full animate-float-1"></div>
           <div className="absolute top-[30%] right-[25%] w-25 h-25 bg-orange-600/50 rounded-full animate-float-2 animation-delay-700"></div>
           <div className="absolute bottom-[5%] right-[55%] w-30 h-30 bg-orange-600/30 rounded-full animate-float-2 animation-delay-600"></div>
@@ -192,11 +188,11 @@ const SignUp = () => {
           <div className="absolute bottom-[35%] left-[20%] w-40 h-40 bg-orange-600/40 rounded-full animate-float-4 animation-delay-400"></div>
           <div className="absolute top-[15%] right-[20%] w-18 h-18 bg-orange-600/60 rounded-full animate-float-2 animation-delay-200"></div>
           <div className="absolute bottom-[40%] left-[0%] w-20 h-20 bg-orange-600/30 rounded-full animate-float-1 animation-delay-300"></div>
-          {/* Main Image */}
+
           <img src={welcomeBoy} alt="Welcome illustration" className="relative top-20 w-full h-full object-cover z-10" />
         </div>
       </div>
-      {/* Custom Animation Styles */}
+
       <style jsx>{`
         @keyframes float-1 {
           0%,
