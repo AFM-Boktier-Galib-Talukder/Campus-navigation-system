@@ -18,7 +18,9 @@ function HomePage() {
       if (location.state?.userId) {
         try {
           // Fetch user data from API using userId
-          const response = await fetch(`http://localhost:1490/api/signup/${location.state.userId}`);
+          const response = await fetch(
+            `http://localhost:1490/api/signup/${location.state.userId}`
+          );
           if (response.ok) {
             const user = await response.json();
             setUserData(user);
@@ -26,22 +28,22 @@ function HomePage() {
             // Set default user data if fetch fails
             setUserData({
               name: "User",
-              email: "user@example.com"
+              email: "user@example.com",
             });
           }
         } catch (error) {
-          console.error('Error fetching user data:', error);
+          console.error("Error fetching user data:", error);
           // Set default user data if fetch fails
           setUserData({
             name: "User",
-            email: "user@example.com"
+            email: "user@example.com",
           });
         }
       } else {
         // Set default user data if no userId
         setUserData({
           name: "User",
-          email: "user@example.com"
+          email: "user@example.com",
         });
       }
     };
@@ -51,7 +53,7 @@ function HomePage() {
 
   const handleNavClick = (itemId) => {
     setActiveNavItem(itemId);
-    switch(itemId) {
+    switch (itemId) {
       case "home":
         navigate("/homepage");
         break;
@@ -87,12 +89,16 @@ function HomePage() {
       />
 
       {/* Main Content */}
-      <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? 'ml-70' : 'ml-20'}`}>
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          isSidebarExpanded ? "ml-70" : "ml-20"
+        }`}
+      >
         {/* Header */}
         <Header userData={userData} title="Welcome to CAMPUS-NAV" />
 
         {/* Main Content Area - Two Column Layout */}
-        <div className="flex h-full">
+        <div className="flex">
           {/* Left Column - Main Content */}
           <div className="flex-1 p-8">
             {/* Slideshow Banner */}
@@ -106,7 +112,8 @@ function HomePage() {
                     Smart Campus Navigation
                   </h2>
                   <p className="text-xl opacity-90 max-w-md mb-8">
-                    Find your way around campus with intelligent pathfinding and real-time directions.
+                    Find your way around campus with intelligent pathfinding and
+                    real-time directions.
                   </p>
                   <div className="flex gap-4">
                     <button className="bg-white/20 text-white px-8 py-4 rounded-2xl font-semibold border-2 border-white/30 backdrop-blur-lg hover:bg-white/30 hover:-translate-y-1 transition-all">

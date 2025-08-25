@@ -524,3 +524,111 @@
 1756148702228 : ::1 PUT : /api/admin/floor/dots/10
 
 1756148775613 : ::1 PUT : /api/admin/floor/dots/10
+
+1756150721751 : ::1 POST : /api/login
+
+1756150721836 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150721932 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150721945 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150726049 : ::1 GET : /api/facultyDesk
+
+1756150726077 : ::1 GET : /api/facultyDesk
+
+1756150728261 : ::1 GET : /api/library/nodes
+
+1756150728279 : ::1 GET : /api/library/nodes
+
+1756150752538 : ::1 GET : /api/facultyDesk
+
+1756150752550 : ::1 GET : /api/facultyDesk
+
+1756150755830 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150755846 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150777396 : ::1 GET : /api/library/nodes
+
+1756150777408 : ::1 GET : /api/library/nodes
+
+1756150941037 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150941046 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756150943235 : ::1 GET : /api/library/nodes
+
+1756150943250 : ::1 GET : /api/library/nodes
+
+1756151503550 : ::1 GET : /api/facultyDesk
+
+1756151503566 : ::1 GET : /api/facultyDesk
+
+1756151509241 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756151509247 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756151519652 : ::1 GET : /api/facultyDesk
+
+1756151519658 : ::1 GET : /api/facultyDesk
+
+1756151522648 : ::1 GET : /api/library/nodes
+
+1756151522657 : ::1 GET : /api/library/nodes
+
+1756152103351 : ::1 POST : /api/login
+
+1756152103372 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756152103436 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756152103437 : ::1 GET : /api/admin/floor/dots
+
+1756152103457 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756152103469 : ::1 GET : /api/admin/floor/dots
+
+1756152110670 : ::1 GET : /api/reports
+
+1756152110684 : ::1 GET : /api/reports
+
+1756152124670 : ::1 POST : /api/login
+
+1756152124690 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756152124763 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756152124768 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756152229969 : ::1 GET : /api/facultyDesk
+
+1756152229975 : ::1 GET : /api/facultyDesk
+
+1756152239031 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756152239037 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756152243594 : ::1 GET : /api/library/nodes
+
+1756152243605 : ::1 GET : /api/library/nodes
+
+1756152336611 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756152336621 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756153057348 : ::1 GET : /api/library/nodes
+
+1756153057364 : ::1 GET : /api/library/nodes
+
+1756153060740 : ::1 GET : /api/facultyDesk
+
+1756153060750 : ::1 GET : /api/facultyDesk
+
+1756153719610 : ::1 GET : /api/library/nodes
+
+1756153719631 : ::1 GET : /api/library/nodes
+
+1756153738636 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756153738647 : ::1 GET : /api/signup/68972de3784897036748da6a
