@@ -97,9 +97,15 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
 
     setIsSubmitting(true);
     try {
-      const startParam = selectedStartDot != null ? String(selectedStartDot) : startPoint.trim();
-      const endParam = selectedEndDot != null ? String(selectedEndDot) : endPoint.trim();
-      const url = `${API_BASE}/path?start=${encodeURIComponent(startParam)}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(transportOption)}`;
+      const startParam =
+        selectedStartDot != null ? String(selectedStartDot) : startPoint.trim();
+      const endParam =
+        selectedEndDot != null ? String(selectedEndDot) : endPoint.trim();
+      const url = `${API_BASE}/path?start=${encodeURIComponent(
+        startParam
+      )}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(
+        transportOption
+      )}`;
       const res = await fetch(url);
       const data = await res.json();
       if (!res.ok) {
@@ -122,9 +128,14 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
         },
       };
       const isAlreadyOnNavigation = location.pathname === "/navigation";
-      navigate("/navigation", { state: navState, replace: isAlreadyOnNavigation });
+      navigate("/navigation", {
+        state: navState,
+        replace: isAlreadyOnNavigation,
+      });
     } catch (err) {
-      const errorPayload = { error: "Something went wrong while finding the route" };
+      const errorPayload = {
+        error: "Something went wrong while finding the route",
+      };
       onPathFound?.(errorPayload);
       onRouteComputed?.(errorPayload);
     } finally {
@@ -166,13 +177,23 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
         <div className="p-6 border-b border-orange-200/30 bg-gradient-to-r from-orange-50/50 to-yellow-50/50">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-gradient-to-br from-red-400 to-yellow-400 rounded-lg flex items-center justify-center shadow-lg">
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              <svg
+                className="w-5 h-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <h3 className="text-xl font-bold text-gray-800">Find Your Route</h3>
           </div>
-          <p className="text-gray-600 text-sm">Plan your navigation across campus</p>
+          <p className="text-gray-600 text-sm">
+            Plan your navigation across campus
+          </p>
         </div>
 
         {/* Route Search Form */}
@@ -180,9 +201,20 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
           <div className="space-y-6">
             {/* Start Point */}
             <div>
-              <label htmlFor="start-point" className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              <label
+                htmlFor="start-point"
+                className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
+              >
+                <svg
+                  className="w-4 h-4 text-orange-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 Start Point
               </label>
@@ -201,32 +233,48 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 onBlur={() => {
                   setTimeout(() => setShowStartDropdown(false), 120);
                 }}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="Type room and select..."
                 required
               />
-              {showStartDropdown && (startSuggestions.length > 0 || startNoResults) && (
-                <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
-                  {startSuggestions.map((s) => (
-                    <button
-                      key={`${s.label}-${s.dot}`}
-                      type="button"
-                      onMouseDown={() => handleSelectStart(s.label, s.dot)}
-                      className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                  {startNoResults && startSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-500">NO Rooms Found</div>}
-                </div>
-              )}
+              {showStartDropdown &&
+                (startSuggestions.length > 0 || startNoResults) && (
+                  <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                    {startSuggestions.map((s) => (
+                      <button
+                        key={`${s.label}-${s.dot}`}
+                        type="button"
+                        onMouseDown={() => handleSelectStart(s.label, s.dot)}
+                        className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                    {startNoResults && startSuggestions.length === 0 && (
+                      <div className="px-4 py-2 text-sm text-gray-500">
+                        NO Rooms Found
+                      </div>
+                    )}
+                  </div>
+                )}
             </div>
 
             {/* End Point */}
             <div>
-              <label htmlFor="end-point" className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              <label
+                htmlFor="end-point"
+                className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
+              >
+                <svg
+                  className="w-4 h-4 text-orange-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 Destination
               </label>
@@ -245,31 +293,40 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 onBlur={() => {
                   setTimeout(() => setShowEndDropdown(false), 120);
                 }}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="Type room and select..."
                 required
               />
-              {showEndDropdown && (endSuggestions.length > 0 || endNoResults) && (
-                <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
-                  {endSuggestions.map((s) => (
-                    <button
-                      key={`${s.label}-${s.dot}`}
-                      type="button"
-                      onMouseDown={() => handleSelectEnd(s.label, s.dot)}
-                      className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                  {endNoResults && endSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-500">NO Rooms Found</div>}
-                </div>
-              )}
+              {showEndDropdown &&
+                (endSuggestions.length > 0 || endNoResults) && (
+                  <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                    {endSuggestions.map((s) => (
+                      <button
+                        key={`${s.label}-${s.dot}`}
+                        type="button"
+                        onMouseDown={() => handleSelectEnd(s.label, s.dot)}
+                        className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                    {endNoResults && endSuggestions.length === 0 && (
+                      <div className="px-4 py-2 text-sm text-gray-500">
+                        NO Rooms Found
+                      </div>
+                    )}
+                  </div>
+                )}
             </div>
 
             {/* Transport Options */}
             <div>
               <label className=" text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4 text-orange-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                 </svg>
                 Transport Options
@@ -286,11 +343,25 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                     }`}
                   >
                     <div className="flex justify-center mb-2">
-                      <div className={`w-8 h-8 flex items-center justify-center ${transportOption === option.id ? "text-white" : "text-orange-500"}`}>
+                      <div
+                        className={`w-8 h-8 flex items-center justify-center ${
+                          transportOption === option.id
+                            ? "text-white"
+                            : "text-orange-500"
+                        }`}
+                      >
                         {option.icon}
                       </div>
                     </div>
-                    <div className={`text-sm font-medium ${transportOption === option.id ? "text-white" : "text-gray-700"}`}>{option.label}</div>
+                    <div
+                      className={`text-sm font-medium ${
+                        transportOption === option.id
+                          ? "text-white"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      {option.label}
+                    </div>
                   </div>
                 ))}
               </div>
