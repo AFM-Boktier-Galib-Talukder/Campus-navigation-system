@@ -78,9 +78,6 @@ function AdminDashboard() {
       case "admin_home":
         navigate("/admin-dashboard");
         break;
-      case "admin_billboards":
-        navigate("/admin/maps");
-        break;
       case "admin_events":
         navigate("/admin/events");
         break;

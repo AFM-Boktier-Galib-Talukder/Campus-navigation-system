@@ -632,3 +632,59 @@
 1756153738636 : ::1 GET : /api/signup/68972de3784897036748da6a
 
 1756153738647 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756217923688 : ::1 POST : /api/login
+
+1756217923809 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756217923886 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756217923887 : ::1 GET : /api/admin/floor/dots
+
+1756217923903 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756217923916 : ::1 GET : /api/admin/floor/dots
+
+1756218155243 : ::1 GET : /api/reports
+
+1756218155278 : ::1 GET : /api/reports
+
+1756219972102 : ::1 POST : /api/login
+
+1756219972192 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219972287 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219972289 : ::1 GET : /api/admin/floor/dots
+
+1756219972304 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219972309 : ::1 GET : /api/admin/floor/dots
+
+1756219977639 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219977639 : ::1 GET : /api/admin/floor/dots
+
+1756219977656 : ::1 GET : /api/admin/floor/dots
+
+1756219977656 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219979806 : ::1 GET : /api/reports
+
+1756219979834 : ::1 GET : /api/reports
+
+1756219994186 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219994187 : ::1 GET : /api/admin/floor/dots
+
+1756219994205 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+
+1756219994208 : ::1 GET : /api/admin/floor/dots
+
+1756220010020 : ::1 POST : /api/login
+
+1756220010041 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756220010118 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756220010123 : ::1 GET : /api/signup/68972de3784897036748da6a
