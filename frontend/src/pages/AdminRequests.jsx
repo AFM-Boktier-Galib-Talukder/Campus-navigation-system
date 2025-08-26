@@ -167,51 +167,47 @@ function AdminRequests() {
                     {selectedReport.description}
                   </div>
                 </div>
+
+                {/* Event Image - Show only for events type */}
+                {selectedReport.type === "events" &&
+                  selectedReport.eventImage && (
+                    <div className="mt-4">
+                      <div className="font-semibold text-gray-700 mb-2">
+                        Event Billboard Image
+                      </div>
+                      <div className="border border-gray-200 rounded-lg overflow-hidden">
+                        <img
+                          src={`http://localhost:1490/uploads/${selectedReport.eventImage}`}
+                          alt="Event Billboard"
+                          className="w-full h-auto max-h-64 object-contain bg-gray-50"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                            e.target.nextElementSibling.style.display = "block";
+                          }}
+                        />
+                        <div className="hidden p-4 text-center text-gray-500 text-sm">
+                          Image not available
+                        </div>
+                      </div>
+                    </div>
+                  )}
               </div>
             </div>
 
             <div className="mt-6 flex items-center justify-end gap-3">
               <button
-                aria-label="Save"
                 onClick={closeModal}
-                className="inline-flex items-center justify-center w-11 h-11 rounded-xl border-2 border-transparent text-black hover:text-white hover:border-orange-400 hover:bg-orange-400 transition-colors"
+                className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg transition-colors duration-200"
               >
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M6 3h9l3 3v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" />
-                  <path d="M14 3v5H7V3" />
-                  <rect x="8" y="14" width="8" height="6" rx="1" />
-                </svg>
+                Back
               </button>
               <button
-                aria-label="Delete"
                 onClick={() =>
                   handleDelete(selectedReport._id || selectedReport.id)
                 }
-                className="inline-flex items-center justify-center w-11 h-11 rounded-xl border-2 border-transparent text-black hover:text-white hover:border-orange-400 hover:bg-orange-400 transition-colors"
+                className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg transition-colors duration-200"
               >
-                <svg
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M3 6h18" />
-                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
-                  <path d="M10 11v6" />
-                  <path d="M14 11v6" />
-                  <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" />
-                </svg>
+                Delete
               </button>
             </div>
           </div>

@@ -8,6 +8,7 @@ const ReportSchema = new mongoose.Schema(
     type: { type: String, required: true },
     title: { type: String, required: true },
     description: { type: String, required: true },
+    eventImage: { type: String }, // Store the image file path/name
   },
   { timestamps: true }
 )

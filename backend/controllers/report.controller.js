@@ -4,11 +4,35 @@ async function createReport(req, res) {
   try {
     const { userId, userName, userEmail, type, title, description } = req.body
     if (!type || !title || !description) {
-      return res.status(400).json({ error: 'type, title and description are required' })
+      return res
+        .status(400)
+        .json({ error: 'type, title and description are required' })
     }
-    const report = await Report.create({ userId, userName, userEmail, type, title, description })
+
+    // Handle event image if present
+    let eventImage = null
+    if (req.file && type === 'events') {
+      eventImage = req.file.filename // Store just the filename
+    }
+
+    const reportData = {
+      userId,
+      userName,
+      userEmail,
+      type,
+      title,
+      description,
+    }
+
+    // Add eventImage only if it exists
+    if (eventImage) {
+      reportData.eventImage = eventImage
+    }
+
+    const report = await Report.create(reportData)
     res.status(201).json({ id: report._id, message: 'Report created' })
   } catch (err) {
+    console.error('Error creating report:', err)
     res.status(500).json({ error: 'Failed to create report' })
   }
 }

@@ -8,6 +8,7 @@ const BillboardSchema = new mongoose.Schema(
     date: { type: String, required: true }, // e.g., YYYY-MM-DD
     time: { type: String, required: true }, // e.g., HH:mm
     description: { type: String, required: true },
+    hostedBy: { type: String, required: true }, // Organization or person hosting the event
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
   },
   { timestamps: true }

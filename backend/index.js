@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const path = require('path')
 const { logReqRes } = require('./middlewares/index')
 const { connectMongoDB } = require('./connection')
 const signUpRouter = require('./routes/signup.route')
@@ -24,10 +25,13 @@ connectMongoDB()
   })
 
 //MiddleWare
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: '50mb' })) // Increased limit for large base64 images
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }))
 app.use(cors())
 app.use(logReqRes('log.txt'))
+
+// Serve static files from uploads directory
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 //Routes
 app.use('/api/floor', floorRouter)
