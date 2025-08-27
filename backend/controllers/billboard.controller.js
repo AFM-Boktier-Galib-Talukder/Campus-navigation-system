@@ -3,7 +3,7 @@ const Billboard = require('../models/billboard.model')
 async function createBillboard(req, res) {
   try {
     const { imageBase64, title, venue, date, time, description, createdBy } = req.body
-    if (!imageBase64  !title  !venue  !date  !time || !description) {
+    if (!imageBase64 || !title || !venue || !date || !time || !description) {
       return res.status(400).json({ error: 'All fields are required' })
     }
     const doc = await Billboard.create({ imageBase64, title, venue, date, time, description, createdBy })

@@ -348,3 +348,83 @@
 1755017751586 : ::1 GET : /api/library/nodes
 
 1755017751596 : ::1 GET : /api/library/nodes
+
+1756229316298 : ::1 POST : /api/signup
+
+1756229326369 : ::1 POST : /api/signup
+
+1756229337268 : ::1 POST : /api/signup
+
+1756229417590 : ::1 POST : /api/login
+
+1756229417609 : ::1 GET : /api/signup/68adeed9724c737026982c25
+
+1756229417668 : ::1 GET : /api/signup/68adeed9724c737026982c25
+
+1756229417678 : ::1 GET : /api/signup/68adeed9724c737026982c25
+
+1756229426172 : ::1 GET : /api/facultyDesk
+
+1756229426180 : ::1 GET : /api/facultyDesk
+
+1756229428440 : ::1 GET : /api/library/nodes
+
+1756229428446 : ::1 GET : /api/library/nodes
+
+1756229451909 : ::1 GET : /api/floor/search
+
+1756229454974 : ::1 GET : /api/floor/search
+
+1756229456536 : ::1 GET : /api/floor/search
+
+1756229459704 : ::1 GET : /api/floor/search
+
+1756229461399 : ::1 GET : /api/floor/search
+
+1756229464159 : ::1 GET : /api/floor/search
+
+1756229467588 : ::1 GET : /api/floor/search
+
+1756229467895 : ::1 GET : /api/floor/search
+
+1756229468247 : ::1 GET : /api/floor/search
+
+1756229468732 : ::1 GET : /api/floor/search
+
+1756229470241 : ::1 GET : /api/floor/search
+
+1756229470569 : ::1 GET : /api/floor/search
+
+1756229474067 : ::1 GET : /api/floor/search
+
+1756229475069 : ::1 GET : /api/floor/search
+
+1756229477356 : ::1 GET : /api/floor/search
+
+1756229478211 : ::1 GET : /api/floor/search
+
+1756229482123 : ::1 GET : /api/floor/search
+
+1756229482840 : ::1 GET : /api/floor/search
+
+1756229485799 : ::1 GET : /api/floor/search
+
+1756229486257 : ::1 GET : /api/floor/search
+
+1756229490940 : ::1 GET : /api/floor/search
+
+1756229513207 : ::1 GET : /api/floor/search
+
+1756308859111 : ::1 POST : /api/login
+
+1756308859179 : ::1 GET : /api/signup/68adeed9724c737026982c25
+
+1756308859288 : ::1 GET : /api/signup/68adeed9724c737026982c25
+
+1756308859294 : ::1 GET : /api/signup/68adeed9724c737026982c25
+
+1756308873941 : ::1 GET : /api/floor/search
+
+1756308874794 : ::1 GET : /api/floor/search
+
+1756308877453 : ::1 GET : /api/floor/search
