@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import FindRouteSection from "../components/FindRouteSection";
+import BillboardShowcase from "../components/BillboardShowcase";
 
 function HomePage() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -99,38 +100,9 @@ function HomePage() {
 
         {/* Main Content Area - Two Column Layout */}
         <div className="flex">
-          {/* Left Column - Main Content */}
+          {/* Left Column - Billboard Showcase */}
           <div className="flex-1 p-8">
-            {/* Slideshow Banner */}
-            <div className="h-96 rounded-3xl overflow-hidden relative shadow-2xl bg-gradient-to-br from-orange-400 to-yellow-400">
-              <div className="absolute inset-0 flex items-center justify-between p-16">
-                <div className="flex-1 text-white">
-                  <div className="bg-white/20 text-white px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider inline-block mb-6">
-                    New Feature
-                  </div>
-                  <h2 className="text-5xl font-bold leading-tight mb-6 font-inknut">
-                    Smart Campus Navigation
-                  </h2>
-                  <p className="text-xl opacity-90 max-w-md mb-8">
-                    Find your way around campus with intelligent pathfinding and
-                    real-time directions.
-                  </p>
-                  <div className="flex gap-4">
-                    <button className="bg-white/20 text-white px-8 py-4 rounded-2xl font-semibold border-2 border-white/30 backdrop-blur-lg hover:bg-white/30 hover:-translate-y-1 transition-all">
-                      Start Navigation
-                    </button>
-                    <button className="text-white/80 px-8 py-4 rounded-2xl font-semibold border-2 border-white/20 hover:bg-white/10 hover:text-white transition-all">
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-                <div className="flex-0 w-72 h-72 bg-white/10 rounded-3xl flex items-center justify-center text-8xl text-white/30 backdrop-blur-xl">
-                  🗺️
-                </div>
-              </div>
-            </div>
-
-            {/* Route result is not shown on Home page per requirements */}
+            <BillboardShowcase />
           </div>
 
           {/* Right Column - Find Your Route Section */}

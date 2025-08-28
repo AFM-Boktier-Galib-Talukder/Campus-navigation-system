@@ -940,3 +940,35 @@
 1756235552443 : ::1 GET : /api/reports
 
 1756235552462 : ::1 GET : /api/reports
+
+1756324789964 : ::1 POST : /api/login
+
+1756324790087 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756324790199 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756324790207 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756325477687 : ::1 GET : /api/billboards
+
+1756325477744 : ::1 GET : /api/billboards
+
+1756350299696 : ::1 GET : /api/billboards
+
+1756350299819 : ::1 GET : /api/billboards
+
+1756350414723 : ::1 GET : /api/billboards
+
+1756350430743 : ::1 GET : /api/billboards
+
+1756350430792 : ::1 GET : /api/billboards
+
+1756350752147 : ::1 GET : /api/billboards
+
+1756350752175 : ::1 GET : /api/billboards
+
+1756350816051 : ::1 GET : /api/floor/search
+
+1756350821538 : ::1 GET : /api/floor/search
+
+1756350824452 : ::1 GET : /api/floor/path
