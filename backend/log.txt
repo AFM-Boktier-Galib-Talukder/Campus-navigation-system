@@ -972,3 +972,15 @@
 1756350821538 : ::1 GET : /api/floor/search
 
 1756350824452 : ::1 GET : /api/floor/path
+
+1756558701517 : ::1 POST : /api/login
+
+1756558701612 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756558701706 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756558701707 : ::1 GET : /api/billboards
+
+1756558701722 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756558701826 : ::1 GET : /api/billboards

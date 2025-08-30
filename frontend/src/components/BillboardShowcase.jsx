@@ -219,11 +219,11 @@ function BillboardShowcase() {
               <div className="p-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   {/* Event Image */}
-                  <div className="relative h-80 rounded-xl overflow-hidden bg-gray-100">
+                  <div className="billboard-container relative h-80 rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
                     <img
                       src={currentBillboard.imageBase64}
                       alt={currentBillboard.title}
-                      className="w-full h-full object-cover billboard-image"
+                      className="billboard-image"
                       onError={(e) => {
                         e.target.style.display = "none";
                         e.target.nextElementSibling.style.display = "flex";

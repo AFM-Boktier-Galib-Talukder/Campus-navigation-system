@@ -85,3 +85,18 @@
 .billboard-image:hover {
   transform: scale(1.02);
 }
+
+/* Billboard container styling for full image display */
+.billboard-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.billboard-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
