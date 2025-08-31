@@ -14,6 +14,13 @@ function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Initialize route result from navigation state if provided (for FindRoute button redirection)
+  useEffect(() => {
+    if (location.state?.routeResult) {
+      handlePathFound(location.state.routeResult);
+    }
+  }, [location.state]);
+
   useEffect(() => {
     const fetchUserData = async () => {
       if (location.state?.userId) {

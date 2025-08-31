@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "68972de3784897036748da6a"
+  },
+  "name": "imdad",
+  "email": "imdad@g.bracu.ac.bd",
+  "password": "imdad123#I",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "689b344a0bee17d673bb8f41"
+  },
+  "name": "Admin",
+  "email": "admin@g.bracu.ac.bd",
+  "password": "Admin@1234",
+  "role": "admin",
+  "__v": 0
+}]

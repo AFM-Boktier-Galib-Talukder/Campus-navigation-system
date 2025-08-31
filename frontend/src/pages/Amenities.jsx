@@ -2,40 +2,73 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
+import AmenitiesRouteSection from "../components/AmenitiesRouteSection";
 
 function Amenities() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState("amenities");
   const [userData, setUserData] = useState(null);
+  const [selectedAmenity, setSelectedAmenity] = useState(null);
+  const [routeResult, setRouteResult] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Predefined amenities that exist in the floors collection
+  const amenities = [
+    {
+      id: "male-washroom",
+      name: "Male Washroom",
+      description: "Men's restroom facilities",
+      icon: "🚹",
+    },
+    {
+      id: "female-washroom",
+      name: "Female Washroom",
+      description: "Women's restroom facilities",
+      icon: "🚺",
+    },
+    {
+      id: "fire-exit",
+      name: "FireExit",
+      description: "Emergency fire exit routes",
+      icon: "🚨",
+    },
+    {
+      id: "medical-center",
+      name: "Medical Center",
+      description: "Health services and first aid",
+      icon: "🏥",
+    },
+  ];
 
   // Get user data from location state or fetch from API
   useEffect(() => {
     const fetchUserData = async () => {
       if (location.state?.userId) {
         try {
-          const response = await fetch(`http://localhost:1490/api/signup/${location.state.userId}`);
+          const response = await fetch(
+            `http://localhost:1490/api/signup/${location.state.userId}`
+          );
           if (response.ok) {
             const user = await response.json();
             setUserData(user);
           } else {
             setUserData({
               name: "User",
-              email: "user@example.com"
+              email: "user@example.com",
             });
           }
         } catch (error) {
-          console.error('Error fetching user data:', error);
+          console.error("Error fetching user data:", error);
           setUserData({
             name: "User",
-            email: "user@example.com"
+            email: "user@example.com",
           });
         }
       } else {
         setUserData({
           name: "User",
-          email: "user@example.com"
+          email: "user@example.com",
         });
       }
     };
@@ -45,7 +78,7 @@ function Amenities() {
 
   const handleNavClick = (itemId) => {
     setActiveNavItem(itemId);
-    switch(itemId) {
+    switch (itemId) {
       case "home":
         navigate("/homepage");
         break;
@@ -61,9 +94,16 @@ function Amenities() {
       case "request":
         navigate("/request");
         break;
+      case "navigation":
+        navigate("/navigation");
+        break;
       default:
         break;
     }
+  };
+
+  const handleAmenitySelect = (amenity) => {
+    setSelectedAmenity(amenity);
   };
 
   return (
@@ -78,100 +118,132 @@ function Amenities() {
       />
 
       {/* Main Content */}
-      <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? 'ml-70' : 'ml-20'}`}>
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          isSidebarExpanded ? "ml-70" : "ml-20"
+        }`}
+      >
         {/* Header */}
-        <Header userData={userData} />
+        <Header userData={userData} title="Campus Amenities" />
 
-        {/* Main Content Area */}
-        <div className="p-8">
-          {/* Amenities Content */}
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Campus Amenities</h2>
-            <p className="text-gray-600 mb-6">
-              Discover all the facilities and services available on campus.
-            </p>
-          </div>
-
-          {/* Amenities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Cafeteria",
-                description: "Multiple dining options with various cuisines",
-                location: "Ground Floor, Block A",
-                hours: "7 AM - 10 PM",
-                icon: "🍽️"
-              },
-              {
-                title: "Student Lounge",
-                description: "Comfortable seating areas for relaxation",
-                location: "2nd Floor, Block B",
-                hours: "24/7",
-                icon: "🛋️"
-              },
-              {
-                title: "Gym & Fitness Center",
-                description: "Modern fitness equipment and training facilities",
-                location: "Basement, Block C",
-                hours: "6 AM - 11 PM",
-                icon: "��️"
-              },
-              {
-                title: "Prayer Room",
-                description: "Dedicated spaces for prayer and meditation",
-                location: "1st Floor, Block A",
-                hours: "24/7",
-                icon: "🕌"
-              },
-              {
-                title: "ATM & Banking",
-                description: "ATM machines and banking services",
-                location: "Ground Floor, Main Building",
-                hours: "24/7",
-                icon: "🏧"
-              },
-              {
-                title: "Medical Center",
-                description: "Health services and first aid",
-                location: "1st Floor, Block B",
-                hours: "8 AM - 6 PM",
-                icon: "🏥"
-              },
-              {
-                title: "WiFi Zones",
-                description: "High-speed internet access throughout campus",
-                location: "All buildings",
-                hours: "24/7",
-                icon: "📶"
-              },
-              {
-                title: "Parking",
-                description: "Secure parking facilities for students",
-                location: "Underground & Surface",
-                hours: "24/7",
-                icon: "🅿️"
-              },
-              {
-                title: "Security",
-                description: "24/7 campus security and surveillance",
-                location: "All entrances",
-                hours: "24/7",
-                icon: "🛡️"
-              }
-            ].map((amenity, index) => (
-              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-orange-200/50 hover:shadow-xl transition-all hover:-translate-y-1">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-800">{amenity.title}</h3>
-                  <div className="text-3xl">{amenity.icon}</div>
+        {/* Main Content Area - Two Column Layout */}
+        <div className="flex">
+          {/* Left Column - Amenities Selection */}
+          <div className="flex-1 p-8">
+            {/* Section Header */}
+            <div className="mb-8">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                  <svg
+                    className="w-5 h-5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                  </svg>
                 </div>
-                <p className="text-gray-600 mb-4">{amenity.description}</p>
-                <div className="space-y-1">
-                  <p className="text-sm text-gray-500"><span className="font-semibold">Location:</span> {amenity.location}</p>
-                  <p className="text-sm text-gray-500"><span className="font-semibold">Hours:</span> {amenity.hours}</p>
+                <h2 className="text-3xl font-bold text-orange-600">
+                  Campus Amenities
+                </h2>
+              </div>
+              <p className="text-gray-600 text-lg">
+                Select an amenity to find directions from your location.
+              </p>
+            </div>
+
+            {/* Amenities Selection Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {amenities.map((amenity) => (
+                <div
+                  key={amenity.id}
+                  onClick={() => handleAmenitySelect(amenity)}
+                  className={`bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-md border-2 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1 ${
+                    selectedAmenity?.id === amenity.id
+                      ? "border-orange-500 bg-orange-50/50 shadow-lg scale-105"
+                      : "border-orange-200/50 hover:border-orange-300"
+                  }`}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3
+                      className={`text-xl font-semibold transition-colors ${
+                        selectedAmenity?.id === amenity.id
+                          ? "text-orange-600"
+                          : "text-gray-800"
+                      }`}
+                    >
+                      {amenity.name}
+                    </h3>
+                    <div className="text-3xl">{amenity.icon}</div>
+                  </div>
+                  <p className="text-gray-600 mb-4">{amenity.description}</p>
+
+                  {selectedAmenity?.id === amenity.id && (
+                    <div className="mt-4 p-3 bg-orange-100 rounded-lg border border-orange-200">
+                      <div className="flex items-center gap-2 text-orange-700">
+                        <svg
+                          className="w-4 h-4"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                        <span className="text-sm font-medium">
+                          Selected as destination
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Selection Instructions */}
+            {!selectedAmenity && (
+              <div className="mt-8 p-6 bg-orange-50 border border-orange-200 rounded-xl">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg
+                      className="w-3 h-3 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-orange-800 mb-1">
+                      How to use:
+                    </h4>
+                    <p className="text-orange-700 text-sm">
+                      1. Click on any amenity card to select it as your
+                      destination
+                      <br />
+                      2. Use the route finder on the right to enter your
+                      starting point
+                      <br />
+                      3. Choose your preferred transport option and find your
+                      route
+                    </p>
+                  </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
+
+          {/* Right Column - Amenities Route Section */}
+          <AmenitiesRouteSection
+            selectedAmenity={selectedAmenity}
+            onPathFound={setRouteResult}
+            onRouteComputed={setRouteResult}
+          />
         </div>
       </div>
     </div>

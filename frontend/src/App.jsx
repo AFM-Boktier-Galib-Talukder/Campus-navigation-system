@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import SignUp from "./pages/Signup";
 import Login from "./pages/Login";
 import Homepage from "./pages/HomePage";
@@ -8,6 +13,8 @@ import Amenities from "./pages/Amenities";
 import Request from "./pages/Request";
 import AdminDashboard from "./pages/AdminDashboard";
 import Navigation from "./pages/Navigation";
+import AdminEvents from "./pages/AdminEvents";
+import AdminRequests from "./pages/AdminRequests";
 
 function App() {
   return (
@@ -22,6 +29,8 @@ function App() {
         <Route path="/amenities" element={<Amenities />} />
         <Route path="/request" element={<Request />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/events" element={<AdminEvents />} />
+        <Route path="/admin/request" element={<AdminRequests />} />
         <Route path="/navigation" element={<Navigation />} />
       </Routes>
     </Router>

@@ -2,7 +2,7 @@
   {
     "dot": 10,
     "connection": [11],
-    "left": "gate",
+    "left": "",
     "right": "",
     "up": null,
     "down": null
@@ -10,8 +10,8 @@
   {
     "dot": 11,
     "connection": [12, 10],
-    "left": "helpDesk",
-    "right": "medicalCenter",
+    "left": "Help Desk",
+    "right": "Medical Center",
     "up": null,
     "down": null
   },
@@ -26,15 +26,15 @@
   {
     "dot": 13,
     "connection": [14, 12],
-    "left": "fireExist1",
+    "left": "FireExist floor 1",
     "right": "1B5C",
     "up": null,
     "down": null
   },
   {
     "dot": 14,
-    "connection": [15, 13, 24],
-    "left": "stair1",
+    "connection": [15, 13,24],
+    "left": "Stair floor 1",
     "right": "1B6T",
     "up": 24,
     "down": null
@@ -51,15 +51,15 @@
     "dot": 16,
     "connection": [17, 15, 26],
     "left": "1A3C",
-    "right": "lift1",
+    "right": "Lift floor 1",
     "up": 26,
     "down": null
   },
   {
     "dot": 17,
     "connection": [18, 16],
-    "left": "FW1",
-    "right": "MW1",
+    "left": "Female Washroom floor 1",
+    "right": "Male Washroom floor 1",
     "up": null,
     "down": null
   },
@@ -90,7 +90,7 @@
   {
     "dot": 23,
     "connection": [24, 22],
-    "left": "fireExist2",
+    "left": "FireExit floor 2",
     "right": "2B6T",
     "up": null,
     "down": null
@@ -98,7 +98,7 @@
   {
     "dot": 24,
     "connection": [25, 23, 34, 14],
-    "left": "stair2",
+    "left": "Stair floor 2",
     "right": "2B7C",
     "up": 34,
     "down": 14
@@ -106,7 +106,7 @@
   {
     "dot": 25,
     "connection": [26, 24],
-    "left": "faculty",
+    "left": "FacultyDesk",
     "right": "2B8C",
     "up": null,
     "down": null
@@ -115,15 +115,15 @@
     "dot": 26,
     "connection": [27, 25, 36, 16],
     "left": "2A3C",
-    "right": "lift2",
+    "right": "Lift floor 2",
     "up": 36,
     "down": 16
   },
   {
     "dot": 27,
     "connection": [26],
-    "left": "FW2",
-    "right": "MW2",
+    "left": "Female Washroom floor 2",
+    "right": "Male Washroom floor 2",
     "up": null,
     "down": null
   },
@@ -146,7 +146,7 @@
   {
     "dot": 33,
     "connection": [34, 32],
-    "left": "fireExist3",
+    "left": "FireExist floor 3",
     "right": "3B6T",
     "up": null,
     "down": null
@@ -154,7 +154,7 @@
   {
     "dot": 34,
     "connection": [35, 33, 24],
-    "left": "stair3",
+    "left": "Stair floor 3",
     "right": "3B7C",
     "up": null,
     "down": 24
@@ -162,7 +162,7 @@
   {
     "dot": 35,
     "connection": [36, 34],
-    "left": "library",
+    "left": "Library",
     "right": "3B8C",
     "up": null,
     "down": null
@@ -171,15 +171,15 @@
     "dot": 36,
     "connection": [37, 35, 26],
     "left": "3A3C",
-    "right": "lift3",
+    "right": "Lift floor 3",
     "up": null,
     "down": 26
   },
   {
     "dot": 37,
     "connection": [38, 36],
-    "left": "FW3",
-    "right": "MW3",
+    "left": "Female Washroom floor 3",
+    "right": "Male Washroom floor 3",
     "up": null,
     "down": null
   },

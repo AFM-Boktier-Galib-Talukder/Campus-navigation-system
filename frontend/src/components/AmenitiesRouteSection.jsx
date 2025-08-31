@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
+function AmenitiesRouteSection({
+  selectedAmenity,
+  onPathFound,
+  onRouteComputed,
+}) {
   const [startPoint, setStartPoint] = useState("");
-  const [endPoint, setEndPoint] = useState("");
   const [transportOption, setTransportOption] = useState("lift");
 
   const [startSuggestions, setStartSuggestions] = useState([]);
-  const [endSuggestions, setEndSuggestions] = useState([]);
   const [startNoResults, setStartNoResults] = useState(false);
-  const [endNoResults, setEndNoResults] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedStartDot, setSelectedStartDot] = useState(null);
-  const [selectedEndDot, setSelectedEndDot] = useState(null);
   const [showStartDropdown, setShowStartDropdown] = useState(false);
-  const [showEndDropdown, setShowEndDropdown] = useState(false);
 
-  const API_BASE = apiBaseOverride || "http://localhost:1490/api/floor";
+  const API_BASE = "http://localhost:1490/api/floor";
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -51,28 +50,6 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
     return () => clearTimeout(t);
   }, [startPoint, showStartDropdown]);
 
-  // Debounced search for end input
-  useEffect(() => {
-    if (!showEndDropdown) return;
-    const q = endPoint.trim();
-    if (!q) {
-      setEndSuggestions([]);
-      setEndNoResults(false);
-      return;
-    }
-    const t = setTimeout(async () => {
-      try {
-        const results = await fetchSuggestions(q);
-        setEndSuggestions(results);
-        setEndNoResults(results.length === 0);
-      } catch (_) {
-        setEndSuggestions([]);
-        setEndNoResults(true);
-      }
-    }, 300);
-    return () => clearTimeout(t);
-  }, [endPoint, showEndDropdown]);
-
   const handleSelectStart = (label, dot) => {
     setStartPoint(label);
     setSelectedStartDot(dot);
@@ -81,17 +58,9 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
     setShowStartDropdown(false);
   };
 
-  const handleSelectEnd = (label, dot) => {
-    setEndPoint(label);
-    setSelectedEndDot(dot);
-    setEndSuggestions([]);
-    setEndNoResults(false);
-    setShowEndDropdown(false);
-  };
-
   const handleFindRoute = async (e) => {
     e?.preventDefault();
-    if (!startPoint.trim() || !endPoint.trim() || !transportOption) {
+    if (!startPoint.trim() || !selectedAmenity || !transportOption) {
       return;
     }
 
@@ -99,13 +68,13 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
     try {
       const startParam =
         selectedStartDot != null ? String(selectedStartDot) : startPoint.trim();
-      const endParam =
-        selectedEndDot != null ? String(selectedEndDot) : endPoint.trim();
-      const url = `${API_BASE}/path?start=${encodeURIComponent(
+      const endParam = selectedAmenity.name; // Use amenity name as destination
+
+      const url = `http://localhost:1490/api/amenity/path?start=${encodeURIComponent(
         startParam
-      )}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(
-        transportOption
-      )}`;
+      )}&destination=${encodeURIComponent(
+        endParam
+      )}&transport=${encodeURIComponent(transportOption)}`;
       const res = await fetch(url);
       const data = await res.json();
       if (!res.ok) {
@@ -121,10 +90,10 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
         routeResult: data,
         form: {
           startPoint,
-          endPoint,
+          endPoint: selectedAmenity.name,
           transportOption,
           selectedStartDot,
-          selectedEndDot,
+          selectedEndDot: null,
         },
       };
       const isAlreadyOnNavigation = location.pathname === "/navigation";
@@ -153,10 +122,8 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
       ),
       label: "Lift",
     },
-
     {
       id: "stair",
-
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -189,16 +156,44 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-800">Find Your Route</h3>
+            <h3 className="text-xl font-bold text-gray-800">
+              Find Route to Amenity
+            </h3>
           </div>
           <p className="text-gray-600 text-sm">
-            Plan your navigation across campus
+            Navigate to your selected amenity
           </p>
         </div>
 
         {/* Route Search Form */}
         <form className="p-6" onSubmit={handleFindRoute}>
           <div className="space-y-6">
+            {/* Selected Amenity Display */}
+            <div>
+              <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+                <svg
+                  className="w-4 h-4 text-orange-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                Destination
+              </label>
+              <div className="w-full px-4 py-3 border border-orange-300 rounded-lg bg-orange-50/50 text-gray-700 text-sm flex items-center justify-between">
+                <span>
+                  {selectedAmenity
+                    ? selectedAmenity.name
+                    : "Select an amenity first"}
+                </span>
+                <span className="text-2xl">{selectedAmenity?.icon}</span>
+              </div>
+            </div>
+
             {/* Start Point */}
             <div>
               <label
@@ -236,6 +231,7 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="Type room and select..."
                 required
+                disabled={!selectedAmenity}
               />
               {showStartDropdown &&
                 (startSuggestions.length > 0 || startNoResults) && (
@@ -259,69 +255,9 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 )}
             </div>
 
-            {/* End Point */}
-            <div>
-              <label
-                htmlFor="end-point"
-                className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
-              >
-                <svg
-                  className="w-4 h-4 text-orange-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                Destination
-              </label>
-              <input
-                type="text"
-                id="end-point"
-                value={endPoint}
-                onChange={(e) => {
-                  setEndPoint(e.target.value);
-                  setSelectedEndDot(null);
-                  setShowEndDropdown(true);
-                }}
-                onFocus={() => {
-                  if (endPoint.trim()) setShowEndDropdown(true);
-                }}
-                onBlur={() => {
-                  setTimeout(() => setShowEndDropdown(false), 120);
-                }}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
-                placeholder="Type room and select..."
-                required
-              />
-              {showEndDropdown &&
-                (endSuggestions.length > 0 || endNoResults) && (
-                  <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
-                    {endSuggestions.map((s) => (
-                      <button
-                        key={`${s.label}-${s.dot}`}
-                        type="button"
-                        onMouseDown={() => handleSelectEnd(s.label, s.dot)}
-                        className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
-                      >
-                        {s.label}
-                      </button>
-                    ))}
-                    {endNoResults && endSuggestions.length === 0 && (
-                      <div className="px-4 py-2 text-sm text-gray-500">
-                        NO Rooms Found
-                      </div>
-                    )}
-                  </div>
-                )}
-            </div>
-
             {/* Transport Options */}
             <div>
-              <label className=" text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
                 <svg
                   className="w-4 h-4 text-orange-500"
                   fill="currentColor"
@@ -340,7 +276,12 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                       transportOption === option.id
                         ? "bg-gradient-to-br from-red-400 to-yellow-400 border-orange-500 text-white shadow-lg transform scale-105"
                         : "border-orange-300 hover:border-orange-400 hover:bg-orange-50 text-gray-700"
+                    } ${
+                      !selectedAmenity ? "opacity-50 cursor-not-allowed" : ""
                     }`}
+                    style={{
+                      pointerEvents: !selectedAmenity ? "none" : "auto",
+                    }}
                   >
                     <div className="flex justify-center mb-2">
                       <div
@@ -370,10 +311,18 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
             {/* Find Route Button */}
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-br from-red-400 to-yellow-400 text-white py-4 px-6 rounded-xl font-semibold text-base hover:from-red-500 hover:to-yellow-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl border border-orange-300"
+              disabled={isSubmitting || !selectedAmenity}
+              className={`w-full py-4 px-6 rounded-xl font-semibold text-base transform transition-all duration-300 shadow-lg border border-orange-300 ${
+                !selectedAmenity || isSubmitting
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-gradient-to-br from-red-400 to-yellow-400 text-white hover:from-red-500 hover:to-yellow-500 hover:-translate-y-1 hover:shadow-xl"
+              }`}
             >
-              {isSubmitting ? "Finding..." : "Find Route"}
+              {isSubmitting
+                ? "Finding..."
+                : selectedAmenity
+                ? "Find Route"
+                : "Select Amenity First"}
             </button>
           </div>
         </form>
@@ -382,4 +331,4 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
   );
 }
 
-export default FindRouteSection;
+export default AmenitiesRouteSection;
