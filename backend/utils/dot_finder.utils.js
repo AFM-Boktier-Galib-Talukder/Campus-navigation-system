@@ -1,3 +1,5 @@
+const FloorDesign = require('../models/floorDesign.model')
+
 async function findSingleDot(model, roomName) {
   if (!roomName || typeof roomName !== 'string') return null
   const trimmed = roomName.trim()
@@ -11,6 +13,22 @@ async function findSingleDot(model, roomName) {
   })
   return doc ? doc.dot : null
 }
+
+async function findDotForRoom(roomName) {
+  if (!roomName || typeof roomName !== 'string') return null
+  const trimmed = roomName.trim()
+  if (!trimmed) return null
+
+  // Exact, case-insensitive match on either left or right
+  const doc = await FloorDesign.findOne({
+    $or: [
+      { left: { $regex: `^${escapeRegex(trimmed)}$`, $options: 'i' } },
+      { right: { $regex: `^${escapeRegex(trimmed)}$`, $options: 'i' } },
+    ],
+  })
+  return doc ? doc.dot : null
+}
+
 function parseDot(input) {
   if (/^\d+$/.test(String(input))) {
     return parseInt(input)
@@ -40,6 +58,14 @@ async function findDots(model, start, end) {
   return { startDot, endDot }
 }
 
+async function findDotsForRooms(startRoom, endRoom) {
+  const [startDot, endDot] = await Promise.all([
+    findDotForRoom(startRoom),
+    findDotForRoom(endRoom),
+  ])
+  return { startDot, endDot }
+}
+
 function escapeRegex(str) {
   return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
@@ -47,4 +73,6 @@ function escapeRegex(str) {
 module.exports = {
   findSingleDot,
   findDots,
+  findDotForRoom,
+  findDotsForRooms,
 }

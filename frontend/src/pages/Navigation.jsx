@@ -25,7 +25,9 @@ function Navigation() {
     const fetchUserData = async () => {
       if (location.state?.userId) {
         try {
-          const response = await fetch(`http://localhost:1490/api/signup/${location.state.userId}`);
+          const response = await fetch(
+            `http://localhost:1490/api/signup/${location.state.userId}`
+          );
           if (response.ok) {
             const user = await response.json();
             setUserData(user);
@@ -161,11 +163,18 @@ function Navigation() {
         onNavClick={handleNavClick}
       />
 
-      <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          isSidebarExpanded ? "ml-70" : "ml-20"
+        }`}
+      >
         <Header userData={userData} />
 
         <div className="flex">
-          <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
+          <NavigationComponent
+            navigationSteps={navigationSteps}
+            pathData={pathData}
+          />
 
           <FindRouteSection onPathFound={handlePathFound} />
         </div>

@@ -51,7 +51,9 @@ async function getLibraryShortestPath(req, res) {
   try {
     const { start, end, choice } = req.query
     if (!start || !end || !choice) {
-      return res.status(400).json({ error: 'Missing start, end, or choice parameters' })
+      return res
+        .status(400)
+        .json({ error: 'Missing start, end, or choice parameters' })
     }
 
     const isNumericStart = /^\d+$/.test(String(start))
@@ -70,7 +72,9 @@ async function getLibraryShortestPath(req, res) {
     }
 
     if (startDot === null || endDot === null) {
-      return res.status(404).json({ error: 'Start or destination not found in library' })
+      return res
+        .status(404)
+        .json({ error: 'Start or destination not found in library' })
     }
 
     const nodes = await LibraryDesign.find({})
@@ -86,7 +90,8 @@ async function getLibraryShortestPath(req, res) {
       path = floor_jump(graph, startDot, endDot, String(choice).toLowerCase())
     }
 
-    if (path.length === 0) return res.status(404).json({ error: 'No path found' })
+    if (path.length === 0)
+      return res.status(404).json({ error: 'No path found' })
 
     const distance = generateDistance(path)
     const directions = generateDirections(graph, path)
@@ -97,5 +102,3 @@ async function getLibraryShortestPath(req, res) {
 }
 
 module.exports = { getAllLibraryNodes, getLibraryShortestPath, librarySearch }
-
-
