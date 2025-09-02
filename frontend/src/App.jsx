@@ -8,12 +8,14 @@ import Amenities from "./pages/Amenities";
 import Request from "./pages/Request";
 import AdminDashboard from "./pages/AdminDashboard";
 import Navigation from "./pages/Navigation";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/landingPage" element={<LandingPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/homepage" element={<Homepage />} />
