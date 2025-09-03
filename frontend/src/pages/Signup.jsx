@@ -171,10 +171,10 @@ const SignUp = () => {
 
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-2 text-center relative" style={{ fontFamily: "'Inria Sans', sans-serif" }}>
         <div className="relative top-20 flex items-center space-x-2 z-20">
-          <p className="text-xl text-lime-100">Already have an account?</p>
+          <p className="text-xl text-green-500">Already have an account?</p>
           <button
             onClick={() => navigate("/login")}
-            className="text-yellow-200/80  text-xl font-bold underline hover:text-2xl cursor-pointer"
+            className="text-green-600/80  text-xl font-bold underline hover:text-2xl cursor-pointer"
             style={{ fontFamily: "'Inknut Antiqua', serif" }}
           >
             Login

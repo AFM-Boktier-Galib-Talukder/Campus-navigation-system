@@ -64,10 +64,10 @@ const Login = () => {
     <div className="min-h-screen max-h-lvh flex flex-col md:flex-row bg-lime-400/85 text-yellow-200 overflow-hidden relative">
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-2 text-center relative" style={{ fontFamily: "'Inria Sans', sans-serif" }}>
         <div className="relative top-20 flex items-center space-x-2 z-20">
-          <p className="text-xl text-lime-100">Don't have an account?</p>
+          <p className="text-xl text-green-500">Don't have an account?</p>
           <button
             onClick={() => navigate("/signup")}
-            className="text-yellow-200/80 cursor-pointer  text-xl font-bold underline hover:text-2xl"
+            className="text-green-600/80 cursor-pointer  text-xl font-bold underline hover:text-2xl"
             style={{ fontFamily: "'Inknut Antiqua', serif" }}
           >
             Sign up

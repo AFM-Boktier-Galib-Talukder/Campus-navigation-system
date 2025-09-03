@@ -3054,3 +3054,65 @@
 1756925830744 : ::1 GET : /api/signup/68972de3784897036748da6a
 
 1756925830760 : ::1 GET : /api/signup/68972de3784897036748da6a
+
+1756922944430 : ::1 GET : /api/floor/search
+
+1756922948467 : ::1 GET : /api/amenity/path
+
+1756922954303 : ::1 GET : /api/floor/search
+
+1756922957063 : ::1 GET : /api/amenity/path
+
+1756922979389 : ::1 GET : /api/floor/search
+
+1756922981881 : ::1 GET : /api/amenity/path
+
+1756922989287 : ::1 GET : /api/billboards
+
+1756922989370 : ::1 GET : /api/billboards
+
+1756922993465 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756922993526 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756923037185 : ::1 GET : /api/billboards
+
+1756923037273 : ::1 GET : /api/billboards
+
+1756923060468 : ::1 GET : /api/facultyDesk
+
+1756923060500 : ::1 GET : /api/facultyDesk
+
+1756923070578 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756923070584 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756923184247 : ::1 GET : /api/facultyDesk
+
+1756923184339 : ::1 GET : /api/facultyDesk
+
+1756923193247 : ::1 GET : /api/library/nodes
+
+1756923193259 : ::1 GET : /api/library/nodes
+
+1756923202997 : ::1 GET : /api/floor/search
+
+1756923204577 : ::1 GET : /api/amenity/path
+
+1756923209183 : ::1 GET : /api/billboards
+
+1756923209261 : ::1 GET : /api/billboards
+
+1756923212682 : ::1 GET : /api/floor/search
+
+1756923215314 : ::1 GET : /api/floor/search
+
+1756923216977 : ::1 GET : /api/floor/path
+
+1756923223230 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756923223294 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756923239214 : ::1 GET : /api/billboards
+
+1756923239306 : ::1 GET : /api/billboards
