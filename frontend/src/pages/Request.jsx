@@ -207,7 +207,7 @@ function Request() {
   ];
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 font-inria">
       {/* Collapsible Sidebar */}
       <Sidebar
         isExpanded={isSidebarExpanded}
@@ -240,7 +240,7 @@ function Request() {
 
           {/* Request Form - full width */}
           <div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-orange-200/50">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-200/50">
               <form onSubmit={handleSubmitRequest} className="space-y-6">
                 {/* Request Type */}
                 <div>
@@ -254,8 +254,8 @@ function Request() {
                         onClick={() => setRequestType(type.id)}
                         className={`p-2 border-2 rounded-xl cursor-pointer transition-all text-center select-none ${
                           requestType === type.id
-                            ? "bg-gradient-to-br from-red-400 to-yellow-400 border-orange-500 text-white"
-                            : "border-orange-300 hover:border-orange-400 hover:bg-orange-50"
+                            ? "bg-gradient-to-br from-green-400 to-emerald-400 border-green-500 text-white"
+                            : "border-green-300 hover:border-green-400 hover:bg-green-50"
                         }`}
                       >
                         <div
@@ -288,7 +288,7 @@ function Request() {
                     id="request-title"
                     value={requestTitle}
                     onChange={(e) => setRequestTitle(e.target.value)}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
                     placeholder="Enter a brief title for your request"
                     required
                   />
@@ -307,7 +307,7 @@ function Request() {
                     value={requestDescription}
                     onChange={(e) => setRequestDescription(e.target.value)}
                     rows={6}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm resize-none"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm resize-none"
                     placeholder="Please provide detailed information about your request..."
                     required
                   />
@@ -331,7 +331,7 @@ function Request() {
                         onChange={(e) =>
                           setEventImage(e.target.files[0] || null)
                         }
-                        className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100"
+                        className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
                         required
                       />
                       <p className="text-xs text-gray-500 mt-1">
@@ -345,7 +345,7 @@ function Request() {
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="inline-flex bg-gradient-to-br from-red-400 to-yellow-400 text-white py-3 px-6 rounded-xl font-semibold text-base hover:from-red-500 hover:to-yellow-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl border border-orange-300"
+                    className="inline-flex bg-gradient-to-br from-green-400 to-emerald-400 text-white py-3 px-6 rounded-xl font-semibold text-base hover:from-green-500 hover:to-emerald-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl border border-green-300"
                   >
                     Submit Request
                   </button>

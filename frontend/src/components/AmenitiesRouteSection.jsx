@@ -138,12 +138,12 @@ function AmenitiesRouteSection({
   ];
 
   return (
-    <div className="w-96 p-8 border-l border-orange-200/30 bg-gradient-to-br from-orange-50/50 to-yellow-50/50 backdrop-blur-sm">
-      <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-orange-200/50 sticky top-8">
+    <div className="w-96 p-8 border-l border-green-200/30 bg-gradient-to-br from-green-50/50 to-emerald-50/50 backdrop-blur-sm">
+      <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-green-200/50 sticky top-8">
         {/* Section Header */}
-        <div className="p-6 border-b border-orange-200/30 bg-gradient-to-r from-orange-50/50 to-yellow-50/50">
+        <div className="p-6 border-b border-green-200/30 bg-gradient-to-r from-green-50/50 to-emerald-50/50">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-red-400 to-yellow-400 rounded-lg flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-400 rounded-lg flex items-center justify-center shadow-lg">
               <svg
                 className="w-5 h-5 text-white"
                 fill="currentColor"
@@ -172,7 +172,7 @@ function AmenitiesRouteSection({
             <div>
               <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
                 <svg
-                  className="w-4 h-4 text-orange-500"
+                  className="w-4 h-4 text-green-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -184,7 +184,7 @@ function AmenitiesRouteSection({
                 </svg>
                 Destination
               </label>
-              <div className="w-full px-4 py-3 border border-orange-300 rounded-lg bg-orange-50/50 text-gray-700 text-sm flex items-center justify-between">
+              <div className="w-full px-4 py-3 border border-green-300 rounded-lg bg-green-50/50 text-gray-700 text-sm flex items-center justify-between">
                 <span>
                   {selectedAmenity
                     ? selectedAmenity.name
@@ -201,7 +201,7 @@ function AmenitiesRouteSection({
                 className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
               >
                 <svg
-                  className="w-4 h-4 text-orange-500"
+                  className="w-4 h-4 text-green-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -228,20 +228,20 @@ function AmenitiesRouteSection({
                 onBlur={() => {
                   setTimeout(() => setShowStartDropdown(false), 120);
                 }}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="Type room and select..."
                 required
                 disabled={!selectedAmenity}
               />
               {showStartDropdown &&
                 (startSuggestions.length > 0 || startNoResults) && (
-                  <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                  <div className="mt-2 border border-green-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
                     {startSuggestions.map((s) => (
                       <button
                         key={`${s.label}-${s.dot}`}
                         type="button"
                         onMouseDown={() => handleSelectStart(s.label, s.dot)}
-                        className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                        className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm"
                       >
                         {s.label}
                       </button>
@@ -259,7 +259,7 @@ function AmenitiesRouteSection({
             <div>
               <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
                 <svg
-                  className="w-4 h-4 text-orange-500"
+                  className="w-4 h-4 text-green-500"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -274,8 +274,8 @@ function AmenitiesRouteSection({
                     onClick={() => setTransportOption(option.id)}
                     className={`flex-1 text-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
                       transportOption === option.id
-                        ? "bg-gradient-to-br from-red-400 to-yellow-400 border-orange-500 text-white shadow-lg transform scale-105"
-                        : "border-orange-300 hover:border-orange-400 hover:bg-orange-50 text-gray-700"
+                        ? "bg-gradient-to-br from-green-400 to-emerald-400 border-green-500 text-white shadow-lg transform scale-105"
+                        : "border-green-300 hover:border-green-400 hover:bg-green-50 text-gray-700"
                     } ${
                       !selectedAmenity ? "opacity-50 cursor-not-allowed" : ""
                     }`}
