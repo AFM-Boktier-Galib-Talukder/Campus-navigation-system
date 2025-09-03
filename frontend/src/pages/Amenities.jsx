@@ -175,11 +175,15 @@ function Amenities() {
                     </h3>
                     <div className="text-3xl">{amenity.icon}</div>
                   </div>
-                  <p className={`mb-4 transition-colors duration-150 ${
-                    selectedAmenity?.id === amenity.id
-                      ? "text-white/90"
-                      : "text-gray-600 group-hover:text-white/90"
-                  }`}>{amenity.description}</p>
+                  <p
+                    className={`mb-4 transition-colors duration-150 ${
+                      selectedAmenity?.id === amenity.id
+                        ? "text-white/90"
+                        : "text-gray-600 group-hover:text-white/90"
+                    }`}
+                  >
+                    {amenity.description}
+                  </p>
 
                   {selectedAmenity?.id === amenity.id && (
                     <div className="mt-4 p-3 bg-white/20 rounded-lg border border-white/30">

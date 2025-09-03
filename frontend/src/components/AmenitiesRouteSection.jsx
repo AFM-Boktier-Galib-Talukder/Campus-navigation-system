@@ -166,7 +166,10 @@ function AmenitiesRouteSection({
         </div>
 
         {/* Route Search Form */}
-        <form className="p-6 bg-gradient-to-br from-green-600 to-lime-400" onSubmit={handleFindRoute}>
+        <form
+          className="p-6 bg-gradient-to-br from-green-600 to-lime-400"
+          onSubmit={handleFindRoute}
+        >
           <div className="space-y-6">
             {/* Selected Amenity Display */}
             <div>

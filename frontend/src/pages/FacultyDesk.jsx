@@ -120,16 +120,19 @@ function FacultyDesk() {
 
   const findPath = async (startInitial, endInitial) => {
     try {
-      const response = await fetch("http://localhost:1490/api/facultyDeskPath/find-path", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          startInitial,
-          endInitial,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:1490/api/facultyDeskPath/find-path",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            startInitial,
+            endInitial,
+          }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -162,7 +165,11 @@ function FacultyDesk() {
         onNavClick={handleNavClick}
       />
 
-      <div className={`flex-1 transition-all duration-150 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
+      <div
+        className={`flex-1 transition-all duration-150 ${
+          isSidebarExpanded ? "ml-70" : "ml-20"
+        }`}
+      >
         <Header userData={userData} title="Faculty Desk" />
 
         <div className="flex">
@@ -202,7 +209,9 @@ function FacultyDesk() {
 
             {!loading && filteredFaculty.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-600 text-lg">No faculty members found matching your search.</p>
+                <p className="text-gray-600 text-lg">
+                  No faculty members found matching your search.
+                </p>
               </div>
             )}
 
@@ -228,23 +237,35 @@ function FacultyDesk() {
                       <div className="space-y-3">
                         <div className="grid grid-cols-1 gap-2">
                           <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
-                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Faculty:</span>
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">
+                              Faculty:
+                            </span>
                             <span className="ml-2">{faculty.faculty}</span>
                           </p>
                           <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
-                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Initial:</span>
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">
+                              Initial:
+                            </span>
                             <span className="ml-2">{faculty.initial}</span>
                           </p>
                           <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
-                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Office:</span>
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">
+                              Office:
+                            </span>
                             <span className="ml-2">{faculty.office}</span>
                           </p>
                           <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150 break-all">
-                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Email:</span>
-                            <span className="ml-2 text-sm">{faculty.email}</span>
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">
+                              Email:
+                            </span>
+                            <span className="ml-2 text-sm">
+                              {faculty.email}
+                            </span>
                           </p>
                           <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
-                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Phone:</span>
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">
+                              Phone:
+                            </span>
                             <span className="ml-2">{faculty.phone}</span>
                           </p>
                         </div>
@@ -262,7 +283,10 @@ function FacultyDesk() {
           </div>
           <div className="flex-1 p-3 flex flex-col">
             <FacultyDeskSearch onFindPath={findPath} />
-            <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
+            <NavigationComponent
+              navigationSteps={navigationSteps}
+              pathData={pathData}
+            />
           </div>
         </div>
       </div>
