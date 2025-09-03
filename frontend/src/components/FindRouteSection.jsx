@@ -118,6 +118,8 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
           selectedStartDot,
           selectedEndDot,
         },
+        // Preserve userId if it exists in current location state
+        userId: location.state?.userId,
       };
       const isAlreadyOnNavigation = location.pathname === "/navigation";
       navigate("/navigation", {
