@@ -120,11 +120,11 @@ function Navigation() {
     setPathData(data);
   };
 
-  // Handle incoming route result from homepage - placed after handlePathFound is defined
+  // Handle incoming route result from any page (homepage, library, etc.) - placed after handlePathFound is defined
   useEffect(() => {
     if (location.state?.routeResult) {
       console.log(
-        "Processing route result from homepage:",
+        "Processing route result:",
         location.state.routeResult
       );
       handlePathFound(location.state.routeResult);

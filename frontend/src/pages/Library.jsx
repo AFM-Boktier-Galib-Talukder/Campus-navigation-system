@@ -8,6 +8,7 @@ function Library() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState("library");
   const [userData, setUserData] = useState(null);
+  const [routeResult, setRouteResult] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -174,7 +175,10 @@ function Library() {
           </div>
 
           {/* Right Column - Find Your Route Section */}
-          <FindRouteSection apiBaseOverride="http://localhost:1490/api/library" />
+          <FindRouteSection 
+            apiBaseOverride="http://localhost:1490/api/library"
+            onPathFound={setRouteResult}
+          />
         </div>
       </div>
     </div>

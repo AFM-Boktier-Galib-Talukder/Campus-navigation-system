@@ -1,10 +1,8 @@
 const LibraryDesign = require('../models/library.model')
-const {
-  buildGraph,
-  findShortestPath,
-  generateDirections,
-  generateDistance,
-} = require('../utils/pathfinder.utils')
+const { buildGraph } = require('../utils/graphBuilder.utils')
+const { findShortestPath } = require('../utils/pathfinder.utils')
+const { generateDirections } = require('../utils/directionGenerator.utils')
+const { pathDistance, generateTime } = require('../utils/distanceCalculator.utils')
 const { floor_jump } = require('../utils/floor_jump.utils')
 const { findLibraryDotsForRooms } = require('../utils/library_dot_finder.utils')
 
@@ -88,9 +86,17 @@ async function getLibraryShortestPath(req, res) {
 
     if (path.length === 0) return res.status(404).json({ error: 'No path found' })
 
-    const distance = generateDistance(path)
+    const distance = pathDistance(path)
+    const time = generateTime(path)
     const directions = generateDirections(graph, path)
-    res.json({ path, distance, directions, startDot, endDot })
+    res.json({ 
+      path, 
+      distance: `${distance} meters`, 
+      time, 
+      directions, 
+      startDot, 
+      endDot 
+    })
   } catch (err) {
     res.status(500).json({ error: 'Library pathfinding failed' })
   }

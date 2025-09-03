@@ -89,7 +89,10 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
 
   const handleFindRoute = async (e) => {
     e?.preventDefault();
+    console.log("Find route button clicked", { startPoint, endPoint, transportOption, API_BASE });
+    
     if (!startPoint.trim() || !endPoint.trim() || !transportOption) {
+      console.log("Missing required fields", { startPoint, endPoint, transportOption });
       return;
     }
 
@@ -104,8 +107,12 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
       )}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(
         transportOption
       )}`;
+      
+      console.log("Making API request to:", url);
       const res = await fetch(url);
       const data = await res.json();
+      console.log("API response:", { ok: res.ok, data });
+      
       if (!res.ok) {
         onPathFound?.({ error: data?.error || "Failed to find path" });
         onRouteComputed?.({ error: data?.error || "Failed to find path" });
@@ -125,12 +132,14 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
           selectedEndDot,
         },
       };
+      console.log("Navigating to /navigation with state:", navState);
       const isAlreadyOnNavigation = location.pathname === "/navigation";
       navigate("/navigation", {
         state: navState,
         replace: isAlreadyOnNavigation,
       });
     } catch (err) {
+      console.error("Route finding error:", err);
       const errorPayload = {
         error: "Something went wrong while finding the route",
       };
