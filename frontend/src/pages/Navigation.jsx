@@ -9,7 +9,6 @@ function Navigation() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState("navigation");
   const [userData, setUserData] = useState(null);
-  const [isLoadingUser, setIsLoadingUser] = useState(true);
   const [navigationSteps, setNavigationSteps] = useState([]);
   const [pathData, setPathData] = useState(null);
   const navigate = useNavigate();
@@ -17,10 +16,11 @@ function Navigation() {
 
   useEffect(() => {
     const fetchUserData = async () => {
-      setIsLoadingUser(true);
       if (location.state?.userId) {
         try {
-          const response = await fetch(`http://localhost:1490/api/signup/${location.state.userId}`);
+          const response = await fetch(
+            `http://localhost:1490/api/signup/${location.state.userId}`
+          );
           if (response.ok) {
             const user = await response.json();
             setUserData(user);
@@ -43,46 +43,10 @@ function Navigation() {
           email: "user@example.com",
         });
       }
-      setIsLoadingUser(false);
     };
 
     fetchUserData();
   }, [location.state?.userId]);
-
-  // Handle incoming route result from homepage
-  useEffect(() => {
-    if (location.state?.routeResult && !isLoadingUser) {
-      console.log("Processing route result from homepage:", location.state.routeResult);
-      try {
-        const routeData = location.state.routeResult;
-        // Validate that the route data has required properties
-        if (routeData && (routeData.directions || routeData.error)) {
-          handlePathFound(routeData);
-        } else {
-          console.warn("Invalid route data structure:", routeData);
-          setNavigationSteps([
-            {
-              direction: "start",
-              message: "Invalid route data received. Please try again.",
-              angle: 0,
-            },
-          ]);
-          setPathData(null);
-        }
-      } catch (error) {
-        console.error("Error processing route result:", error);
-        // Set a default error state to prevent blank screen
-        setNavigationSteps([
-          {
-            direction: "start",
-            message: "Error processing route data. Please try again.",
-            angle: 0,
-          },
-        ]);
-        setPathData(null);
-      }
-    }
-  }, [location.state?.routeResult, isLoadingUser]);
 
   const handlePathFound = (data) => {
     if (data.error) {
@@ -156,6 +120,17 @@ function Navigation() {
     setPathData(data);
   };
 
+  // Handle incoming route result from homepage - placed after handlePathFound is defined
+  useEffect(() => {
+    if (location.state?.routeResult) {
+      console.log(
+        "Processing route result from homepage:",
+        location.state.routeResult
+      );
+      handlePathFound(location.state.routeResult);
+    }
+  }, [location.state?.routeResult]);
+
   const handleNavClick = (itemId) => {
     setActiveNavItem(itemId);
     switch (itemId) {
@@ -182,20 +157,6 @@ function Navigation() {
     }
   };
 
-  // Show loading screen while user data is being fetched
-  if (isLoadingUser) {
-    return (
-      <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading...</p>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
       <Sidebar
@@ -206,11 +167,18 @@ function Navigation() {
         onNavClick={handleNavClick}
       />
 
-      <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
+      <div
+        className={`flex-1 transition-all duration-300 ${
+          isSidebarExpanded ? "ml-70" : "ml-20"
+        }`}
+      >
         <Header userData={userData} title="Navigation" />
 
         <div className="flex">
-          <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
+          <NavigationComponent
+            navigationSteps={navigationSteps}
+            pathData={pathData}
+          />
 
           <FindRouteSection onPathFound={handlePathFound} />
         </div>

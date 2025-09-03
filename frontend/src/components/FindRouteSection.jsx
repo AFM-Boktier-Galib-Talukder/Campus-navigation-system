@@ -95,9 +95,15 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
 
     setIsSubmitting(true);
     try {
-      const startParam = selectedStartDot != null ? String(selectedStartDot) : startPoint.trim();
-      const endParam = selectedEndDot != null ? String(selectedEndDot) : endPoint.trim();
-      const url = `${API_BASE}/path?start=${encodeURIComponent(startParam)}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(transportOption)}`;
+      const startParam =
+        selectedStartDot != null ? String(selectedStartDot) : startPoint.trim();
+      const endParam =
+        selectedEndDot != null ? String(selectedEndDot) : endPoint.trim();
+      const url = `${API_BASE}/path?start=${encodeURIComponent(
+        startParam
+      )}&end=${encodeURIComponent(endParam)}&choice=${encodeURIComponent(
+        transportOption
+      )}`;
       const res = await fetch(url);
       const data = await res.json();
       if (!res.ok) {
@@ -118,8 +124,6 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
           selectedStartDot,
           selectedEndDot,
         },
-        // Preserve userId if it exists in current location state
-        userId: location.state?.userId,
       };
       const isAlreadyOnNavigation = location.pathname === "/navigation";
       navigate("/navigation", {
@@ -170,21 +174,42 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
         <div className="p-6 border-b border-green-200/30 bg-gradient-to-r from-green-700 to-lime-500">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-lime-400 rounded-lg flex items-center justify-center shadow-lg">
-              <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              <svg
+                className="w-5 h-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <h3 className="text-xl font-bold text-white">Find Your Route</h3>
           </div>
-          <p className="text-white text-sm">Plan your navigation across campus</p>
+          <p className="text-white text-sm">
+            Plan your navigation across campus
+          </p>
         </div>
 
         <form className="p-6" onSubmit={handleFindRoute}>
           <div className="space-y-6">
             <div>
-              <label htmlFor="start-point" className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              <label
+                htmlFor="start-point"
+                className="text-sm font-semibold text-white mb-2 flex items-center gap-2"
+              >
+                <svg
+                  className="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 Start Point
               </label>
@@ -207,27 +232,43 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 placeholder="Type room and select..."
                 required
               />
-              {showStartDropdown && (startSuggestions.length > 0 || startNoResults) && (
-                <div className="mt-2 border border-green-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
-                  {startSuggestions.map((s) => (
-                    <button
-                      key={`${s.label}-${s.dot}`}
-                      type="button"
-                      onMouseDown={() => handleSelectStart(s.label, s.dot)}
-                      className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm"
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                  {startNoResults && startSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-500">NO Rooms Found</div>}
-                </div>
-              )}
+              {showStartDropdown &&
+                (startSuggestions.length > 0 || startNoResults) && (
+                  <div className="mt-2 border border-green-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                    {startSuggestions.map((s) => (
+                      <button
+                        key={`${s.label}-${s.dot}`}
+                        type="button"
+                        onMouseDown={() => handleSelectStart(s.label, s.dot)}
+                        className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm"
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                    {startNoResults && startSuggestions.length === 0 && (
+                      <div className="px-4 py-2 text-sm text-gray-500">
+                        NO Rooms Found
+                      </div>
+                    )}
+                  </div>
+                )}
             </div>
 
             <div>
-              <label htmlFor="end-point" className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              <label
+                htmlFor="end-point"
+                className="text-sm font-semibold text-white mb-2 flex items-center gap-2"
+              >
+                <svg
+                  className="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 Destination
               </label>
@@ -250,26 +291,35 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                 placeholder="Type room and select..."
                 required
               />
-              {showEndDropdown && (endSuggestions.length > 0 || endNoResults) && (
-                <div className="mt-2 border border-green-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
-                  {endSuggestions.map((s) => (
-                    <button
-                      key={`${s.label}-${s.dot}`}
-                      type="button"
-                      onMouseDown={() => handleSelectEnd(s.label, s.dot)}
-                      className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm"
-                    >
-                      {s.label}
-                    </button>
-                  ))}
-                  {endNoResults && endSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-500">NO Rooms Found</div>}
-                </div>
-              )}
+              {showEndDropdown &&
+                (endSuggestions.length > 0 || endNoResults) && (
+                  <div className="mt-2 border border-green-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                    {endSuggestions.map((s) => (
+                      <button
+                        key={`${s.label}-${s.dot}`}
+                        type="button"
+                        onMouseDown={() => handleSelectEnd(s.label, s.dot)}
+                        className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm"
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                    {endNoResults && endSuggestions.length === 0 && (
+                      <div className="px-4 py-2 text-sm text-gray-500">
+                        NO Rooms Found
+                      </div>
+                    )}
+                  </div>
+                )}
             </div>
 
             <div>
               <label className=" text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-4 h-4 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                 </svg>
                 Transport Options
@@ -286,11 +336,25 @@ function FindRouteSection({ onPathFound, onRouteComputed, apiBaseOverride }) {
                     }`}
                   >
                     <div className="flex justify-center mb-2">
-                      <div className={`w-8 h-8 flex items-center justify-center ${transportOption === option.id ? "text-white" : "text-lime-300"}`}>
+                      <div
+                        className={`w-8 h-8 flex items-center justify-center ${
+                          transportOption === option.id
+                            ? "text-white"
+                            : "text-lime-300"
+                        }`}
+                      >
                         {option.icon}
                       </div>
                     </div>
-                    <div className={`text-sm font-medium ${transportOption === option.id ? "text-white" : "text-lime-300"}`}>{option.label}</div>
+                    <div
+                      className={`text-sm font-medium ${
+                        transportOption === option.id
+                          ? "text-white"
+                          : "text-lime-300"
+                      }`}
+                    >
+                      {option.label}
+                    </div>
                   </div>
                 ))}
               </div>
