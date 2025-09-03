@@ -2740,3 +2740,25 @@
 1756922383054 : ::1 GET : /api/amenity/path
 
 1756922410785 : ::1 GET : /api/amenity/path
+
+1756922490025 : ::1 GET : /api/library/nodes
+
+1756922490058 : ::1 GET : /api/library/nodes
+
+1756922492985 : ::1 GET : /api/library/search
+
+1756922496590 : ::1 GET : /api/library/search
+
+1756922500221 : ::1 GET : /api/library/path
+
+1756922511590 : ::1 GET : /api/floor/search
+
+1756922513955 : ::1 GET : /api/amenity/path
+
+1756922530353 : ::1 GET : /api/floor/search
+
+1756922535737 : ::1 GET : /api/amenity/path
+
+1756922551446 : ::1 GET : /api/library/nodes
+
+1756922551461 : ::1 GET : /api/library/nodes
