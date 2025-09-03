@@ -2,7 +2,7 @@
   {
     "dot": 10,
     "connection": [11],
-    "left": "",
+    "left": "gate",
     "right": "",
     "up": null,
     "down": null
@@ -33,8 +33,8 @@
   },
   {
     "dot": 14,
-    "connection": [15, 13,24],
-    "left": "Stair floor 1",
+    "connection": [15, 13, 24],
+    "left": "stair1",
     "right": "1B6T",
     "up": 24,
     "down": null

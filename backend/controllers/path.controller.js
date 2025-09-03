@@ -1,12 +1,14 @@
 const FloorDesign = require('../models/floorDesign.model')
+const { buildGraph } = require('../utils/graphBuilder.utils')
+const { findShortestPath } = require('../utils/pathfinder.utils')
+const { generateDirections } = require('../utils/directionGenerator.utils')
 const {
-  buildGraph,
-  findShortestPath,
-  generateDirections,
-  generateDistance,
-} = require('../utils/pathfinder.utils')
+  generateTime,
+  pathDistance,
+} = require('../utils/distanceCalculator.utils')
 const { floor_jump } = require('../utils/floor_jump.utils')
-const { findDotsForRooms } = require('../utils/dot_finder.utils')
+const { findDots } = require('../utils/dot_finder.utils')
+const { searching } = require('../utils/searching.utils')
 
 async function getAllNodes(req, res) {
   try {
@@ -26,21 +28,8 @@ async function getShortestPath(req, res) {
         .json({ error: 'Missing start, end, or choice parameters' })
     }
 
-    // Accept either numeric dots or room names. If not numeric, resolve via dot finder
-    const isNumericStart = /^\d+$/.test(String(start))
-    const isNumericEnd = /^\d+$/.test(String(end))
-
-    let startDot = isNumericStart ? parseInt(start) : null
-    let endDot = isNumericEnd ? parseInt(end) : null
-
-    if (startDot === null || endDot === null) {
-      const resolved = await findDotsForRooms(
-        startDot === null ? start : String(startDot),
-        endDot === null ? end : String(endDot)
-      )
-      startDot = startDot === null ? resolved.startDot : startDot
-      endDot = endDot === null ? resolved.endDot : endDot
-    }
+    console.log('from path.controller.js_______start', start, '____End', end)
+    const { startDot, endDot } = await findDots(FloorDesign, start, end)
 
     if (startDot === null || endDot === null) {
       return res
@@ -56,7 +45,6 @@ async function getShortestPath(req, res) {
 
     let path = []
     if (startFloor === endFloor) {
-      // Same floor: do not use floor_jump; do direct shortest path
       path = findShortestPath(graph, startDot, endDot)
     } else {
       path = floor_jump(graph, startDot, endDot, String(choice).toLowerCase())
@@ -66,12 +54,30 @@ async function getShortestPath(req, res) {
       return res.status(404).json({ error: 'No path found' })
     }
 
-    const distance = generateDistance(path)
+    const distance = pathDistance(path)
+    const time = generateTime(path)
     const directions = generateDirections(graph, path)
-    res.json({ path, distance, directions, startDot, endDot })
+    res.json({
+      path,
+      distance: `${distance} meters`,
+      time,
+      directions,
+      startDot,
+      endDot,
+    })
   } catch (err) {
     res.status(500).json({ error: 'Pathfinding failed' })
   }
 }
 
-module.exports = { getAllNodes, getShortestPath }
+async function searchRoomsController(req, res) {
+  try {
+    const { q } = req.query
+    const results = await searching(FloorDesign, q)
+    res.json({ results })
+  } catch (err) {
+    res.status(500).json({ error: 'Search failed' })
+  }
+}
+
+module.exports = { getAllNodes, getShortestPath, searchRoomsController }

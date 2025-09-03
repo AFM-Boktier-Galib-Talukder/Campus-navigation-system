@@ -1,986 +1,2380 @@
 
-1754993270068 : ::1 POST : /api/login
+1754847812899 : ::1 GET : /api/facultyDesk
 
-1754993270219 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754847812964 : ::1 GET : /api/facultyDesk
 
-1754993270244 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754864154407 : ::1 GET : /api/floor/search
 
-1754993279393 : ::1 GET : /api/facultyDesk
+1754864159002 : ::1 GET : /api/floor/search
 
-1754993279422 : ::1 GET : /api/facultyDesk
+1754864163165 : ::1 GET : /api/floor/path
 
-1754993339169 : ::1 GET : /api/facultyDesk
+1754864165495 : ::1 GET : /api/floor/path
 
-1754993339186 : ::1 GET : /api/facultyDesk
+1754864166478 : ::1 GET : /api/floor/path
 
-1754993348949 : ::1 GET : /api/floor/search
+1754864167695 : ::1 GET : /api/floor/path
 
-1754993351833 : ::1 GET : /api/floor/search
+1754864168146 : ::1 GET : /api/floor/path
 
-1754993354246 : ::1 GET : /api/floor/path
+1754864195984 : ::1 GET : /api/floor/search
 
-1754993519942 : ::1 GET : /api/facultyDesk
+1754864199716 : ::1 GET : /api/floor/search
 
-1754993519962 : ::1 GET : /api/facultyDesk
+1754864202932 : ::1 GET : /api/floor/path
 
-1754994508103 : ::1 GET : /api/floor/search
+1754864205579 : ::1 GET : /api/floor/path
 
-1754994511041 : ::1 GET : /api/floor/search
+1754864206310 : ::1 GET : /api/floor/path
 
-1754994534331 : ::1 GET : /api/floor/path
+1754864207761 : ::1 GET : /api/floor/path
 
-1754994599998 : ::1 GET : /api/facultyDesk
+1754864208144 : ::1 GET : /api/floor/path
 
-1754994600022 : ::1 GET : /api/facultyDesk
+1754864210562 : ::1 GET : /api/floor/path
 
-1754994717752 : ::1 GET : /api/facultyDesk
+1754864211410 : ::1 GET : /api/floor/path
 
-1754994717777 : ::1 GET : /api/facultyDesk
+1754864266257 : ::1 GET : /api/floor/search
 
-1754994719625 : ::1 GET : /api/facultyDesk
+1754864267449 : ::1 GET : /api/floor/search
 
-1754994719639 : ::1 GET : /api/facultyDesk
+1754864269496 : ::1 GET : /api/floor/search
 
-1754994746579 : ::1 POST : /api/login
+1754864271062 : ::1 GET : /api/floor/search
 
-1754994746648 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754864273377 : ::1 GET : /api/floor/path
 
-1754994746656 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754864275310 : ::1 GET : /api/floor/path
 
-1754994746668 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754864275925 : ::1 GET : /api/floor/path
 
-1754994746677 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754864276442 : ::1 GET : /api/floor/path
 
-1754994750236 : ::1 GET : /api/facultyDesk
+1754864278161 : ::1 GET : /api/floor/path
 
-1754994750249 : ::1 GET : /api/facultyDesk
+1754864278592 : ::1 GET : /api/floor/path
 
-1754994776647 : ::1 GET : /api/facultyDesk
+1754864279059 : ::1 GET : /api/floor/path
 
-1754994776660 : ::1 GET : /api/facultyDesk
+1754864297311 : ::1 GET : /api/floor/path
 
-1754995329407 : ::1 GET : /api/facultyDesk
+1754864301206 : ::1 GET : /api/floor/nodes
 
-1754995329441 : ::1 GET : /api/facultyDesk
+1754864303497 : ::1 GET : /api/floor/nodes
 
-1754995341637 : ::1 GET : /api/facultyDesk
+1754864310232 : ::1 GET : /api/floor/nodes
 
-1754995341644 : ::1 GET : /api/facultyDesk
+1754864313112 : ::1 GET : /api/floor/path
 
-1754995356930 : ::1 GET : /api/facultyDesk
+1754864314174 : ::1 GET : /api/floor/path
 
-1754995356941 : ::1 GET : /api/facultyDesk
+1754864314857 : ::1 GET : /api/floor/path
 
-1754995534593 : ::1 GET : /api/facultyDesk
+1754864316324 : ::1 GET : /api/floor/path
 
-1754995534604 : ::1 GET : /api/facultyDesk
+1754864324914 : ::1 GET : /api/floor/search
 
-1754995712487 : ::1 GET : /api/facultyDesk
+1754864328878 : ::1 GET : /api/floor/search
 
-1754995712497 : ::1 GET : /api/facultyDesk
+1754864331258 : ::1 GET : /api/floor/path
 
-1754995940415 : ::1 GET : /api/facultyDesk
+1754864332460 : ::1 GET : /api/floor/path
 
-1754995940425 : ::1 GET : /api/facultyDesk
+1754864333227 : ::1 GET : /api/floor/path
 
-1754996232426 : ::1 GET : /api/facultyDesk
+1754864343077 : ::1 GET : /api/floor/path
 
-1754996232440 : ::1 GET : /api/facultyDesk
+1754864344776 : ::1 GET : /api/floor/path
 
-1754996627351 : ::1 GET : /api/facultyDesk
+1754864347093 : ::1 GET : /api/floor/path
 
-1754996627447 : ::1 GET : /api/facultyDesk
+1754864348232 : ::1 GET : /api/floor/search
 
-1754997835644 : ::1 GET : /api/facultyDesk
+1754864349858 : ::1 GET : /api/floor/search
 
-1754997835754 : ::1 GET : /api/facultyDesk
+1754864359522 : ::1 GET : /api/floor/search
 
-1754997851518 : ::1 GET : /api/facultyDesk
+1754864359883 : ::1 GET : /api/floor/search
 
-1754997851533 : ::1 GET : /api/facultyDesk
+1754864361853 : ::1 GET : /api/floor/search
 
-1754997866369 : ::1 GET : /api/facultyDesk
+1754864366611 : ::1 GET : /api/floor/path
 
-1754997866382 : ::1 GET : /api/facultyDesk
+1754864369945 : ::1 GET : /api/floor/path
 
-1754999873963 : ::1 GET : /api/facultyDesk
+1754864402498 : ::1 GET : /api/floor/path
 
-1754999874093 : ::1 GET : /api/facultyDesk
+1754864601529 : ::1 GET : /api/floor/path
 
-1754999880046 : ::1 GET : /api/facultyDesk
+1754865256179 : ::1 GET : /api/floor/path
 
-1754999880059 : ::1 GET : /api/facultyDesk
+1754865261517 : ::1 GET : /api/floor/path
 
-1755000863913 : ::1 GET : /api/floor/search
+1754865263869 : ::1 GET : /api/floor/path
 
-1755000866652 : ::1 GET : /api/floor/search
+1754865266233 : ::1 GET : /api/floor/path
 
-1755000869819 : ::1 GET : /api/floor/path
+1754866948055 : ::1 GET : /api/floor/search
 
-1755000875083 : ::1 GET : /api/floor/search
+1754866952647 : ::1 GET : /api/floor/search
 
-1755000878941 : ::1 GET : /api/floor/search
+1754866957256 : ::1 GET : /api/floor/path
 
-1755000882798 : ::1 GET : /api/floor/path
+1754867112929 : ::1 GET : /api/floor/path
 
-1755000892977 : ::1 GET : /api/facultyDesk
+1754867162007 : ::1 GET : /api/floor/path
 
-1755000893012 : ::1 GET : /api/facultyDesk
+1754867163953 : ::1 GET : /api/floor/path
 
-1755001930598 : ::1 POST : /api/signup
+1754867166309 : ::1 GET : /api/floor/path
 
-1755002010520 : ::1 GET : /api/signup/email/admin@g.bracu.ac.bd
+1754867174436 : ::1 GET : /api/floor/path
 
-1755002586676 : ::1 GET : /api/signup/email/admin@g.bracu.ac.bd
+1754867395229 : ::1 GET : /api/floor/path
 
-1755002637139 : ::1 POST : /api/signup
+1754867398804 : ::1 GET : /api/floor/path
 
-1755002685002 : ::1 POST : /api/signup
+1754867400370 : ::1 GET : /api/floor/path
 
-1755002707731 : ::1 POST : /api/signup
+1754867510455 : ::1 GET : /api/floor/path
 
-1755002859097 : ::1 POST : /api/signup
+1754867564393 : ::1 GET : /api/floor/path
 
-1755002860689 : ::1 POST : /api/signup
+1754867568971 : ::1 GET : /api/floor/path
 
-1755002929317 : ::1 GET : /api/signup/email/admin@g.bracu.ac.bd
+1754867612648 : ::1 GET : /api/floor/path
 
-1755003010330 : ::1 POST : /api/login
+1754867840901 : ::1 GET : /api/floor/path
 
-1755003086116 : ::1 POST : /api/login
+1754867998080 : ::1 GET : /api/floor/path
 
-1755003086132 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754868052613 : ::1 GET : /api/floor/path
 
-1755004238856 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754868447593 : ::1 GET : /api/floor/path
 
-1755004460501 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869091056 : ::1 GET : /api/floor/path
 
-1755004460518 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869244130 : ::1 GET : /api/floor/path
 
-1755004489129 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869493547 : ::1 GET : /api/floor/path
 
-1755004489139 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869595828 : ::1 GET : /api/floor/path
 
-1755004507986 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869660074 : ::1 GET : /api/floor/path
 
-1755004508000 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869660675 : ::1 GET : /api/floor/path
 
-1755004539961 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869660940 : ::1 GET : /api/floor/path
 
-1755004539970 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869661190 : ::1 GET : /api/floor/path
 
-1755004570041 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869711243 : ::1 GET : /api/floor/path
 
-1755004570052 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754869721461 : ::1 GET : /api/floor/path
 
-1755004927758 : ::1 POST : /api/login
+1754870742705 : ::1 GET : /api/floor/path
 
-1755004927815 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754870744760 : ::1 GET : /api/floor/path
 
-1755004927910 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754870819102 : ::1 GET : /api/floor/path
 
-1755004927915 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754871526998 : ::1 GET : /api/floor/path
 
-1755004932064 : ::1 GET : /api/facultyDesk
+1754871846734 : ::1 GET : /api/floor/path
 
-1755004932146 : ::1 GET : /api/facultyDesk
+1754871886558 : ::1 GET : /api/floor/path
 
-1755005389320 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754871927209 : ::1 GET : /api/floor/path
 
-1755005389366 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872091250 : ::1 GET : /api/floor/path
 
-1755008381434 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872092374 : ::1 GET : /api/floor/path
 
-1755008381553 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872094660 : ::1 GET : /api/floor/path
 
-1755009034843 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872156370 : ::1 GET : /api/floor/search
 
-1755009034874 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872157924 : ::1 GET : /api/floor/search
 
-1755009151614 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872160350 : ::1 GET : /api/floor/search
 
-1755009151623 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872163567 : ::1 GET : /api/floor/search
 
-1755009164965 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872166037 : ::1 GET : /api/floor/search
 
-1755009164995 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872166598 : ::1 GET : /api/floor/search
 
-1755009175497 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872167916 : ::1 GET : /api/floor/search
 
-1755009175522 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754872168546 : ::1 GET : /api/floor/search
 
-1755009193546 : ::1 POST : /api/login
+1754872172921 : ::1 GET : /api/floor/path
 
-1755009193601 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754872460604 : ::1 GET : /api/floor/path
 
-1755009193646 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754872647483 : ::1 GET : /api/floor/path
 
-1755009193652 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754872651322 : ::1 GET : /api/floor/path
 
-1755009206718 : ::1 GET : /api/facultyDesk
+1754872651687 : ::1 GET : /api/floor/path
 
-1755009206761 : ::1 GET : /api/facultyDesk
+1754872651937 : ::1 GET : /api/floor/path
 
-1755009595452 : ::1 GET : /api/facultyDesk
+1754872653856 : ::1 GET : /api/floor/path
 
-1755009595484 : ::1 GET : /api/facultyDesk
+1754872655843 : ::1 GET : /api/floor/path
 
-1755009626309 : ::1 GET : /api/facultyDesk
+1754872661589 : ::1 GET : /api/floor/path
 
-1755009626390 : ::1 GET : /api/facultyDesk
+1754872670059 : ::1 GET : /api/floor/path
 
-1755009641994 : ::1 GET : /api/facultyDesk
+1754872923015 : ::1 GET : /api/floor/path
 
-1755009642012 : ::1 GET : /api/facultyDesk
+1754872925692 : ::1 GET : /api/floor/path
 
-1755009751676 : ::1 POST : /api/login
+1754872975179 : ::1 GET : /api/floor/path
 
-1755009751714 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754873014316 : ::1 GET : /api/floor/path
 
-1755009751764 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754873015357 : ::1 GET : /api/floor/path
 
-1755009751777 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754873015576 : ::1 GET : /api/floor/path
 
-1755009764526 : ::1 POST : /api/login
+1754873021624 : ::1 GET : /api/floor/search
 
-1755009764548 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873022704 : ::1 GET : /api/floor/search
 
-1755009764574 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873026946 : ::1 GET : /api/floor/search
 
-1755009764584 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873027356 : ::1 GET : /api/floor/search
 
-1755009773844 : ::1 GET : /api/facultyDesk
+1754873029812 : ::1 GET : /api/floor/path
 
-1755009773860 : ::1 GET : /api/facultyDesk
+1754873087948 : ::1 GET : /api/floor/path
 
-1755009873734 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873088842 : ::1 GET : /api/floor/path
 
-1755009873745 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873089609 : ::1 GET : /api/floor/path
 
-1755009877480 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873089875 : ::1 GET : /api/floor/path
 
-1755009877486 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873092390 : ::1 GET : /api/floor/path
 
-1755010058490 : ::1 GET : /api/floor/search
+1754873093058 : ::1 GET : /api/floor/path
 
-1755010061472 : ::1 GET : /api/floor/search
+1754873093342 : ::1 GET : /api/floor/path
 
-1755010063300 : ::1 GET : /api/floor/path
+1754873094642 : ::1 GET : /api/floor/path
 
-1755015106062 : ::1 GET : /api/facultyDesk
+1754873095810 : ::1 GET : /api/floor/path
 
-1755015106273 : ::1 GET : /api/facultyDesk
+1754873097276 : ::1 GET : /api/floor/path
 
-1755015119023 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873099627 : ::1 GET : /api/floor/path
 
-1755015119086 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873115182 : ::1 GET : /api/floor/path
 
-1755015126059 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873115760 : ::1 GET : /api/floor/path
 
-1755015126073 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754873117026 : ::1 GET : /api/floor/path
 
-1755016998779 : ::1 GET : /api/library/nodes
+1754873121683 : ::1 GET : /api/floor/search
 
-1755017111163 : ::1 GET : /api/library/search
+1754873125498 : ::1 GET : /api/floor/search
 
-1755017114368 : ::1 GET : /api/library/search
+1754873126673 : ::1 GET : /api/floor/path
 
-1755017159778 : ::1 GET : /api/library/nodes
+1754873144814 : ::1 GET : /api/floor/path
 
-1755017159799 : ::1 GET : /api/library/nodes
+1754873150059 : ::1 GET : /api/floor/path
 
-1755017164789 : ::1 GET : /api/facultyDesk
+1754874906431 : ::1 GET : /api/floor/search
 
-1755017164821 : ::1 GET : /api/facultyDesk
+1754874909467 : ::1 GET : /api/floor/search
 
-1755017170858 : ::1 GET : /api/library/nodes
+1754874913820 : ::1 GET : /api/floor/search
 
-1755017170875 : ::1 GET : /api/library/nodes
+1754874917300 : ::1 GET : /api/floor/path
 
-1755017223420 : ::1 GET : /api/library/search
+1754875145367 : ::1 GET : /api/floor/path
 
-1755017225367 : ::1 GET : /api/library/search
+1754875148894 : ::1 GET : /api/floor/path
 
-1755017236951 : ::1 GET : /api/library/search
+1754875562154 : ::1 GET : /api/floor/search
 
-1755017242101 : ::1 GET : /api/floor/search
+1754875565999 : ::1 GET : /api/floor/search
 
-1755017244531 : ::1 GET : /api/floor/search
+1754875569061 : ::1 GET : /api/floor/path
 
-1755017246234 : ::1 GET : /api/floor/search
+1754875622902 : ::1 GET : /api/floor/search
 
-1755017248963 : ::1 GET : /api/library/nodes
+1754875626147 : ::1 GET : /api/floor/search
 
-1755017248973 : ::1 GET : /api/library/nodes
+1754875627356 : ::1 GET : /api/floor/search
 
-1755017259117 : ::1 GET : /api/library/search
+1754875629929 : ::1 GET : /api/floor/search
 
-1755017259430 : ::1 GET : /api/library/search
+1754875634016 : ::1 GET : /api/floor/search
 
-1755017260881 : ::1 GET : /api/library/search
+1754875636164 : ::1 GET : /api/floor/search
 
-1755017670580 : ::1 GET : /api/library/nodes
+1754875638813 : ::1 GET : /api/floor/search
 
-1755017670658 : ::1 GET : /api/library/nodes
+1754875644178 : ::1 GET : /api/floor/path
 
-1755017672413 : ::1 GET : /api/library/nodes
+1754875652509 : ::1 GET : /api/floor/path
 
-1755017672431 : ::1 GET : /api/library/nodes
+1754875658826 : ::1 GET : /api/floor/path
 
-1755017683597 : ::1 GET : /api/library/search
+1754875957494 : ::1 GET : /api/floor/search
 
-1755017687362 : ::1 GET : /api/library/search
+1754875962025 : ::1 GET : /api/floor/search
 
-1755017690103 : ::1 GET : /api/library/search
+1754875968839 : ::1 GET : /api/floor/path
 
-1755017693717 : ::1 GET : /api/library/search
+1754876152786 : ::1 GET : /api/floor/path
 
-1755017695053 : ::1 GET : /api/library/search
+1754876159614 : ::1 GET : /api/floor/path
 
-1755017695658 : ::1 GET : /api/library/search
+1754876451718 : ::1 GET : /api/facultyDesk
 
-1755017696161 : ::1 GET : /api/library/search
+1754876451802 : ::1 GET : /api/facultyDesk
 
-1755017696662 : ::1 GET : /api/library/search
+1754876517909 : ::1 GET : /api/facultyDesk
 
-1755017699531 : ::1 GET : /api/library/path
+1754876517920 : ::1 GET : /api/facultyDesk
 
-1755017751586 : ::1 GET : /api/library/nodes
+1754876580434 : ::1 GET : /api/facultyDesk
 
-1755017751596 : ::1 GET : /api/library/nodes
+1754876580454 : ::1 GET : /api/facultyDesk
 
-1755018076310 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754878590993 : ::1 GET : /api/facultyDesk
 
-1755018076481 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754878591050 : ::1 GET : /api/facultyDesk
 
-1755019183702 : ::1 GET : /api/library/nodes
+1754878979036 : ::1 GET : /api/floor/search
 
-1755019183789 : ::1 GET : /api/library/nodes
+1754878983332 : ::1 GET : /api/floor/search
 
-1755020649526 : ::1 POST : /api/reports
+1754878985998 : ::1 GET : /api/floor/path
 
-1755020675182 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754879047902 : ::1 GET : /api/floor/search
 
-1755020675226 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754879051151 : ::1 GET : /api/floor/search
 
-1755020688106 : ::1 POST : /api/reports
+1754879053381 : ::1 GET : /api/floor/path
 
-1755020704349 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754879123749 : ::1 GET : /api/facultyDesk
 
-1755020704379 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754879123783 : ::1 GET : /api/facultyDesk
 
-1755020722625 : ::1 POST : /api/reports
+1754879138008 : ::1 GET : /api/facultyDesk
 
-1755021729028 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754879138067 : ::1 GET : /api/facultyDesk
 
-1755021729166 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754880062195 : ::1 GET : /api/facultyDesk
 
-1755021750316 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754880062222 : ::1 GET : /api/facultyDesk
 
-1755021750336 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754880851367 : ::1 GET : /api/facultyDesk
 
-1755108557489 : ::1 POST : /api/login
+1754880851479 : ::1 GET : /api/facultyDesk
 
-1755108557561 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754881815622 : ::1 GET : /api/facultyDesk
 
-1755108557603 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754881815678 : ::1 GET : /api/facultyDesk
 
-1755108557609 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754881913803 : ::1 GET : /api/facultyDesk
 
-1755108972272 : ::1 POST : /api/login
+1754881919874 : ::1 GET : /api/facultyDesk
 
-1755108972326 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754881919884 : ::1 GET : /api/facultyDesk
 
-1755108972424 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754881925737 : ::1 GET : /api/facultyDesk
 
-1755108972435 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754881925768 : ::1 GET : /api/facultyDesk
 
-1755108976015 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754882781167 : ::1 GET : /api/facultyDesk
 
-1755108976026 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754882781213 : ::1 GET : /api/facultyDesk
 
-1755108993628 : ::1 POST : /api/reports
+1754882879825 : ::1 GET : /api/facultyDesk
 
-1755110067920 : ::1 GET : /api/reports
+1754882879833 : ::1 GET : /api/facultyDesk
 
-1755110190786 : ::1 DELETE : /api/reports/689b7d69ea5502dd882fe338
+1754883304784 : ::1 GET : /api/facultyDesk
 
-1755110590252 : ::1 GET : /api/reports
+1754883315179 : ::1 GET : /api/facultyDesk
 
-1755110590303 : ::1 GET : /api/reports
+1754883315189 : ::1 GET : /api/facultyDesk
 
-1755110809703 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754883734558 : ::1 GET : /api/facultyDesk
 
-1755110809832 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754883734568 : ::1 GET : /api/facultyDesk
 
-1755110820614 : ::1 GET : /api/library/nodes
+1754885567258 : ::1 GET : /api/facultyDesk
 
-1755110820648 : ::1 GET : /api/library/nodes
+1754885567316 : ::1 GET : /api/facultyDesk
 
-1756134659770 : ::1 GET : /api/library/nodes
+1754885868112 : ::1 GET : /api/facultyDesk
 
-1756134659869 : ::1 GET : /api/library/nodes
+1754885868133 : ::1 GET : /api/facultyDesk
 
-1756134661283 : ::1 GET : /api/facultyDesk
+1754885891509 : ::1 GET : /api/facultyDesk
 
-1756134661315 : ::1 GET : /api/facultyDesk
+1754885891528 : ::1 GET : /api/facultyDesk
 
-1756134665245 : ::1 GET : /api/facultyDesk
+1754889405220 : ::1 GET : /api/facultyDesk
 
-1756134665253 : ::1 GET : /api/facultyDesk
+1754889405262 : ::1 GET : /api/facultyDesk
 
-1756134670797 : ::1 GET : /api/floor/search
+1754889406912 : ::1 GET : /api/facultyDesk
 
-1756134673080 : ::1 GET : /api/floor/search
+1754889406925 : ::1 GET : /api/facultyDesk
 
-1756134674316 : ::1 GET : /api/floor/search
+1754889407631 : ::1 GET : /api/facultyDesk
 
-1756134676414 : ::1 GET : /api/floor/search
+1754889407642 : ::1 GET : /api/facultyDesk
 
-1756134681131 : ::1 GET : /api/floor/search
+1754889408886 : ::1 POST : /api/faculty-desk/find-path
 
-1756134684779 : ::1 GET : /api/floor/path
+1754889433890 : ::1 POST : /api/faculty-desk/find-path
 
-1756134694071 : ::1 GET : /api/library/nodes
+1754889435120 : ::1 POST : /api/faculty-desk/find-path
 
-1756134694093 : ::1 GET : /api/library/nodes
+1754889530211 : ::1 GET : /api/facultyDesk
 
-1756134706145 : ::1 GET : /api/library/search
+1754889530241 : ::1 GET : /api/facultyDesk
 
-1756134709924 : ::1 GET : /api/library/search
+1754889531990 : ::1 GET : /api/facultyDesk
 
-1756134713960 : ::1 GET : /api/library/path
+1754889532002 : ::1 GET : /api/facultyDesk
 
-1756134728495 : ::1 GET : /api/library/nodes
+1754889533220 : ::1 POST : /api/faculty-desk/find-path
 
-1756134728510 : ::1 GET : /api/library/nodes
+1754889751595 : ::1 GET : /api/floor/search
 
-1756135238596 : ::1 GET : /api/library/search
+1754889756708 : ::1 GET : /api/floor/search
 
-1756135239007 : ::1 GET : /api/library/search
+1754889758523 : ::1 GET : /api/floor/path
 
-1756135244888 : ::1 GET : /api/library/search
+1754890138807 : ::1 GET : /api/facultyDesk
 
-1756135245393 : ::1 GET : /api/library/search
+1754890138854 : ::1 GET : /api/facultyDesk
 
-1756135247665 : ::1 GET : /api/library/search
+1754890143049 : ::1 GET : /api/facultyDesk
 
-1756135306518 : ::1 GET : /api/library/path
+1754890143055 : ::1 GET : /api/facultyDesk
 
-1756135314085 : ::1 GET : /api/library/nodes
+1754890145519 : ::1 GET : /api/facultyDesk
 
-1756135314108 : ::1 GET : /api/library/nodes
+1754890145528 : ::1 GET : /api/facultyDesk
 
-1756135651710 : ::1 GET : /api/facultyDesk
+1754890244210 : ::1 POST : /api/faculty-desk/find-path
 
-1756135651758 : ::1 GET : /api/facultyDesk
+1754890717197 : ::1 GET : /api/faculty-desk/find-path
 
-1756135653620 : ::1 GET : /api/library/nodes
+1754890729133 : ::1 GET : /api/faculty-desk/find-path
 
-1756135653630 : ::1 GET : /api/library/nodes
+1754890730762 : ::1 GET : /api/faculty-desk/find-path
 
-1756135708743 : ::1 POST : /api/login
+1754890762194 : ::1 GET : /api/faculty-desk/find-path
 
-1756135708782 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891239868 : ::1 GET : /api/faculty-desk/find-path
 
-1756135708881 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891242746 : ::1 GET : /api/faculty-desk/find-path
 
-1756135708892 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891244437 : ::1 GET : /api/faculty-desk/find-path
 
-1756135735286 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891452656 : ::1 POST : /api/faculty-desk/find-path
 
-1756135735303 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891479084 : ::1 POST : /api/faculty-desk/find-path
 
-1756144273513 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891521518 : ::1 GET : /api/facultyDesk
 
-1756144273843 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754891521930 : ::1 GET : /api/facultyDesk
 
-1756144302888 : ::1 GET : /api/reports
+1754916981857 : ::1 POST : /api/signup
 
-1756144302978 : ::1 GET : /api/reports
+1754916989916 : ::1 POST : /api/signup
 
-1756144349339 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754916999218 : ::1 POST : /api/signup
 
-1756144349354 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754917002731 : ::1 POST : /api/signup
 
-1756144527467 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754917018687 : ::1 POST : /api/signup
 
-1756144527497 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754917109030 : ::1 POST : /api/login
 
-1756146525273 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754917109094 : ::1 GET : /api/signup/6899e89a57354db248d7fc87
 
-1756146525276 : ::1 GET : /api/admin/floor/dots
+1754917109101 : ::1 GET : /api/signup/6899e89a57354db248d7fc87
 
-1756146717640 : ::1 PUT : /api/admin/floor/dots/10
+1754917236294 : ::1 GET : /api/facultyDesk
 
-1756146748441 : ::1 PUT : /api/admin/floor/dots/10
+1754917236328 : ::1 GET : /api/facultyDesk
 
-1756147023310 : ::1 PUT : /api/admin/floor/dots/11
+1754917306969 : ::1 GET : /api/facultyDesk
 
-1756147055833 : ::1 PUT : /api/admin/floor/dots/11
+1754917306983 : ::1 GET : /api/facultyDesk
 
-1756148265186 : ::1 PUT : /api/admin/floor/dots/13
+1754917421520 : ::1 GET : /api/facultyDesk
 
-1756148702228 : ::1 PUT : /api/admin/floor/dots/10
+1754917421599 : ::1 GET : /api/facultyDesk
 
-1756148775613 : ::1 PUT : /api/admin/floor/dots/10
+1754917580461 : ::1 GET : /api/facultyDesk
 
-1756150721751 : ::1 POST : /api/login
+1754917580472 : ::1 GET : /api/facultyDesk
 
-1756150721836 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754917618366 : ::1 GET : /api/facultyDesk
 
-1756150721932 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754917618405 : ::1 GET : /api/facultyDesk
 
-1756150721945 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754917674739 : ::1 GET : /api/facultyDesk
 
-1756150726049 : ::1 GET : /api/facultyDesk
+1754917674753 : ::1 GET : /api/facultyDesk
 
-1756150726077 : ::1 GET : /api/facultyDesk
+1754917682934 : ::1 GET : /api/facultyDesk
 
-1756150728261 : ::1 GET : /api/library/nodes
+1754917682954 : ::1 GET : /api/facultyDesk
 
-1756150728279 : ::1 GET : /api/library/nodes
+1754917728598 : ::1 GET : /api/facultyDesk
 
-1756150752538 : ::1 GET : /api/facultyDesk
+1754917728605 : ::1 GET : /api/facultyDesk
 
-1756150752550 : ::1 GET : /api/facultyDesk
+1754917787797 : ::1 POST : /api/faculty-desk/find-path
 
-1756150755830 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754917895737 : ::1 POST : /api/faculty-desk/find-path
 
-1756150755846 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754917987792 : ::1 POST : /api/faculty-desk/find-path
 
-1756150777396 : ::1 GET : /api/library/nodes
+1754917989859 : ::1 POST : /api/faculty-desk/find-path
 
-1756150777408 : ::1 GET : /api/library/nodes
+1754917991225 : ::1 POST : /api/faculty-desk/find-path
 
-1756150941037 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754917993876 : ::1 POST : /api/faculty-desk/find-path
 
-1756150941046 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918262004 : ::1 GET : /api/facultyDesk
 
-1756150943235 : ::1 GET : /api/library/nodes
+1754918262037 : ::1 GET : /api/facultyDesk
 
-1756150943250 : ::1 GET : /api/library/nodes
+1754918290302 : ::1 GET : /api/facultyDesk
 
-1756151503550 : ::1 GET : /api/facultyDesk
+1754918290310 : ::1 GET : /api/facultyDesk
 
-1756151503566 : ::1 GET : /api/facultyDesk
+1754918325020 : ::1 GET : /api/facultyDesk
 
-1756151509241 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918325028 : ::1 GET : /api/facultyDesk
 
-1756151509247 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918493450 : ::1 GET : /api/floor/search
 
-1756151519652 : ::1 GET : /api/facultyDesk
+1754918496773 : ::1 GET : /api/floor/search
 
-1756151519658 : ::1 GET : /api/facultyDesk
+1754918499013 : ::1 GET : /api/floor/search
 
-1756151522648 : ::1 GET : /api/library/nodes
+1754918502493 : ::1 GET : /api/floor/search
 
-1756151522657 : ::1 GET : /api/library/nodes
+1754918504704 : ::1 GET : /api/floor/path
 
-1756152103351 : ::1 POST : /api/login
+1754918508197 : ::1 GET : /api/floor/path
 
-1756152103372 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754918508882 : ::1 GET : /api/floor/path
 
-1756152103436 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754918509147 : ::1 GET : /api/floor/path
 
-1756152103437 : ::1 GET : /api/admin/floor/dots
+1754918509348 : ::1 GET : /api/floor/path
 
-1756152103457 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754918509547 : ::1 GET : /api/floor/path
 
-1756152103469 : ::1 GET : /api/admin/floor/dots
+1754918509748 : ::1 GET : /api/floor/path
 
-1756152110670 : ::1 GET : /api/reports
+1754918517522 : ::1 GET : /api/floor/search
 
-1756152110684 : ::1 GET : /api/reports
+1754918518408 : ::1 GET : /api/floor/search
 
-1756152124670 : ::1 POST : /api/login
+1754918521255 : ::1 GET : /api/floor/search
 
-1756152124690 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918529550 : ::1 GET : /api/floor/search
 
-1756152124763 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918529934 : ::1 GET : /api/floor/search
 
-1756152124768 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918535403 : ::1 GET : /api/floor/search
 
-1756152229969 : ::1 GET : /api/facultyDesk
+1754918537326 : ::1 GET : /api/floor/search
 
-1756152229975 : ::1 GET : /api/facultyDesk
+1754918551120 : ::1 GET : /api/floor/search
 
-1756152239031 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918554601 : ::1 GET : /api/floor/search
 
-1756152239037 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918558194 : ::1 GET : /api/floor/search
 
-1756152243594 : ::1 GET : /api/library/nodes
+1754918558577 : ::1 GET : /api/floor/search
 
-1756152243605 : ::1 GET : /api/library/nodes
+1754918560478 : ::1 GET : /api/floor/search
 
-1756152336611 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918566309 : ::1 GET : /api/floor/search
 
-1756152336621 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918566828 : ::1 GET : /api/floor/search
 
-1756153057348 : ::1 GET : /api/library/nodes
+1754918580358 : ::1 GET : /api/floor/search
 
-1756153057364 : ::1 GET : /api/library/nodes
+1754918582050 : ::1 GET : /api/floor/search
 
-1756153060740 : ::1 GET : /api/facultyDesk
+1754918598177 : ::1 GET : /api/floor/path
 
-1756153060750 : ::1 GET : /api/facultyDesk
+1754918615562 : ::1 GET : /api/floor/path
 
-1756153719610 : ::1 GET : /api/library/nodes
+1754918648134 : ::1 GET : /api/floor/search
 
-1756153719631 : ::1 GET : /api/library/nodes
+1754918651108 : ::1 GET : /api/floor/path
 
-1756153738636 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918939567 : ::1 GET : /api/faculty-desk/find-path
 
-1756153738647 : ::1 GET : /api/signup/68972de3784897036748da6a
+1754918945970 : ::1 GET : /api/faculty-desk/find-path
 
-1756217923688 : ::1 POST : /api/login
+1754918957978 : ::1 POST : /api/faculty-desk/find-path
 
-1756217923809 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754919203131 : ::1 POST : /api/faculty-desk/find-path
 
-1756217923886 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754930323123 : ::1 GET : /api/facultyDesk
 
-1756217923887 : ::1 GET : /api/admin/floor/dots
+1754930323190 : ::1 GET : /api/facultyDesk
 
-1756217923903 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1754930949118 : ::1 GET : /api/facultyDesk
 
-1756217923916 : ::1 GET : /api/admin/floor/dots
+1754930949483 : ::1 GET : /api/facultyDesk
 
-1756218155243 : ::1 GET : /api/reports
+1755010343141 : ::1 POST : /api/faculty-desk/find-path
 
-1756218155278 : ::1 GET : /api/reports
+1755010460518 : ::1 POST : /api/faculty-desk/find-path
 
-1756219972102 : ::1 POST : /api/login
+1755010662542 : ::1 POST : /api/faculty-desk/find-path
 
-1756219972192 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755010916781 : ::1 GET : /api/floor/search
 
-1756219972287 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755010920423 : ::1 GET : /api/floor/search
 
-1756219972289 : ::1 GET : /api/admin/floor/dots
+1755010923904 : ::1 GET : /api/floor/path
 
-1756219972304 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755011736214 : ::1 GET : /api/floor/path
 
-1756219972309 : ::1 GET : /api/admin/floor/dots
+1755011741938 : ::1 GET : /api/floor/search
 
-1756219977639 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755011742985 : ::1 GET : /api/floor/search
 
-1756219977639 : ::1 GET : /api/admin/floor/dots
+1755011745581 : ::1 GET : /api/floor/search
 
-1756219977656 : ::1 GET : /api/admin/floor/dots
+1755011748702 : ::1 GET : /api/floor/search
 
-1756219977656 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755011749273 : ::1 GET : /api/floor/search
 
-1756219979806 : ::1 GET : /api/reports
+1755011751086 : ::1 GET : /api/floor/search
 
-1756219979834 : ::1 GET : /api/reports
+1755011755114 : ::1 GET : /api/floor/path
 
-1756219994186 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755012087490 : ::1 GET : /api/floor/path
 
-1756219994187 : ::1 GET : /api/admin/floor/dots
+1755039807819 : ::1 GET : /api/floor/search
 
-1756219994205 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755039810563 : ::1 GET : /api/floor/search
 
-1756219994208 : ::1 GET : /api/admin/floor/dots
+1755039811691 : ::1 GET : /api/floor/path
 
-1756220010020 : ::1 POST : /api/login
+1755039856164 : ::1 GET : /api/floor/path
 
-1756220010041 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755039884528 : ::1 GET : /api/floor/path
 
-1756220010118 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755039905328 : ::1 GET : /api/floor/path
 
-1756220010123 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755040022496 : ::1 GET : /api/floor/path
 
-1756221752771 : ::1 GET : /api/floor/search
+1755040192413 : ::1 GET : /api/floor/search
 
-1756221757014 : ::1 GET : /api/floor/path
+1755040195754 : ::1 GET : /api/floor/search
 
-1756221758430 : ::1 GET : /api/floor/path
+1755040200595 : ::1 GET : /api/floor/search
 
-1756221759247 : ::1 GET : /api/floor/path
+1755040201621 : ::1 GET : /api/floor/search
 
-1756223617699 : ::1 GET : /api/floor/search
+1755040207443 : ::1 GET : /api/floor/search
 
-1756223620459 : ::1 GET : /api/amenity/path
+1755040214544 : ::1 GET : /api/floor/search
 
-1756223621556 : ::1 GET : /api/amenity/path
+1755040215639 : ::1 GET : /api/floor/path
 
-1756223622421 : ::1 GET : /api/amenity/path
+1755040539917 : ::1 GET : /api/floor/path
 
-1756223622563 : ::1 GET : /api/amenity/path
+1755040618376 : ::1 GET : /api/floor/search
 
-1756223622708 : ::1 GET : /api/amenity/path
+1755040620922 : ::1 GET : /api/floor/search
 
-1756223622941 : ::1 GET : /api/amenity/path
+1755040624935 : ::1 GET : /api/floor/path
 
-1756223630241 : ::1 GET : /api/floor/search
+1755040634483 : ::1 GET : /api/floor/path
 
-1756223633418 : ::1 GET : /api/floor/search
+1755040724101 : ::1 GET : /api/floor/path
 
-1756223635341 : ::1 GET : /api/floor/path
+1755040846268 : ::1 GET : /api/floor/path
 
-1756223773987 : ::1 GET : /api/floor/search
+1755041005319 : ::1 GET : /api/floor/path
 
-1756223776585 : ::1 GET : /api/floor/search
+1755041309251 : ::1 GET : /api/floor/path
 
-1756223778622 : ::1 GET : /api/floor/path
+1755045661763 : ::1 GET : /api/floor/search
 
-1756224079647 : ::1 GET : /api/amenity/path
+1755045664817 : ::1 GET : /api/floor/search
 
-1756224086115 : ::1 GET : /api/amenity/path
+1755045667501 : ::1 GET : /api/floor/path
 
-1756224098474 : ::1 GET : /api/amenity/path
+1755045668995 : ::1 GET : /api/floor/path
 
-1756224128257 : ::1 GET : /api/floor/search
+1755045669193 : ::1 GET : /api/floor/path
 
-1756224135189 : ::1 GET : /api/amenity/path
+1755045669376 : ::1 GET : /api/floor/path
 
-1756224150858 : ::1 GET : /api/floor/search
+1755045669576 : ::1 GET : /api/floor/path
 
-1756224157735 : ::1 GET : /api/amenity/path
+1755045669896 : ::1 GET : /api/floor/path
 
-1756225814293 : ::1 POST : /api/login
+1755046502515 : ::1 GET : /api/floor/path
 
-1756225814390 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046504462 : ::1 GET : /api/floor/search
 
-1756225814545 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046506014 : ::1 GET : /api/floor/search
 
-1756225814561 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046508109 : ::1 GET : /api/floor/path
 
-1756225915150 : ::1 GET : /api/floor/search
+1755046509224 : ::1 GET : /api/floor/path
 
-1756225921750 : ::1 GET : /api/amenity/path
+1755046510206 : ::1 GET : /api/floor/path
 
-1756225951905 : ::1 GET : /api/floor/search
+1755046510690 : ::1 GET : /api/floor/path
 
-1756226008823 : ::1 GET : /api/amenity/path
+1755046511388 : ::1 GET : /api/floor/path
 
-1756226205689 : ::1 GET : /api/floor/search
+1755046516641 : ::1 GET : /api/floor/path
 
-1756226213944 : ::1 GET : /api/amenity/path
+1755046517658 : ::1 GET : /api/floor/path
 
-1756226679353 : ::1 GET : /api/library/nodes
+1755046517907 : ::1 GET : /api/floor/path
 
-1756226679403 : ::1 GET : /api/library/nodes
+1755046519594 : ::1 GET : /api/floor/path
 
-1756227077936 : ::1 GET : /api/floor/search
+1755046520090 : ::1 GET : /api/floor/path
 
-1756227082436 : ::1 GET : /api/amenity/path
+1755046520573 : ::1 GET : /api/floor/path
 
-1756227109342 : ::1 GET : /api/library/nodes
+1755046520773 : ::1 GET : /api/floor/path
 
-1756227109357 : ::1 GET : /api/library/nodes
+1755046520989 : ::1 GET : /api/floor/path
 
-1756228875914 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046521573 : ::1 GET : /api/floor/path
 
-1756228876026 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046522139 : ::1 GET : /api/floor/path
 
-1756229919293 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046522372 : ::1 GET : /api/floor/path
 
-1756231094897 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046522556 : ::1 GET : /api/floor/path
 
-1756231094921 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046522756 : ::1 GET : /api/floor/path
 
-1756231347515 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046524823 : ::1 GET : /api/floor/path
 
-1756231347550 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046525139 : ::1 GET : /api/floor/path
 
-1756231359246 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046525340 : ::1 GET : /api/floor/path
 
-1756231359263 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046525506 : ::1 GET : /api/floor/path
 
-1756231662652 : ::1 POST : /api/reports
+1755046525706 : ::1 GET : /api/floor/path
 
-1756231903409 : ::1 POST : /api/reports
+1755046526340 : ::1 GET : /api/floor/path
 
-1756231997225 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755046526756 : ::1 GET : /api/floor/path
 
-1756232204465 : ::1 POST : /api/reports
+1755046527323 : ::1 GET : /api/floor/path
 
-1756232240205 : ::1 POST : /api/login
+1755046527590 : ::1 GET : /api/floor/path
 
-1756232240278 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755047498655 : ::1 GET : /api/floor/path
 
-1756232240363 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755047517158 : ::1 GET : /api/floor/search
 
-1756232240364 : ::1 GET : /api/admin/floor/dots
+1755047518886 : ::1 GET : /api/floor/search
 
-1756232240383 : ::1 GET : /api/signup/689b344a0bee17d673bb8f41
+1755047520930 : ::1 GET : /api/floor/path
 
-1756232240398 : ::1 GET : /api/admin/floor/dots
+1755047521948 : ::1 GET : /api/floor/path
 
-1756232245096 : ::1 GET : /api/reports
+1755047746822 : ::1 GET : /api/floor/path
 
-1756232245148 : ::1 GET : /api/reports
+1755047747874 : ::1 GET : /api/floor/path
 
-1756232311774 : ::1 GET : /api/reports
+1755047748107 : ::1 GET : /api/floor/path
 
-1756232311804 : ::1 GET : /api/reports
+1755047748440 : ::1 GET : /api/floor/path
 
-1756232698944 : ::1 GET : /api/reports
+1755047749914 : ::1 GET : /api/floor/search
 
-1756232698986 : ::1 GET : /api/reports
+1755047751831 : ::1 GET : /api/floor/search
 
-1756232726986 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755047753474 : ::1 GET : /api/floor/path
 
-1756232732452 : ::1 GET : /uploads/eventImage-1756231662683-526707268.png
+1755047754807 : ::1 GET : /api/floor/path
 
-1756232736505 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755047754992 : ::1 GET : /api/floor/path
 
-1756232751593 : ::1 GET : /api/reports
+1755047755557 : ::1 GET : /api/floor/path
 
-1756232751602 : ::1 GET : /api/reports
+1755048040278 : ::1 GET : /api/floor/path
 
-1756232755249 : ::1 DELETE : /api/reports/689cd681bf4bdb3f3847b567
+1755048247511 : ::1 GET : /api/floor/path
 
-1756232760427 : ::1 DELETE : /api/reports/689b7d90ea5502dd882fe33c
+1755048248689 : ::1 GET : /api/floor/path
 
-1756232763200 : ::1 DELETE : /api/reports/689b7db2ea5502dd882fe340
+1755048248972 : ::1 GET : /api/floor/path
 
-1756232785113 : ::1 GET : /api/reports
+1755048249305 : ::1 GET : /api/floor/path
 
-1756232785124 : ::1 GET : /api/reports
+1755048280113 : ::1 GET : /api/floor/search
 
-1756232835624 : ::1 GET : /api/reports
+1755048281619 : ::1 GET : /api/floor/search
 
-1756232835636 : ::1 GET : /api/reports
+1755048284061 : ::1 GET : /api/floor/search
 
-1756232837088 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048284627 : ::1 GET : /api/floor/search
 
-1756233648349 : ::1 GET : /api/reports
+1755048285644 : ::1 GET : /api/floor/search
 
-1756233648403 : ::1 GET : /api/reports
+1755048287859 : ::1 GET : /api/floor/search
 
-1756233649888 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048289724 : ::1 GET : /api/floor/search
 
-1756233720919 : ::1 GET : /api/reports
+1755048290141 : ::1 GET : /api/floor/search
 
-1756233720935 : ::1 GET : /api/reports
+1755048291916 : ::1 GET : /api/floor/search
 
-1756233723506 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048292299 : ::1 GET : /api/floor/search
 
-1756234309401 : ::1 GET : /api/reports
+1755048292758 : ::1 GET : /api/floor/search
 
-1756234326807 : ::1 GET : /api/reports
+1755048295090 : ::1 GET : /api/floor/path
 
-1756234329723 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048296890 : ::1 GET : /api/floor/path
 
-1756234337139 : ::1 GET : /api/reports
+1755048408866 : ::1 GET : /api/floor/search
 
-1756234339393 : ::1 GET : /uploads/eventImage-1756231662683-526707268.png
+1755048412410 : ::1 GET : /api/floor/search
 
-1756234345982 : ::1 GET : /api/reports
+1755048414612 : ::1 GET : /api/floor/path
 
-1756234387021 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048417088 : ::1 GET : /api/floor/path
 
-1756234392968 : ::1 GET : /api/reports
+1755048460468 : ::1 GET : /api/floor/path
 
-1756234400104 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048494060 : ::1 GET : /api/floor/path
 
-1756234402990 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048514098 : ::1 GET : /api/floor/search
 
-1756234404650 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048516113 : ::1 GET : /api/floor/search
 
-1756234419339 : ::1 GET : /api/reports
+1755048518154 : ::1 GET : /api/floor/search
 
-1756234424770 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755048518881 : ::1 GET : /api/floor/search
 
-1756234426657 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755048519561 : ::1 GET : /api/floor/search
 
-1756234428365 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755048521777 : ::1 GET : /api/floor/search
 
-1756234429981 : ::1 GET : /api/reports
+1755048522612 : ::1 GET : /api/floor/search
 
-1756234434598 : ::1 GET : /api/reports
+1755048524265 : ::1 GET : /api/floor/search
 
-1756234436298 : ::1 GET : /uploads/eventImage-1756231662683-526707268.png
+1755048529138 : ::1 GET : /api/floor/path
 
-1756234438049 : ::1 GET : /api/reports
+1755048613365 : ::1 GET : /api/floor/search
 
-1756234444395 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755048616515 : ::1 GET : /api/floor/search
 
-1756234445608 : ::1 GET : /api/reports
+1755048619113 : ::1 GET : /api/floor/path
 
-1756234448727 : ::1 GET : /api/reports
+1755048629086 : ::1 GET : /api/floor/search
 
-1756234450885 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048631500 : ::1 GET : /api/floor/search
 
-1756234583878 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048640827 : ::1 GET : /api/floor/search
 
-1756234899133 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048641492 : ::1 GET : /api/floor/search
 
-1756234899216 : ::1 POST : /api/billboards
+1755048643133 : ::1 GET : /api/floor/search
 
-1756234925466 : ::1 GET : /api/reports
+1755048643792 : ::1 GET : /api/floor/search
 
-1756234939849 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755048644535 : ::1 GET : /api/floor/search
 
-1756234947476 : ::1 GET : /uploads/eventImage-1756231903428-340307334.jpg
+1755048645100 : ::1 GET : /api/floor/search
 
-1756234947492 : ::1 POST : /api/billboards
+1755048648792 : ::1 GET : /api/floor/search
 
-1756235110689 : ::1 GET : /api/reports
+1755048652112 : ::1 GET : /api/floor/search
 
-1756235237444 : ::1 GET : /api/reports
+1755048653288 : ::1 GET : /api/floor/search
 
-1756235504946 : ::1 GET : /api/reports
+1755048654203 : ::1 GET : /api/floor/search
 
-1756235505006 : ::1 GET : /api/reports
+1755048654586 : ::1 GET : /api/floor/search
 
-1756235506333 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048657269 : ::1 GET : /api/floor/search
 
-1756235530011 : ::1 GET : /api/reports
+1755048657880 : ::1 GET : /api/floor/search
 
-1756235532359 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048658186 : ::1 GET : /api/floor/search
 
-1756235533874 : ::1 GET : /api/reports
+1755048661215 : ::1 GET : /api/floor/path
 
-1756235549131 : ::1 GET : /uploads/eventImage-1756232204478-141344066.jpg
+1755048977063 : ::1 GET : /api/floor/search
 
-1756235549184 : ::1 POST : /api/billboards
+1755048979853 : ::1 GET : /api/floor/search
 
-1756235552443 : ::1 GET : /api/reports
+1755048989620 : ::1 GET : /api/floor/path
 
-1756235552462 : ::1 GET : /api/reports
+1755049030378 : ::1 GET : /api/floor/search
 
-1756324789964 : ::1 POST : /api/login
+1755049032504 : ::1 GET : /api/floor/search
 
-1756324790087 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755049034615 : ::1 GET : /api/floor/search
 
-1756324790199 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755049035862 : ::1 GET : /api/floor/search
 
-1756324790207 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755049036250 : ::1 GET : /api/floor/search
 
-1756325477687 : ::1 GET : /api/billboards
+1755049038914 : ::1 GET : /api/floor/path
 
-1756325477744 : ::1 GET : /api/billboards
+1755049059143 : ::1 GET : /api/floor/search
 
-1756350299696 : ::1 GET : /api/billboards
+1755049061376 : ::1 GET : /api/floor/search
 
-1756350299819 : ::1 GET : /api/billboards
+1755049063501 : ::1 GET : /api/floor/search
 
-1756350414723 : ::1 GET : /api/billboards
+1755049064364 : ::1 GET : /api/floor/search
 
-1756350430743 : ::1 GET : /api/billboards
+1755049064675 : ::1 GET : /api/floor/search
 
-1756350430792 : ::1 GET : /api/billboards
+1755049066948 : ::1 GET : /api/floor/path
 
-1756350752147 : ::1 GET : /api/billboards
+1755049072934 : ::1 GET : /api/floor/path
 
-1756350752175 : ::1 GET : /api/billboards
+1755049077586 : ::1 GET : /api/floor/search
 
-1756350816051 : ::1 GET : /api/floor/search
+1755049079016 : ::1 GET : /api/floor/search
 
-1756350821538 : ::1 GET : /api/floor/search
+1755049081057 : ::1 GET : /api/floor/search
 
-1756350824452 : ::1 GET : /api/floor/path
+1755049081556 : ::1 GET : /api/floor/search
 
-1756558701517 : ::1 POST : /api/login
+1755049083780 : ::1 GET : /api/floor/path
 
-1756558701612 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755049085646 : ::1 GET : /api/floor/path
 
-1756558701706 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755049093996 : ::1 GET : /api/floor/search
 
-1756558701707 : ::1 GET : /api/billboards
+1755049095788 : ::1 GET : /api/floor/search
 
-1756558701722 : ::1 GET : /api/signup/68972de3784897036748da6a
+1755049099462 : ::1 GET : /api/floor/search
 
-1756558701826 : ::1 GET : /api/billboards
+1755049099809 : ::1 GET : /api/floor/search
+
+1755049103267 : ::1 GET : /api/floor/path
+
+1755081517631 : ::1 GET : /api/floor/search
+
+1755081520993 : ::1 GET : /api/floor/search
+
+1755081522807 : ::1 GET : /api/floor/path
+
+1755081527655 : ::1 GET : /api/floor/path
+
+1755082707987 : ::1 GET : /api/floor/path
+
+1755082717555 : ::1 GET : /api/floor/search
+
+1755082720637 : ::1 GET : /api/floor/search
+
+1755082724024 : ::1 GET : /api/floor/search
+
+1755082724537 : ::1 GET : /api/floor/search
+
+1755082727245 : ::1 GET : /api/floor/path
+
+1755082761320 : ::1 GET : /api/floor/search
+
+1755082762647 : ::1 GET : /api/floor/search
+
+1755082764714 : ::1 GET : /api/floor/search
+
+1755082765066 : ::1 GET : /api/floor/search
+
+1755082765371 : ::1 GET : /api/floor/search
+
+1755082767081 : ::1 GET : /api/floor/search
+
+1755082769463 : ::1 GET : /api/floor/path
+
+1755082770628 : ::1 GET : /api/floor/path
+
+1755083084939 : ::1 GET : /api/facultyDesk
+
+1755083084980 : ::1 GET : /api/facultyDesk
+
+1755083086881 : ::1 POST : /api/faculty-desk/find-path
+
+1755083088295 : ::1 POST : /api/faculty-desk/find-path
+
+1755083106786 : ::1 POST : /api/faculty-desk/find-path
+
+1755083111778 : ::1 POST : /api/faculty-desk/find-path
+
+1755083112563 : ::1 POST : /api/faculty-desk/find-path
+
+1755083157204 : ::1 POST : /api/faculty-desk/find-path
+
+1755084152652 : ::1 GET : /api/facultyDesk
+
+1755084152767 : ::1 GET : /api/facultyDesk
+
+1755087089490 : ::1 GET : /api/floor/search
+
+1755087092202 : ::1 GET : /api/floor/search
+
+1755087093286 : ::1 GET : /api/floor/path
+
+1755087193457 : ::1 GET : /api/floor/path
+
+1755087199281 : ::1 GET : /api/floor/path
+
+1755087205907 : ::1 GET : /api/floor/search
+
+1755087207203 : ::1 GET : /api/floor/search
+
+1755087282424 : ::1 GET : /api/floor/search
+
+1755087284502 : ::1 GET : /api/floor/search
+
+1755087285550 : ::1 GET : /api/floor/search
+
+1755087287686 : ::1 GET : /api/floor/search
+
+1755087288127 : ::1 GET : /api/floor/search
+
+1755087290812 : ::1 GET : /api/floor/path
+
+1755087515331 : ::1 GET : /api/floor/path
+
+1755087516939 : ::1 GET : /api/floor/path
+
+1755087520339 : ::1 GET : /api/floor/path
+
+1755087522304 : ::1 GET : /api/floor/path
+
+1755087523523 : ::1 GET : /api/floor/path
+
+1755087524822 : ::1 GET : /api/floor/path
+
+1755087525637 : ::1 GET : /api/floor/path
+
+1755087526521 : ::1 GET : /api/floor/path
+
+1755087526855 : ::1 GET : /api/floor/path
+
+1755087527087 : ::1 GET : /api/floor/path
+
+1755087528121 : ::1 GET : /api/floor/path
+
+1755087534529 : ::1 GET : /api/floor/search
+
+1755087537253 : ::1 GET : /api/floor/search
+
+1755087540254 : ::1 GET : /api/floor/path
+
+1755087543537 : ::1 GET : /api/floor/path
+
+1755087548709 : ::1 GET : /api/floor/search
+
+1755087549296 : ::1 GET : /api/floor/search
+
+1755087551741 : ::1 GET : /api/floor/search
+
+1755087554003 : ::1 GET : /api/floor/path
+
+1755087559774 : ::1 GET : /api/floor/path
+
+1755087768234 : ::1 GET : /api/floor/path
+
+1755087770502 : ::1 GET : /api/floor/search
+
+1755087781893 : ::1 GET : /api/floor/search
+
+1755087783450 : ::1 GET : /api/floor/path
+
+1755087848253 : ::1 GET : /api/facultyDesk
+
+1755087848345 : ::1 GET : /api/facultyDesk
+
+1755087850089 : ::1 POST : /api/faculty-desk/find-path
+
+1755087892615 : ::1 POST : /api/faculty-desk/find-path
+
+1755087925269 : ::1 GET : /api/facultyDesk
+
+1755087925299 : ::1 GET : /api/facultyDesk
+
+1755087951892 : ::1 POST : /api/faculty-desk/find-path
+
+1755087977116 : ::1 GET : /api/facultyDesk
+
+1755087977128 : ::1 GET : /api/facultyDesk
+
+1755087980079 : ::1 POST : /api/faculty-desk/find-path
+
+1755088060104 : ::1 GET : /api/facultyDesk
+
+1755088060125 : ::1 GET : /api/facultyDesk
+
+1755088064087 : ::1 GET : /api/facultyDesk
+
+1755088064097 : ::1 GET : /api/facultyDesk
+
+1755088064831 : ::1 GET : /api/facultyDesk
+
+1755088064840 : ::1 GET : /api/facultyDesk
+
+1755088246398 : ::1 POST : /api/faculty-desk/find-path
+
+1755088266386 : ::1 POST : /api/faculty-desk/find-path
+
+1755089823094 : ::1 GET : /api/facultyDesk
+
+1755089823153 : ::1 GET : /api/facultyDesk
+
+1755090813268 : ::1 GET : /api/facultyDesk
+
+1755090813307 : ::1 GET : /api/facultyDesk
+
+1755093321785 : ::1 POST : /api/faculty-desk/find-path
+
+1755093340593 : ::1 POST : /api/faculty-desk/find-path
+
+1755093451162 : ::1 GET : /api/floor/search
+
+1755093458994 : ::1 GET : /api/floor/search
+
+1755093460208 : ::1 GET : /api/floor/path
+
+1755093522756 : ::1 GET : /api/floor/path
+
+1755093538032 : ::1 GET : /api/facultyDesk
+
+1755093538083 : ::1 GET : /api/facultyDesk
+
+1755094596425 : ::1 GET : /api/facultyDesk
+
+1755094596502 : ::1 GET : /api/facultyDesk
+
+1755094612970 : ::1 POST : /api/faculty-desk/find-path
+
+1755095294914 : ::1 GET : /api/facultyDesk
+
+1755095294951 : ::1 GET : /api/facultyDesk
+
+1755095296100 : ::1 GET : /api/facultyDesk
+
+1755095296113 : ::1 GET : /api/facultyDesk
+
+1755095296751 : ::1 GET : /api/facultyDesk
+
+1755095296760 : ::1 GET : /api/facultyDesk
+
+1755095314017 : ::1 POST : /api/faculty-desk/find-path
+
+1755095397823 : ::1 GET : /api/facultyDesk
+
+1755095397859 : ::1 GET : /api/facultyDesk
+
+1755095398723 : ::1 GET : /api/facultyDesk
+
+1755095398729 : ::1 GET : /api/facultyDesk
+
+1755095400469 : ::1 GET : /api/facultyDesk
+
+1755095400478 : ::1 GET : /api/facultyDesk
+
+1755095401351 : ::1 GET : /api/facultyDesk
+
+1755095401360 : ::1 GET : /api/facultyDesk
+
+1755095523330 : ::1 POST : /api/faculty-desk/find-path
+
+1755095608008 : ::1 POST : /api/faculty-desk/find-path
+
+1755095611848 : ::1 GET : /api/facultyDesk
+
+1755095611879 : ::1 GET : /api/facultyDesk
+
+1755095613691 : ::1 POST : /api/faculty-desk/find-path
+
+1755096138724 : ::1 GET : /api/facultyDesk
+
+1755096138804 : ::1 GET : /api/facultyDesk
+
+1755096268113 : ::1 GET : /api/facultyDesk
+
+1755096268126 : ::1 GET : /api/facultyDesk
+
+1755096272377 : ::1 POST : /api/faculty-desk/find-path
+
+1755096275192 : ::1 GET : /api/facultyDesk
+
+1755096275199 : ::1 GET : /api/facultyDesk
+
+1755096574718 : ::1 GET : /api/facultyDesk
+
+1755096574774 : ::1 GET : /api/facultyDesk
+
+1755096575728 : ::1 GET : /api/facultyDesk
+
+1755096575731 : ::1 GET : /api/facultyDesk
+
+1755096576724 : ::1 GET : /api/facultyDesk
+
+1755096576730 : ::1 GET : /api/facultyDesk
+
+1755096577462 : ::1 GET : /api/facultyDesk
+
+1755096577466 : ::1 GET : /api/facultyDesk
+
+1755096603378 : ::1 GET : /api/facultyDesk
+
+1755096603396 : ::1 GET : /api/facultyDesk
+
+1755096604636 : ::1 GET : /api/facultyDesk
+
+1755096604643 : ::1 GET : /api/facultyDesk
+
+1755096605646 : ::1 GET : /api/facultyDesk
+
+1755096605653 : ::1 GET : /api/facultyDesk
+
+1755096606587 : ::1 GET : /api/facultyDesk
+
+1755096606596 : ::1 GET : /api/facultyDesk
+
+1755096608967 : ::1 POST : /api/faculty-desk/find-path
+
+1755096612456 : ::1 GET : /api/facultyDesk
+
+1755096612464 : ::1 GET : /api/facultyDesk
+
+1755096651518 : ::1 POST : /api/faculty-desk/find-path
+
+1755096655600 : ::1 POST : /api/faculty-desk/find-path
+
+1755096657427 : ::1 GET : /api/facultyDesk
+
+1755096657433 : ::1 GET : /api/facultyDesk
+
+1755097217858 : ::1 GET : /api/facultyDesk
+
+1755097217884 : ::1 GET : /api/facultyDesk
+
+1755097275721 : ::1 GET : /api/facultyDesk
+
+1755097275775 : ::1 GET : /api/facultyDesk
+
+1755097283066 : ::1 GET : /api/facultyDesk
+
+1755097283074 : ::1 GET : /api/facultyDesk
+
+1755097290478 : ::1 GET : /api/facultyDesk
+
+1755097290500 : ::1 GET : /api/facultyDesk
+
+1755097291529 : ::1 GET : /api/facultyDesk
+
+1755097291536 : ::1 GET : /api/facultyDesk
+
+1755097292218 : ::1 GET : /api/facultyDesk
+
+1755097292224 : ::1 GET : /api/facultyDesk
+
+1755097292560 : ::1 GET : /api/facultyDesk
+
+1755097292564 : ::1 GET : /api/facultyDesk
+
+1755097319998 : ::1 POST : /api/faculty-desk/find-path
+
+1755097507902 : ::1 GET : /api/facultyDesk
+
+1755097507908 : ::1 GET : /api/facultyDesk
+
+1755097508893 : ::1 GET : /api/facultyDesk
+
+1755097508899 : ::1 GET : /api/facultyDesk
+
+1755097561559 : ::1 GET : /api/facultyDesk
+
+1755097561602 : ::1 GET : /api/facultyDesk
+
+1755098340583 : ::1 POST : /api/faculty-desk/find-path
+
+1755098472502 : ::1 POST : /api/faculty-desk/find-path
+
+1755098474737 : ::1 GET : /api/facultyDesk
+
+1755098474780 : ::1 GET : /api/facultyDesk
+
+1755098760061 : ::1 GET : /api/facultyDesk
+
+1755098760068 : ::1 GET : /api/facultyDesk
+
+1755098765740 : ::1 GET : /api/facultyDesk
+
+1755098765786 : ::1 GET : /api/facultyDesk
+
+1755098767109 : ::1 GET : /api/facultyDesk
+
+1755098767117 : ::1 GET : /api/facultyDesk
+
+1755098767665 : ::1 GET : /api/facultyDesk
+
+1755098767683 : ::1 GET : /api/facultyDesk
+
+1755098879082 : ::1 GET : /api/facultyDesk
+
+1755098879120 : ::1 GET : /api/facultyDesk
+
+1755099002686 : ::1 GET : /api/facultyDesk
+
+1755099002739 : ::1 GET : /api/facultyDesk
+
+1755099004214 : ::1 GET : /api/facultyDesk
+
+1755099004223 : ::1 GET : /api/facultyDesk
+
+1755099008464 : ::1 GET : /api/facultyDesk
+
+1755099008472 : ::1 GET : /api/facultyDesk
+
+1755099033272 : ::1 GET : /api/facultyDesk
+
+1755099033305 : ::1 GET : /api/facultyDesk
+
+1755099035137 : ::1 GET : /api/facultyDesk
+
+1755099035144 : ::1 GET : /api/facultyDesk
+
+1755099035763 : ::1 GET : /api/facultyDesk
+
+1755099035773 : ::1 GET : /api/facultyDesk
+
+1755099156490 : ::1 POST : /api/faculty-desk/find-path
+
+1755099167667 : ::1 GET : /api/facultyDesk
+
+1755099167673 : ::1 GET : /api/facultyDesk
+
+1755099189123 : ::1 POST : /api/faculty-desk/find-path
+
+1755099210054 : ::1 GET : /api/facultyDesk
+
+1755099210084 : ::1 GET : /api/facultyDesk
+
+1755099211369 : ::1 GET : /api/facultyDesk
+
+1755099211378 : ::1 GET : /api/facultyDesk
+
+1755099212360 : ::1 GET : /api/facultyDesk
+
+1755099212367 : ::1 GET : /api/facultyDesk
+
+1755099224853 : ::1 GET : /api/facultyDesk
+
+1755099224885 : ::1 GET : /api/facultyDesk
+
+1755099227628 : ::1 GET : /api/facultyDesk
+
+1755099227637 : ::1 GET : /api/facultyDesk
+
+1755099230061 : ::1 GET : /api/facultyDesk
+
+1755099230069 : ::1 GET : /api/facultyDesk
+
+1755099230754 : ::1 GET : /api/facultyDesk
+
+1755099230759 : ::1 GET : /api/facultyDesk
+
+1755099388271 : ::1 GET : /api/floor/search
+
+1755099390885 : ::1 GET : /api/floor/search
+
+1755099392971 : ::1 GET : /api/floor/path
+
+1755099559551 : ::1 GET : /api/floor/search
+
+1755099561746 : ::1 GET : /api/floor/search
+
+1755099563426 : ::1 GET : /api/floor/path
+
+1755100041981 : ::1 GET : /api/floor/search
+
+1755100044729 : ::1 GET : /api/floor/search
+
+1755100046507 : ::1 GET : /api/floor/path
+
+1755100069713 : ::1 GET : /api/floor/search
+
+1755100162212 : ::1 GET : /api/floor/search
+
+1755100165129 : ::1 GET : /api/floor/search
+
+1755100179497 : ::1 GET : /api/floor/search
+
+1755100182589 : ::1 GET : /api/floor/search
+
+1755100212379 : ::1 GET : /api/floor/search
+
+1755100213289 : ::1 GET : /api/floor/search
+
+1755100215686 : ::1 GET : /api/floor/search
+
+1755100222342 : ::1 GET : /api/floor/search
+
+1755100243169 : ::1 GET : /api/floor/search
+
+1755100244320 : ::1 GET : /api/floor/search
+
+1755100279742 : ::1 GET : /api/floor/search
+
+1755100281589 : ::1 GET : /api/floor/search
+
+1755100283235 : ::1 GET : /api/floor/search
+
+1755100285552 : ::1 GET : /api/floor/search
+
+1755100288068 : ::1 GET : /api/floor/search
+
+1755100289451 : ::1 GET : /api/floor/search
+
+1755100298337 : ::1 GET : /api/floor/search
+
+1755100300551 : ::1 GET : /api/floor/search
+
+1755100302150 : ::1 GET : /api/floor/search
+
+1755100308728 : ::1 GET : /api/floor/search
+
+1755100344094 : ::1 GET : /api/floor/search
+
+1755100344887 : ::1 GET : /api/floor/search
+
+1755100346951 : ::1 GET : /api/floor/search
+
+1755100350980 : ::1 GET : /api/floor/path
+
+1755100352746 : ::1 GET : /api/floor/path
+
+1755100376281 : ::1 GET : /api/facultyDesk
+
+1755100376392 : ::1 GET : /api/facultyDesk
+
+1755100385264 : ::1 POST : /api/faculty-desk/find-path
+
+1755100671733 : ::1 GET : /api/facultyDesk
+
+1755100671747 : ::1 GET : /api/facultyDesk
+
+1755100819025 : ::1 GET : /api/floor/search
+
+1755100822907 : ::1 GET : /api/floor/search
+
+1755100913123 : ::1 GET : /api/floor/path
+
+1755100916572 : ::1 GET : /api/facultyDesk
+
+1755100916579 : ::1 GET : /api/facultyDesk
+
+1755100922933 : ::1 POST : /api/faculty-desk/find-path
+
+1755100924413 : ::1 POST : /api/faculty-desk/find-path
+
+1755100926180 : ::1 POST : /api/faculty-desk/find-path
+
+1755100928481 : ::1 POST : /api/faculty-desk/find-path
+
+1755100947040 : ::1 GET : /api/facultyDesk
+
+1755100947067 : ::1 GET : /api/facultyDesk
+
+1755100955015 : ::1 POST : /api/faculty-desk/find-path
+
+1755100965620 : ::1 GET : /api/floor/search
+
+1755100966150 : ::1 GET : /api/floor/search
+
+1755100969192 : ::1 GET : /api/floor/search
+
+1755100973797 : ::1 GET : /api/floor/path
+
+1755100975147 : ::1 GET : /api/floor/path
+
+1755100976768 : ::1 GET : /api/floor/search
+
+1755100980066 : ::1 GET : /api/floor/search
+
+1755100984576 : ::1 GET : /api/facultyDesk
+
+1755100984583 : ::1 GET : /api/facultyDesk
+
+1755101087229 : ::1 POST : /api/faculty-desk/find-path
+
+1755101118824 : ::1 GET : /api/floor/search
+
+1755101121900 : ::1 GET : /api/floor/search
+
+1755101124315 : ::1 GET : /api/floor/path
+
+1755101323672 : ::1 GET : /api/facultyDesk
+
+1755101323728 : ::1 GET : /api/facultyDesk
+
+1755101534231 : ::1 GET : /api/facultyDesk
+
+1755101534294 : ::1 GET : /api/facultyDesk
+
+1755101820845 : ::1 GET : /api/facultyDesk
+
+1755101820857 : ::1 GET : /api/facultyDesk
+
+1755102051297 : ::1 GET : /api/facultyDesk
+
+1755102051307 : ::1 GET : /api/facultyDesk
+
+1755102326204 : ::1 GET : /api/floor/search
+
+1755102326511 : ::1 GET : /api/floor/search
+
+1755102327578 : ::1 GET : /api/floor/search
+
+1755102328618 : ::1 GET : /api/floor/search
+
+1755102329955 : ::1 GET : /api/floor/search
+
+1755102331732 : ::1 GET : /api/floor/search
+
+1755102333940 : ::1 GET : /api/floor/search
+
+1755102387147 : ::1 GET : /api/floor/search
+
+1755102387866 : ::1 GET : /api/floor/search
+
+1755102388972 : ::1 GET : /api/floor/search
+
+1755102476308 : ::1 GET : /api/floor/search
+
+1755102505578 : ::1 GET : /api/floor/search
+
+1755102520167 : ::1 GET : /api/floor/search
+
+1755102523828 : ::1 GET : /api/floor/path
+
+1755103138126 : ::1 GET : /api/facultyDesk
+
+1755103138154 : ::1 GET : /api/facultyDesk
+
+1755103241095 : ::1 POST : /api/faculty-desk/find-path
+
+1755103309509 : ::1 POST : /api/faculty-desk/find-path
+
+1755103314251 : ::1 GET : /api/facultyDesk
+
+1755103314293 : ::1 GET : /api/facultyDesk
+
+1755103324407 : ::1 POST : /api/faculty-desk/find-path
+
+1755103457371 : ::1 POST : /api/faculty-desk/find-path
+
+1755103705622 : ::1 GET : /api/facultyDesk
+
+1755103705828 : ::1 GET : /api/facultyDesk
+
+1755108152806 : ::1 GET : /api/facultyDesk
+
+1755108152952 : ::1 GET : /api/facultyDesk
+
+1755108153792 : ::1 GET : /api/facultyDesk
+
+1755108153806 : ::1 GET : /api/facultyDesk
+
+1755117123951 : ::1 GET : /api/facultyDesk
+
+1755117124037 : ::1 GET : /api/facultyDesk
+
+1755117294867 : ::1 GET : /api/facultyDesk
+
+1755117294886 : ::1 GET : /api/facultyDesk
+
+1755117392575 : ::1 POST : /api/faculty-desk/find-path
+
+1755117816350 : ::1 POST : /api/faculty-desk/find-path
+
+1755117818659 : ::1 POST : /api/faculty-desk/find-path
+
+1755117819909 : ::1 POST : /api/faculty-desk/find-path
+
+1755118009998 : ::1 GET : /api/floor/search
+
+1755118012447 : ::1 GET : /api/floor/search
+
+1755118015162 : ::1 GET : /api/floor/path
+
+1755118146144 : ::1 GET : /api/floor/search
+
+1755118149727 : ::1 GET : /api/floor/search
+
+1755118150872 : ::1 GET : /api/floor/path
+
+1755118206978 : ::1 GET : /api/floor/search
+
+1755118209270 : ::1 GET : /api/floor/path
+
+1755118260570 : ::1 GET : /api/floor/path
+
+1755118380503 : ::1 GET : /api/floor/search
+
+1755118409769 : ::1 GET : /api/floor/path
+
+1755118462486 : ::1 GET : /api/floor/search
+
+1755118464686 : ::1 GET : /api/floor/search
+
+1755118465995 : ::1 GET : /api/floor/path
+
+1755118506880 : ::1 GET : /api/floor/path
+
+1755119012730 : ::1 GET : /api/facultyDesk
+
+1755119012769 : ::1 GET : /api/facultyDesk
+
+1755119014740 : ::1 POST : /api/faculty-desk/find-path
+
+1755119365538 : ::1 GET : /api/floor/search
+
+1755119368148 : ::1 GET : /api/floor/search
+
+1755119370362 : ::1 GET : /api/floor/path
+
+1755119372223 : ::1 GET : /api/floor/path
+
+1755119374977 : ::1 GET : /api/floor/path
+
+1755119376097 : ::1 GET : /api/floor/path
+
+1755119379811 : ::1 GET : /api/floor/search
+
+1755119381907 : ::1 GET : /api/floor/search
+
+1755119386690 : ::1 GET : /api/floor/path
+
+1755119388906 : ::1 GET : /api/floor/path
+
+1755119390823 : ::1 GET : /api/floor/path
+
+1755119392374 : ::1 GET : /api/floor/path
+
+1755119406196 : ::1 GET : /api/floor/search
+
+1755119409624 : ::1 GET : /api/floor/search
+
+1755119411328 : ::1 GET : /api/floor/search
+
+1755119412412 : ::1 GET : /api/floor/search
+
+1755119414086 : ::1 GET : /api/floor/search
+
+1755119417073 : ::1 GET : /api/floor/search
+
+1755119417685 : ::1 GET : /api/floor/search
+
+1755119421173 : ::1 GET : /api/floor/path
+
+1755119428328 : ::1 GET : /api/floor/search
+
+1755119430879 : ::1 GET : /api/floor/search
+
+1755119433843 : ::1 GET : /api/floor/path
+
+1755119546208 : ::1 GET : /api/floor/path
+
+1755119850689 : ::1 GET : /api/floor/path
+
+1755119987646 : ::1 GET : /api/floor/path
+
+1755120807481 : ::1 GET : /api/floor/path
+
+1755120846443 : ::1 GET : /api/floor/search
+
+1755120849458 : ::1 GET : /api/floor/search
+
+1755120850840 : ::1 GET : /api/floor/path
+
+1755120924157 : ::1 GET : /api/floor/search
+
+1755120927505 : ::1 GET : /api/floor/search
+
+1755120928884 : ::1 GET : /api/floor/path
+
+1755120968589 : ::1 GET : /api/floor/search
+
+1755120970939 : ::1 GET : /api/floor/search
+
+1755120971752 : ::1 GET : /api/floor/path
+
+1755121022023 : ::1 GET : /api/floor/search
+
+1755121024165 : ::1 GET : /api/floor/search
+
+1755121024952 : ::1 GET : /api/floor/path
+
+1755121242008 : ::1 GET : /api/floor/search
+
+1755121244606 : ::1 GET : /api/floor/search
+
+1755121248468 : ::1 GET : /api/floor/path
+
+1755121395381 : ::1 GET : /api/floor/search
+
+1755121397853 : ::1 GET : /api/floor/search
+
+1755121399936 : ::1 GET : /api/floor/path
+
+1755121419518 : ::1 GET : /api/floor/path
+
+1755121424573 : ::1 GET : /api/floor/search
+
+1755121429154 : ::1 GET : /api/floor/search
+
+1755121431715 : ::1 GET : /api/floor/path
+
+1755121695076 : ::1 GET : /api/floor/search
+
+1755121698187 : ::1 GET : /api/floor/search
+
+1755121700482 : ::1 GET : /api/floor/path
+
+1755121789105 : ::1 GET : /api/floor/search
+
+1755121802320 : ::1 GET : /api/floor/search
+
+1755121803648 : ::1 GET : /api/floor/path
+
+1755121882822 : ::1 GET : /api/floor/search
+
+1755121884851 : ::1 GET : /api/floor/search
+
+1755121887034 : ::1 GET : /api/floor/search
+
+1755121888235 : ::1 GET : /api/floor/search
+
+1755121890519 : ::1 GET : /api/floor/search
+
+1755121891221 : ::1 GET : /api/floor/path
+
+1755122151215 : ::1 GET : /api/floor/search
+
+1755122157166 : ::1 GET : /api/floor/search
+
+1755122158028 : ::1 GET : /api/floor/path
+
+1755122209495 : ::1 GET : /api/floor/path
+
+1755122473094 : ::1 GET : /api/facultyDesk
+
+1755122473116 : ::1 GET : /api/facultyDesk
+
+1755122474372 : ::1 POST : /api/faculty-desk/find-path
+
+1755122631910 : ::1 POST : /api/faculty-desk/find-path
+
+1755122633934 : ::1 GET : /api/facultyDesk
+
+1755122633971 : ::1 GET : /api/facultyDesk
+
+1755122635991 : ::1 POST : /api/faculty-desk/find-path
+
+1755123253379 : ::1 POST : /api/faculty-desk/find-path
+
+1755123255211 : ::1 GET : /api/facultyDesk
+
+1755123255236 : ::1 GET : /api/facultyDesk
+
+1755123256398 : ::1 POST : /api/faculty-desk/find-path
+
+1755123533464 : ::1 GET : /api/facultyDesk
+
+1755123533503 : ::1 GET : /api/facultyDesk
+
+1755123535385 : ::1 POST : /api/faculty-desk/find-path
+
+1755123580213 : ::1 GET : /api/facultyDesk
+
+1755123580258 : ::1 GET : /api/facultyDesk
+
+1755123581383 : ::1 POST : /api/faculty-desk/find-path
+
+1755123624217 : ::1 GET : /api/floor/search
+
+1755123627556 : ::1 GET : /api/floor/search
+
+1755123628859 : ::1 GET : /api/floor/path
+
+1755123695439 : ::1 GET : /api/facultyDesk
+
+1755123695465 : ::1 GET : /api/facultyDesk
+
+1755123696646 : ::1 POST : /api/faculty-desk/find-path
+
+1755123720736 : ::1 POST : /api/faculty-desk/find-path
+
+1755123725715 : ::1 GET : /api/facultyDesk
+
+1755123725722 : ::1 GET : /api/facultyDesk
+
+1755123744920 : ::1 POST : /api/faculty-desk/find-path
+
+1755123774488 : ::1 POST : /api/faculty-desk/find-path
+
+1755123945443 : ::1 POST : /api/faculty-desk/find-path
+
+1755124392487 : ::1 GET : /api/facultyDesk
+
+1755124392553 : ::1 GET : /api/facultyDesk
+
+1755124393702 : ::1 POST : /api/faculty-desk/find-path
+
+1755124412625 : ::1 POST : /api/faculty-desk/find-path
+
+1755124414347 : ::1 GET : /api/facultyDesk
+
+1755124414353 : ::1 GET : /api/facultyDesk
+
+1755124416855 : ::1 POST : /api/faculty-desk/find-path
+
+1755126041187 : ::1 GET : /api/floor/search
+
+1755126047315 : ::1 GET : /api/floor/search
+
+1755126050493 : ::1 GET : /api/floor/path
+
+1755126063495 : ::1 GET : /api/facultyDesk
+
+1755126063561 : ::1 GET : /api/facultyDesk
+
+1755126705480 : ::1 GET : /api/facultyDesk
+
+1755126705518 : ::1 GET : /api/facultyDesk
+
+1755127347708 : ::1 GET : /api/facultyDesk
+
+1755127347729 : ::1 GET : /api/facultyDesk
+
+1755127362419 : ::1 GET : /api/faculty-desk/search
+
+1755127373281 : ::1 GET : /api/faculty-desk/search
+
+1755127377506 : ::1 GET : /api/faculty-desk/path
+
+1755127380869 : ::1 GET : /api/faculty-desk/path
+
+1755127382086 : ::1 GET : /api/faculty-desk/path
+
+1755127383639 : ::1 GET : /api/faculty-desk/path
+
+1755127385434 : ::1 POST : /api/faculty-desk/find-path
+
+1755127388336 : ::1 GET : /api/faculty-desk/path
+
+1755127393085 : ::1 GET : /api/facultyDesk
+
+1755127393094 : ::1 GET : /api/facultyDesk
+
+1755127397289 : ::1 GET : /api/faculty-desk/search
+
+1755127401656 : ::1 GET : /api/faculty-desk/search
+
+1755127406553 : ::1 GET : /api/faculty-desk/path
+
+1755127407735 : ::1 GET : /api/faculty-desk/path
+
+1755127596408 : ::1 GET : /api/facultyDesk
+
+1755127596416 : ::1 GET : /api/facultyDesk
+
+1755128207804 : ::1 GET : /api/faculty-desk/search
+
+1755128212615 : ::1 GET : /api/faculty-desk/search
+
+1755128213138 : ::1 GET : /api/faculty-desk/search
+
+1755128215786 : ::1 GET : /api/faculty-desk/path
+
+1755128217081 : ::1 GET : /api/faculty-desk/path
+
+1755128218149 : ::1 GET : /api/faculty-desk/path
+
+1755128218697 : ::1 GET : /api/faculty-desk/path
+
+1755128716983 : ::1 POST : /api/faculty-desk/find-path
+
+1755128726861 : ::1 POST : /api/faculty-desk/find-path
+
+1755128728899 : ::1 GET : /api/facultyDesk
+
+1755128728931 : ::1 GET : /api/facultyDesk
+
+1755128732283 : ::1 POST : /api/faculty-desk/find-path
+
+1755128740842 : ::1 POST : /api/faculty-desk/find-path
+
+1755128753910 : ::1 POST : /api/faculty-desk/find-path
+
+1755128755396 : ::1 GET : /api/facultyDesk
+
+1755128755403 : ::1 GET : /api/facultyDesk
+
+1755128756424 : ::1 POST : /api/faculty-desk/find-path
+
+1755128955025 : ::1 GET : /api/facultyDesk
+
+1755128955055 : ::1 GET : /api/facultyDesk
+
+1755128967697 : ::1 GET : /api/faculty-desk/search
+
+1755128970675 : ::1 GET : /api/faculty-desk/search
+
+1755128973973 : ::1 GET : /api/faculty-desk/path
+
+1755128983028 : ::1 GET : /api/faculty-desk/path
+
+1755128983737 : ::1 GET : /api/faculty-desk/path
+
+1755129378592 : ::1 POST : /api/faculty-desk/find-path
+
+1755129383812 : ::1 GET : /api/facultyDesk
+
+1755129383816 : ::1 GET : /api/facultyDesk
+
+1755129385411 : ::1 GET : /api/facultyDesk
+
+1755129385418 : ::1 GET : /api/facultyDesk
+
+1755129392439 : ::1 GET : /api/faculty-desk/search
+
+1755129393582 : ::1 GET : /api/faculty-desk/search
+
+1755129397754 : ::1 GET : /api/faculty-desk/search
+
+1755129399373 : ::1 GET : /api/faculty-desk/search
+
+1755129401601 : ::1 POST : /api/faculty-desk/find-path
+
+1755129459629 : ::1 POST : /api/faculty-desk/find-path
+
+1755129465827 : ::1 POST : /api/faculty-desk/find-path
+
+1755129507452 : ::1 POST : /api/faculty-desk/find-path
+
+1755129509045 : ::1 POST : /api/faculty-desk/find-path
+
+1755129511912 : ::1 POST : /api/faculty-desk/find-path
+
+1755129513587 : ::1 GET : /api/facultyDesk
+
+1755129513615 : ::1 GET : /api/facultyDesk
+
+1755129515213 : ::1 POST : /api/faculty-desk/find-path
+
+1755129516980 : ::1 POST : /api/faculty-desk/find-path
+
+1755129518044 : ::1 POST : /api/faculty-desk/find-path
+
+1755129518678 : ::1 POST : /api/faculty-desk/find-path
+
+1755129519178 : ::1 POST : /api/faculty-desk/find-path
+
+1755129520580 : ::1 POST : /api/faculty-desk/find-path
+
+1755129521778 : ::1 POST : /api/faculty-desk/find-path
+
+1755129522362 : ::1 POST : /api/faculty-desk/find-path
+
+1755129523045 : ::1 POST : /api/faculty-desk/find-path
+
+1755129523644 : ::1 POST : /api/faculty-desk/find-path
+
+1755129524695 : ::1 POST : /api/faculty-desk/find-path
+
+1755129526077 : ::1 POST : /api/faculty-desk/find-path
+
+1755129527079 : ::1 POST : /api/faculty-desk/find-path
+
+1755129527427 : ::1 POST : /api/faculty-desk/find-path
+
+1755129528044 : ::1 POST : /api/faculty-desk/find-path
+
+1755129528344 : ::1 POST : /api/faculty-desk/find-path
+
+1755129529727 : ::1 POST : /api/faculty-desk/find-path
+
+1755129640738 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129654892 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129656224 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129657207 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129661943 : ::1 GET : /api/facultyDeskPath/search
+
+1755129666211 : ::1 GET : /api/facultyDeskPath/search
+
+1755129671343 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129672957 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129675290 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129677857 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129679906 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129713283 : ::1 GET : /api/facultyDeskPath/search
+
+1755129714645 : ::1 GET : /api/facultyDeskPath/search
+
+1755129920224 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129930767 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129955069 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755129959766 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755130145169 : ::1 GET : /api/facultyDesk
+
+1755130145184 : ::1 GET : /api/facultyDesk
+
+1755130161069 : ::1 GET : /api/facultyDesk
+
+1755130161075 : ::1 GET : /api/facultyDesk
+
+1755130199819 : ::1 GET : /api/facultyDesk
+
+1755130199828 : ::1 GET : /api/facultyDesk
+
+1755130209996 : ::1 POST : /api/faculty-desk/find-path
+
+1755130211360 : ::1 POST : /api/faculty-desk/find-path
+
+1755130212858 : ::1 POST : /api/faculty-desk/find-path
+
+1755130213143 : ::1 POST : /api/faculty-desk/find-path
+
+1755130213327 : ::1 POST : /api/faculty-desk/find-path
+
+1755130214276 : ::1 POST : /api/faculty-desk/find-path
+
+1755130216082 : ::1 GET : /api/facultyDesk
+
+1755130216089 : ::1 GET : /api/facultyDesk
+
+1755130217277 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755130942384 : ::1 POST : /api/login
+
+1755131028069 : ::1 GET : /api/signup
+
+1755131058005 : ::1 POST : /api/login
+
+1755131058050 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1755131058060 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1755133178582 : ::1 POST : /api/signup
+
+1755133193598 : ::1 POST : /api/login
+
+1755133193626 : ::1 GET : /api/signup/689d34faa3ece74a7c08ad62
+
+1755133193633 : ::1 GET : /api/signup/689d34faa3ece74a7c08ad62
+
+1755133200354 : ::1 GET : /api/floor/search
+
+1755133204368 : ::1 GET : /api/floor/search
+
+1755133206995 : ::1 GET : /api/floor/path
+
+1755133225868 : ::1 GET : /api/floor/search
+
+1755133229667 : ::1 GET : /api/floor/search
+
+1755133231346 : ::1 GET : /api/floor/path
+
+1755133234845 : ::1 GET : /api/floor/path
+
+1755133239137 : ::1 GET : /api/facultyDesk
+
+1755133239150 : ::1 GET : /api/facultyDesk
+
+1755133246648 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755133253240 : ::1 GET : /api/facultyDeskPath/search
+
+1755133254208 : ::1 GET : /api/facultyDeskPath/search
+
+1755133254651 : ::1 GET : /api/facultyDeskPath/search
+
+1755133261425 : ::1 GET : /api/facultyDeskPath/search
+
+1755133266012 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755133270962 : ::1 POST : /api/facultyDeskPath/find-path
+
+1755133274477 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756830827995 : ::1 GET : /api/facultyDesk
+
+1756830828064 : ::1 GET : /api/facultyDesk
+
+1756830830172 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756830963749 : ::1 GET : /api/facultyDesk
+
+1756830963760 : ::1 GET : /api/facultyDesk
+
+1756833859498 : ::1 GET : /api/facultyDesk
+
+1756833859537 : ::1 GET : /api/facultyDesk
+
+1756833989079 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756834284125 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756834308379 : ::1 GET : /api/facultyDesk
+
+1756834308402 : ::1 GET : /api/facultyDesk
+
+1756834339227 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756834342897 : ::1 GET : /api/facultyDesk
+
+1756834342903 : ::1 GET : /api/facultyDesk
+
+1756834350447 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756834411253 : ::1 GET : /api/facultyDesk
+
+1756834411264 : ::1 GET : /api/facultyDesk
+
+1756834874329 : ::1 GET : /api/facultyDeskPath/search
+
+1756834874637 : ::1 GET : /api/facultyDeskPath/search
+
+1756834926128 : ::1 GET : /api/facultyDeskPath/search
+
+1756834926876 : ::1 GET : /api/facultyDeskPath/search
+
+1756834947499 : ::1 GET : /api/facultyDeskPath/search
+
+1756834947825 : ::1 GET : /api/facultyDeskPath/search
+
+1756834949634 : ::1 GET : /api/facultyDeskPath/search
+
+1756834956020 : ::1 GET : /api/facultyDeskPath/search
+
+1756834958366 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756835048013 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756835049740 : ::1 GET : /api/facultyDesk
+
+1756835049748 : ::1 GET : /api/facultyDesk
+
+1756835055403 : ::1 GET : /api/facultyDeskPath/search
+
+1756835055867 : ::1 GET : /api/facultyDeskPath/search
+
+1756835060149 : ::1 GET : /api/facultyDeskPath/search
+
+1756835063269 : ::1 GET : /api/facultyDeskPath/search
+
+1756835065433 : ::1 GET : /api/facultyDeskPath/search
+
+1756835090268 : ::1 GET : /api/facultyDeskPath/search
+
+1756835090889 : ::1 GET : /api/facultyDeskPath/search
+
+1756835097284 : ::1 GET : /api/facultyDeskPath/search
+
+1756835101618 : ::1 GET : /api/facultyDeskPath/search
+
+1756835103761 : ::1 GET : /api/facultyDeskPath/search
+
+1756835118722 : ::1 GET : /api/facultyDeskPath/search
+
+1756835119114 : ::1 GET : /api/facultyDeskPath/search
+
+1756835120328 : ::1 GET : /api/facultyDeskPath/search
+
+1756835123881 : ::1 GET : /api/facultyDeskPath/search
+
+1756835196030 : ::1 GET : /api/facultyDesk
+
+1756835196056 : ::1 GET : /api/facultyDesk
+
+1756835197042 : ::1 GET : /api/facultyDesk
+
+1756835197050 : ::1 GET : /api/facultyDesk
+
+1756835206630 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756835210330 : ::1 GET : /api/facultyDesk
+
+1756835210338 : ::1 GET : /api/facultyDesk
+
+1756835898438 : ::1 GET : /api/floor/search
+
+1756835901068 : ::1 GET : /api/floor/search
+
+1756835910454 : ::1 GET : /api/floor/search
+
+1756835938293 : ::1 GET : /api/floor/search
+
+1756835942185 : ::1 GET : /api/floor/search
+
+1756835957986 : ::1 GET : /api/floor/search
+
+1756835960948 : ::1 GET : /api/floor/path
+
+1756836274186 : ::1 GET : /api/floor/search
+
+1756836277555 : ::1 GET : /api/floor/search
+
+1756836280431 : ::1 GET : /api/floor/path
+
+1756836897997 : ::1 GET : /api/facultyDesk
+
+1756836898023 : ::1 GET : /api/facultyDesk
+
+1756836957792 : ::1 GET : /api/facultyDesk
+
+1756836957804 : ::1 GET : /api/facultyDesk
+
+1756837020245 : ::1 GET : /api/floor/search
+
+1756837022109 : ::1 GET : /api/floor/search
+
+1756837024527 : ::1 GET : /api/floor/path
+
+1756837071314 : ::1 GET : /api/facultyDesk
+
+1756837071340 : ::1 GET : /api/facultyDesk
+
+1756837114304 : ::1 GET : /api/facultyDesk
+
+1756837114317 : ::1 GET : /api/facultyDesk
+
+1756837441539 : ::1 GET : /api/facultyDesk
+
+1756837441591 : ::1 GET : /api/facultyDesk
+
+1756837454941 : ::1 GET : /api/facultyDesk
+
+1756837454956 : ::1 GET : /api/facultyDesk
+
+1756837678993 : ::1 GET : /api/facultyDesk
+
+1756837679033 : ::1 GET : /api/facultyDesk
+
+1756837822882 : ::1 POST : /api/login
+
+1756837822930 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756837822961 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756837840172 : ::1 GET : /api/facultyDesk
+
+1756837840206 : ::1 GET : /api/facultyDesk
+
+1756837846488 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756838514441 : ::1 GET : /api/facultyDesk
+
+1756838514462 : ::1 GET : /api/facultyDesk
+
+1756838678175 : ::1 POST : /api/login
+
+1756838678216 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756838678221 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756838738293 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756838738298 : ::1 GET : /api/signup/6896b0f892670eb870407c99
+
+1756841543046 : ::1 GET : /api/floor/search
+
+1756841546490 : ::1 GET : /api/floor/search
+
+1756841549205 : ::1 GET : /api/floor/path
+
+1756841759667 : ::1 GET : /api/facultyDesk
+
+1756841759711 : ::1 GET : /api/facultyDesk
+
+1756841760918 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842016479 : ::1 GET : /api/floor/search
+
+1756842020295 : ::1 GET : /api/floor/search
+
+1756842021808 : ::1 GET : /api/floor/path
+
+1756842121917 : ::1 GET : /api/facultyDesk
+
+1756842121927 : ::1 GET : /api/facultyDesk
+
+1756842123307 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842685572 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842687473 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842688907 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842696143 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842748202 : ::1 GET : /api/facultyDesk
+
+1756842748215 : ::1 GET : /api/facultyDesk
+
+1756842755580 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842767710 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842962788 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756842986453 : ::1 GET : /api/floor/search
+
+1756842988818 : ::1 GET : /api/floor/search
+
+1756842990551 : ::1 GET : /api/floor/path

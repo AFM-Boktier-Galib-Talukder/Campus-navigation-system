@@ -1,0 +1,68 @@
+[
+  {
+    "dot": 0,
+    "connection": [1],
+    "left": "",
+    "right": ""
+  },
+  {
+    "dot": 1,
+    "connection": [2, 0],
+    "left": "JSH",
+    "right": "SJH"
+  },
+  {
+    "dot": 2,
+    "connection": [3, 1],
+    "left": "MBR",
+    "right": "EDS"
+  },
+  {
+    "dot": 3,
+    "connection": [4, 2],
+    "left": "RWL",
+    "right": "LAN"
+  },
+  {
+    "dot": 4,
+    "connection": [5, 3],
+    "left": "ARH",
+    "right": "JLE"
+  },
+  {
+    "dot": 5,
+    "connection": [6, 4],
+    "left": "DTH",
+    "right": "FKH"
+  },
+  {
+    "dot": 6,
+    "connection": [7, 5],
+    "left": "MRD",
+    "right": "APT"
+  },
+  {
+    "dot": 7,
+    "connection": [8, 6],
+    "left": "JMT",
+    "right": "RBG"
+  },
+  {
+    "dot": 8,
+    "connection": [9, 7],
+    "left": "CCL",
+    "right": "NHS"
+  },
+  {
+    "dot": 9,
+    "connection": [10, 8],
+    "left": "WGR",
+    "right": "SAK"
+  },
+  {
+    "dot": 10,
+    "connection": [9],
+    "left": "PJH",
+    "right": "MSH"
+  }
+]

@@ -4,14 +4,14 @@ const { validatePassword } = require('../utils/passwordValidator')
 
 async function CreateNewUser(req, res) {
   const body = req.body
-  // Validate email
+
   const emailError = validateEmail(body.email)
   if (emailError) {
     return res.status(400).json({
       error: emailError,
     })
   }
-  // Validate password
+
   const passwordError = validatePassword(body.password)
   if (passwordError) {
     return res.status(400).json({
@@ -19,7 +19,7 @@ async function CreateNewUser(req, res) {
     })
   }
 
-  console.log('Body', body)
+  console.log('from signup.controller,,,,,,,Body', body)
 
   try {
     const result = await User.create({

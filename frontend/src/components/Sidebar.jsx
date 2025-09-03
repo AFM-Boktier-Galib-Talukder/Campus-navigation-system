@@ -68,16 +68,20 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
 
   return (
     <nav
-      className={`fixed left-0 top-0 h-full bg-gradient-to-br from-orange-50 to-yellow-50 shadow-2xl transition-all duration-500 ease-in-out z-50 overflow-hidden border-r border-orange-200/30 ${
+      className={`fixed left-0 top-0 h-full bg-gradient-to-br from-green-500 to-lime-50 shadow-2xl transition-all duration-500 ease-in-out z-50 overflow-hidden border-r border-green-200/30 ${
         isExpanded ? "w-70" : "w-20"
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {/* Logo Section - Fixed Height */}
-      <div className="h-32 text-center border-b border-orange-200/30 flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100/50 to-yellow-100/50">
-        <div className={`flex items-center transition-all duration-500 ease-in-out ${isExpanded ? "w-full justify-start px-2 gap-1" : "w-full justify-center"}`}>
-          <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0">
+      <div className="h-32 text-center border-b border-green-200/30 flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-100/50 to-lime-100/50">
+        <div
+          className={`flex items-center justify-center transition-all duration-500 ease-in-out ${
+            isExpanded ? "w-full justify-start px-2 gap-1" : "w-full justify-center"
+          }`}
+        >
+          <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-lime-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0 p-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" className="w-full h-full">
               <path
                 fill="currentColor"
@@ -92,10 +96,10 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
               isExpanded ? "opacity-100 max-w-48" : "opacity-0 max-w-0"
             }`}
           >
-            <div className="text-2xl font-bold font-inknut whitespace-nowrap">
-              <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">CAMPUS-NAV</span>
+            <div className="text-xl font-bold font-inknut whitespace-nowrap">
+              <span className="bg-gradient-to-br from-green-600 to-lime-300 bg-clip-text text-transparent">CAMPUS-NAV</span>
             </div>
-            <div className="text-orange-400 text-xs uppercase tracking-wider whitespace-nowrap">Navigate Smart</div>
+            <div className="text-green-600 text-xs uppercase tracking-wider whitespace-nowrap">Navigate Smart</div>
           </div>
         </div>
       </div>
@@ -107,26 +111,12 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
             <li key={item.id} className={`${isExpanded ? "w-full" : "w-full flex justify-center"}`}>
               <button
                 onClick={() => onNavClick(item.id)}
-                className={`${
-                  isExpanded
-                    ? "w-full p-4 justify-start"
-                    : "h-12 w-12 justify-center p-0"
-                } rounded-2xl flex items-center transition-colors duration-200 ease-out hover:bg-orange-200/50 ${
-                  activeNavItem === item.id
-                    ? "bg-gradient-to-r from-red-400 to-yellow-400 text-white shadow-lg"
-                    : "text-gray-700 hover:text-gray-900"
-                }`}
+                className={`w-full rounded-2xl transition-all duration-500 ease-in-out hover:bg-green-200/50 hover:translate-x-2 hover:scale-105 flex items-center ${
+                  isExpanded ? "w-full p-4 justify-start" : "h-12 w-12 justify-center p-0"
+                } ${activeNavItem === item.id ? "bg-gradient-to-r from-green-600 to-lime-400 text-white shadow-lg" : "text-gray-700 hover:text-gray-900"}`}
               >
                 <span className="w-6 h-6 flex items-center justify-center flex-shrink-0">{item.icon}</span>
-                <span
-                  className={`${
-                    isExpanded
-                      ? "ml-4 inline-block font-medium text-left whitespace-nowrap"
-                      : "hidden"
-                  }`}
-                >
-                  {item.text}
-                </span>
+                <span className={`${isExpanded ? "ml-4 inline-block font-medium text-left whitespace-nowrap" : "hidden"}`}>{item.text}</span>
               </button>
             </li>
           ))}
@@ -134,7 +124,7 @@ function Sidebar({ isExpanded, onMouseEnter, onMouseLeave, activeNavItem, onNavC
 
         {/* Footer Section - Fixed at bottom, only visible when expanded */}
         <div
-          className={`border-t border-orange-200/30 bg-gradient-to-br from-orange-100/30 to-yellow-100/30 p-4 transition-all duration-500 ease-in-out ${
+          className={`border-t border-green-200/30 bg-gradient-to-br from-green-100/30 to-lime-100/30 p-4 transition-all duration-500 ease-in-out ${
             isExpanded ? "opacity-100" : "opacity-0"
           }`}
         >
