@@ -12,7 +12,7 @@ async function createBillboard(req, res) {
       description,
       hostedBy,
       createdBy,
-      reportId, // Add reportId to identify which report to delete
+      reportId, 
     } = req.body
     if (
       !imageBase64 ||
@@ -26,7 +26,7 @@ async function createBillboard(req, res) {
       return res.status(400).json({ error: 'All fields are required' })
     }
 
-    // Create the billboard
+   
     const doc = await Billboard.create({
       imageBase64,
       title,
@@ -38,7 +38,7 @@ async function createBillboard(req, res) {
       createdBy,
     })
 
-    // Delete the corresponding report if reportId is provided
+   
     if (reportId) {
       await Report.findByIdAndDelete(reportId)
     }
