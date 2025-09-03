@@ -100,24 +100,24 @@ function FacultyDeskSearch({ onFindPath }) {
 
   return (
     <div className="p-3">
-      <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-orange-200/50 sticky">
-        <div className="p-6 border-b border-orange-200/30 bg-gradient-to-r from-orange-50/50 to-yellow-50/50">
+      <div className="bg-gradient-to-br from-green-600 to-lime-400 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-green-600/50 sticky">
+        <div className="p-6 border-b border-green-600/30 bg-gradient-to-r from-green-60/50 to-yellow-50/50">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-red-400 to-yellow-400 rounded-lg flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-lime-400 rounded-lg flex items-center justify-center shadow-lg">
               <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-800">Find Faculty Desk</h3>
+            <h3 className="text-xl font-bold text-white">Find Faculty Desk</h3>
           </div>
-          <p className="text-gray-600 text-sm">Search your faculty's desk location</p>
+          <p className="text-white text-sm">Search your faculty's desk location</p>
         </div>
 
         <form className="p-6" onSubmit={handleSubmit}>
           <div className="space-y-6">
             <div>
-              <label htmlFor="start-point" className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+              <label htmlFor="start-point" className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
                 Start Faculty Initial
@@ -137,12 +137,12 @@ function FacultyDeskSearch({ onFindPath }) {
                 onBlur={() => {
                   setTimeout(() => setShowStartDropdown(false), 120);
                 }}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="w-full px-4 py-3 border border-green-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="e.g. JMT"
                 required
               />
               {showStartDropdown && (startSuggestions.length > 0 || startNoResults) && (
-                <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                <div className="mt-2 border border-green-600 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
                   {startSuggestions.map((s) => (
                     <button
                       key={`${s.label}-${s.dot}`}
@@ -151,19 +151,19 @@ function FacultyDeskSearch({ onFindPath }) {
                         e.preventDefault();
                         handleSelectStart(s.label, s.dot);
                       }}
-                      className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                      className="w-full text-left px-4 py-2 hover:bg-green-60 text-sm"
                     >
                       {s.label}
                     </button>
                   ))}
-                  {startNoResults && startSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-500">No Rooms Found</div>}
+                  {startNoResults && startSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-800">No Rooms Found</div>}
                 </div>
               )}
             </div>
 
             <div>
-              <label htmlFor="end-point" className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
-                <svg className="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+              <label htmlFor="end-point" className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
                 Destination Faculty Initial
@@ -183,12 +183,12 @@ function FacultyDeskSearch({ onFindPath }) {
                 onBlur={() => {
                   setTimeout(() => setShowEndDropdown(false), 120);
                 }}
-                className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="w-full px-4 py-3 border border-green-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 transition-all text-sm bg-white/80 backdrop-blur-sm"
                 placeholder="e.g. SJH"
                 required
               />
               {showEndDropdown && (endSuggestions.length > 0 || endNoResults) && (
-                <div className="mt-2 border border-orange-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                <div className="mt-2 border border-green-600 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
                   {endSuggestions.map((s) => (
                     <button
                       key={`${s.label}-${s.dot}`}
@@ -197,22 +197,24 @@ function FacultyDeskSearch({ onFindPath }) {
                         e.preventDefault();
                         handleSelectEnd(s.label, s.dot);
                       }}
-                      className="w-full text-left px-4 py-2 hover:bg-orange-50 text-sm"
+                      className="w-full text-left px-4 py-2 hover:bg-green-60 text-sm"
                     >
                       {s.label}
                     </button>
                   ))}
-                  {endNoResults && endSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-500">No Rooms Found</div>}
+                  {endNoResults && endSuggestions.length === 0 && <div className="px-4 py-2 text-sm text-gray-800">No Rooms Found</div>}
                 </div>
               )}
             </div>
 
             <button
+              style={{ fontFamily: "'Inknut Antiqua', serif" }}
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-br from-red-400 to-yellow-400 text-white py-4 px-6 rounded-xl font-semibold text-base hover:from-red-500 hover:to-yellow-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl border border-orange-300"
+              className="w-full text-yellow-200 font-extrabold text-xl cursor-pointer bg-gradient-to-r from-lime-400 to-green-600 py-2 px-4 rounded-md hover:from-green-600 hover:to-lime-400 transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 relative overflow-hidden group button-shine"
             >
               {isSubmitting ? "Finding..." : "Find Route"}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-3000 ease-out"></div>
             </button>
           </div>
         </form>

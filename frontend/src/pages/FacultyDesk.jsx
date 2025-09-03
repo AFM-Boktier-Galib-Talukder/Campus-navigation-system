@@ -174,38 +174,38 @@ function FacultyDesk() {
                   placeholder="Search by faculty name, initials, or department..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-orange-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:outline-none focus:border-transparent bg-white/80 backdrop-blur-sm"
+                  className="w-full pl-10 pr-4 py-3 border border-green-200 rounded-xl focus:ring-2 focus:ring-green-400 focus:outline-none focus:border-transparent bg-white/80 backdrop-blur-sm"
                 />
               </div>
             </div>
 
             {loading && (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
               </div>
             )}
 
             {!loading && filteredFaculty.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No faculty members found matching your search.</p>
+                <p className="text-gray-600 text-lg">No faculty members found matching your search.</p>
               </div>
             )}
 
             {!loading && filteredFaculty.length > 0 && (
-              <div className="h-[1050px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-orange-50">
+              <div className="h-[1050px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-green-300 scrollbar-track-green-50">
                 <div className="grid grid-cols-2 gap-6">
                   {filteredFaculty.map((faculty, index) => (
                     <div
                       key={index}
                       onClick={() => handleFacultyCardClick(faculty)}
-                      className="bg-white/80 backdrop-blur-sm hover:bg-gradient-to-br hover:from-orange-500 hover:to-yellow-300 rounded-2xl p-6 shadow-lg border border-orange-200/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1 cursor-pointer group"
+                      className="bg-white/80 backdrop-blur-sm hover:bg-gradient-to-br hover:from-green-600 hover:to-lime-300 rounded-2xl p-6 shadow-lg border border-green-200/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1 cursor-pointer group"
                     >
                       <div className="flex items-center justify-between mb-4">
                         <h3 className="text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-150 flex-1 mr-4">
                           {faculty.department}
                         </h3>
-                        <div className="w-12 h-12 bg-orange-400  group-hover:bg-white rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-150">
-                          <span className="text-white group-hover:text-orange-400 text-lg font-bold transition-colors duration-150">
+                        <div className="w-12 h-12 bg-green-500  group-hover:bg-white rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-150">
+                          <span className="text-white group-hover:text-green-400 text-lg font-bold transition-colors duration-150">
                             {getInitialLetter(faculty.faculty)}
                           </span>
                         </div>
@@ -234,8 +234,8 @@ function FacultyDesk() {
                           </p>
                         </div>
                       </div>
-                      <div className="mt-6 text-center pt-4 border-t border-orange-100 group-hover:border-white/30 transition-colors duration-150">
-                        <span className="text-sm text-orange-600 group-hover:text-white font-medium transition-colors duration-150">
+                      <div className="mt-6 text-center pt-4 border-t border-green-100 group-hover:border-white/30 transition-colors duration-150">
+                        <span className="text-sm text-green-600 group-hover:text-white font-medium transition-colors duration-150">
                           Click to navigate to office →
                         </span>
                       </div>

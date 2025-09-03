@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [showRouteInfo, setShowRouteInfo] = useState(false);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+
+  const speechSynthesisRef = useRef(null);
+  const currentUtteranceRef = useRef(null);
 
   const defaultSteps = [{ direction: "start", message: "Use the 'Find Your Route' section to plan your journey", angle: 0 }];
 
@@ -13,6 +17,26 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   const isDestination = currentStep === steps.length - 1 && steps[currentStep]?.direction === "destination";
   const isStart = currentStep === 0;
   const hasRouteData = pathData !== null;
+
+  useEffect(() => {
+    if ("speechSynthesis" in window) {
+      speechSynthesisRef.current = window.speechSynthesis;
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (speechSynthesisRef.current && speechSynthesisRef.current.speaking) {
+        speechSynthesisRef.current.cancel();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (hasRouteData && currentNav?.message) {
+      speakMessage(currentNav.message);
+    }
+  }, [currentStep, hasRouteData, currentNav?.message]);
 
   useEffect(() => {
     if (navigationSteps.length > 0) {
@@ -28,6 +52,34 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
       return () => clearTimeout(timer);
     }
   }, [navigationSteps]);
+
+  const speakMessage = (message) => {
+    // Cancel any ongoing speech
+    if (speechSynthesisRef.current?.speaking) {
+      speechSynthesisRef.current.cancel();
+    }
+
+    if (!speechSynthesisRef.current || !message) return;
+
+    const utterance = new SpeechSynthesisUtterance(message);
+    utterance.rate = 0.9;
+    utterance.pitch = 1.0;
+    utterance.volume = 1.0;
+
+    utterance.onstart = () => setIsSpeaking(true);
+    utterance.onend = () => setIsSpeaking(false);
+    utterance.onerror = () => setIsSpeaking(false);
+
+    currentUtteranceRef.current = utterance;
+    speechSynthesisRef.current.speak(utterance);
+  };
+
+  const stopSpeaking = () => {
+    if (speechSynthesisRef.current?.speaking) {
+      speechSynthesisRef.current.cancel();
+      setIsSpeaking(false);
+    }
+  };
 
   const getDirectionIcon = (direction) => {
     const icons = {
@@ -74,6 +126,8 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   };
 
   const handleNext = () => {
+    stopSpeaking();
+
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
       setIsNavigating(true);
@@ -87,9 +141,16 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
   };
 
   const handleReset = () => {
+    stopSpeaking();
     setCurrentStep(0);
     setIsNavigating(false);
     setShowCongratulations(false);
+  };
+
+  const handleRepeatMessage = () => {
+    if (currentNav?.message) {
+      speakMessage(currentNav.message);
+    }
   };
 
   const getButtonText = () => {
@@ -128,14 +189,14 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
           isDestination
             ? "bg-gradient-to-br from-emerald-400 to-green-500"
             : hasRouteData
-            ? "bg-gradient-to-br from-orange-400 to-yellow-400"
-            : "bg-gradient-to-br from-gray-400 to-yellow-100"
+            ? "bg-gradient-to-br from-green-600 to-lime-400"
+            : "bg-gradient-to-br from-gray-600 to-lime-400"
         }`}
       >
         {showCongratulations && (
           <div
             className={`absolute top-0 left-0 right-0 backdrop-blur-lg p-6 transform translate-y-0 animate-bounce z-10 ${
-              isDestination ? "bg-gradient-to-r from-emerald-300/90 to-green-400/90" : "bg-gradient-to-r from-orange-300/90 to-yellow-400/90"
+              isDestination ? "bg-gradient-to-r from-emerald-300/90 to-green-400/90" : "bg-gradient-to-r from-green-300/90 to-lime-400/90"
             }`}
           >
             <p className="text-center text-white font-bold text-xl drop-shadow-lg">🎉 Congratulations on reaching your destination! 🎉</p>
@@ -220,7 +281,18 @@ const NavigationComponent = ({ navigationSteps = [], pathData = null }) => {
               </div>
             </div>
 
-            <div className="bg-white/20 backdrop-blur-xl rounded-2xl p-6 border-2 border-white/30 transform hover:scale-105 transition-all duration-300 max-w-lg">
+            <div className="bg-white/20 backdrop-blur-xl rounded-2xl p-6 border-2 border-white/30 transform hover:scale-105 transition-all duration-300 max-w-lg relative">
+              {hasRouteData && (
+                <button
+                  onClick={handleRepeatMessage}
+                  disabled={isSpeaking}
+                  className="absolute -top-2 -right-2 bg-white/20 backdrop-blur-lg rounded-full p-2 border border-white/30 hover:bg-white/30 transition-all duration-200 disabled:opacity-50"
+                  title="Repeat message"
+                >
+                  <span className="text-white text-sm">🔊</span>
+                </button>
+              )}
+
               <div className="text-white text-lg font-semibold text-center leading-relaxed">
                 {currentNav.message
                   .split(/[.\n]/)

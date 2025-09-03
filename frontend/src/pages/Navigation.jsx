@@ -109,7 +109,7 @@ function Navigation() {
     if (steps[steps.length - 1].direction !== "destination") {
       steps.push({
         direction: "destination",
-        message: "You have reached your destination!",
+        message: "Congratulations You have reached your destination!",
         angle: 0,
       });
     }

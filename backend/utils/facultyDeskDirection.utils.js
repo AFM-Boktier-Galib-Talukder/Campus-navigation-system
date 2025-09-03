@@ -25,7 +25,7 @@ export function getDirectionMessages(graph, path, endInitial) {
           `Go ahead & turn right.\nYou have reached ${endInitial}'s Desk.`
         )
       }
-      messages.push(`You have reached your destination!`)
+      messages.push(`Congratulations You have reached your destination!`)
     } else if (nextNode.left && nextNode.right) {
       messages.push(
         `Move forward.\nYou can see ${nextNode.right} desk on right and ${nextNode.left} desk on left.`

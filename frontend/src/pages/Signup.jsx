@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import welcomeBoy from "../assets/welcomeBoyL.png";
+import welcomeBoy from "../assets/zoroSignIn.png";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -55,9 +55,9 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen max-h-lvh flex flex-col md:flex-row bg-yellow-500/65 text-yellow-200 overflow-hidden relative">
+    <div className="min-h-screen max-h-lvh flex flex-col md:flex-row bg-lime-400/85 text-yellow-200 overflow-hidden relative">
       <div
-        className="w-full md:w-1/2 bg-orange-500 rounded-r-full flex items-center justify-center p-8 relative overflow-hidden form-container"
+        className="w-full md:w-1/2 bg-gradient-to-r from-lime-400 to-green-800 rounded-r-full flex items-center justify-center p-8 relative overflow-hidden form-container"
         style={{ fontFamily: "'Inria Sans', sans-serif" }}
       >
         <div className="w-full max-w-md ">
@@ -90,7 +90,7 @@ const SignUp = () => {
               <input
                 type="text"
                 id="name"
-                className="w-full px-4 py-2 border border-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white"
+                className="w-full px-4 py-2 border border-lime-400 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 text-white"
                 placeholder="Enter your username"
                 required
                 value={formData.name}
@@ -105,7 +105,7 @@ const SignUp = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-2 border border-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white"
+                className="w-full px-4 py-2 border border-lime-400 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 text-white"
                 placeholder="Enter your email"
                 required
                 value={formData.email}
@@ -121,7 +121,7 @@ const SignUp = () => {
                 <input
                   type={showPassword ? "text" : "password"}
                   id="password"
-                  className="w-full px-4 py-2 pr-12 border border-yellow-400 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-300 text-white"
+                  className="w-full px-4 py-2 pr-12 border border-lime-400 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-300 text-white"
                   placeholder="Enter your password"
                   required
                   minLength="6"
@@ -131,7 +131,7 @@ const SignUp = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-yellow-300 hover:text-white focus:outline-none"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-lime-300 hover:text-white focus:outline-none"
                 >
                   {showPassword ? (
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,8 +158,9 @@ const SignUp = () => {
             </div>
 
             <button
+              style={{ fontFamily: "'Inknut Antiqua', serif" }}
               type="submit"
-              className="w-full cursor-pointer bg-gradient-to-r from-orange-600 to-yellow-200 text-2xl font-extrabold py-2 px-4 rounded-md hover:from-yellow-400 hover:to-orange-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 relative overflow-hidden group button-shine glowing-text"
+              className="w-full text-yellow-200 cursor-pointer bg-gradient-to-r from-green-600 to-lime-400 text-2xl font-extrabold py-2 px-4 rounded-md hover:from-lime-400 hover:to-green-600 transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 relative overflow-hidden group button-shine"
             >
               Sign up
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-3000 ease-out"></div>
@@ -170,10 +171,10 @@ const SignUp = () => {
 
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-2 text-center relative" style={{ fontFamily: "'Inria Sans', sans-serif" }}>
         <div className="relative top-20 flex items-center space-x-2 z-20">
-          <p className="text-xl text-yellow-100">Already have an account?</p>
+          <p className="text-xl text-lime-100">Already have an account?</p>
           <button
             onClick={() => navigate("/login")}
-            className="text-orange-500/80  text-xl font-bold underline hover:text-2xl cursor-pointer"
+            className="text-yellow-200/80  text-xl font-bold underline hover:text-2xl cursor-pointer"
             style={{ fontFamily: "'Inknut Antiqua', serif" }}
           >
             Login
@@ -181,15 +182,15 @@ const SignUp = () => {
         </div>
 
         <div className="relative w-full h-lvh">
-          <div className="absolute top-[20%] left-[15%] w-18 h-18 bg-orange-600/60 rounded-full animate-float-1"></div>
-          <div className="absolute top-[30%] right-[25%] w-25 h-25 bg-orange-600/50 rounded-full animate-float-2 animation-delay-700"></div>
-          <div className="absolute bottom-[5%] right-[55%] w-30 h-30 bg-orange-600/30 rounded-full animate-float-2 animation-delay-600"></div>
-          <div className="absolute bottom-[25%] right-[10%] w-40 h-40 bg-orange-600/40 rounded-full animate-float-3 animation-delay-500"></div>
-          <div className="absolute bottom-[35%] left-[20%] w-40 h-40 bg-orange-600/40 rounded-full animate-float-4 animation-delay-400"></div>
-          <div className="absolute top-[15%] right-[20%] w-18 h-18 bg-orange-600/60 rounded-full animate-float-2 animation-delay-200"></div>
-          <div className="absolute bottom-[40%] left-[0%] w-20 h-20 bg-orange-600/30 rounded-full animate-float-1 animation-delay-300"></div>
+          <div className="absolute top-[20%] left-[15%] w-18 h-18 bg-green-600/60 rounded-full animate-float-1"></div>
+          <div className="absolute top-[30%] right-[25%] w-25 h-25 bg-green-600/50 rounded-full animate-float-2 animation-delay-700"></div>
+          <div className="absolute bottom-[5%] right-[55%] w-30 h-30 bg-green-600/30 rounded-full animate-float-2 animation-delay-600"></div>
+          <div className="absolute bottom-[25%] right-[10%] w-40 h-40 bg-green-600/40 rounded-full animate-float-3 animation-delay-500"></div>
+          <div className="absolute bottom-[35%] left-[20%] w-40 h-40 bg-green-600/40 rounded-full animate-float-4 animation-delay-400"></div>
+          <div className="absolute top-[15%] right-[20%] w-18 h-18 bg-green-600/60 rounded-full animate-float-2 animation-delay-200"></div>
+          <div className="absolute bottom-[40%] left-[0%] w-20 h-20 bg-green-600/30 rounded-full animate-float-1 animation-delay-300"></div>
 
-          <img src={welcomeBoy} alt="Welcome illustration" className="relative top-20 w-full h-full object-cover z-10" />
+          <img src={welcomeBoy} alt="Welcome illustration" className="relative top-25 w-auto h-[770px] object-cover z-10" />
         </div>
       </div>
 
@@ -339,16 +340,14 @@ const SignUp = () => {
           animation-delay: 0.7s;
         }
 
-        /* Header with white glow */
         .gradient-header {
-          background: linear-gradient(180deg, #fffff0, #ffe100);
+          background: linear-gradient(180deg, #20b602, #fbff00);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.4);
         }
 
-        /* Typing Animation */
         .typing-animation {
           overflow: hidden;
           border-right: 3px solid white;
@@ -358,13 +357,11 @@ const SignUp = () => {
           animation: typing 7.5s ease-in-out infinite, blink-caret 0.75s step-end infinite;
         }
 
-        /* Enhanced Button Shine Effect */
         .button-shine:hover {
           transform: scale(1.02);
           box-shadow: 0 10px 30px rgba(255, 140, 0, 0.4);
         }
 
-        /* Glowing Button Text */
         .glowing-text {
           color: #ffffff;
           animation: text-glow 2s ease-in-out infinite;
@@ -374,7 +371,6 @@ const SignUp = () => {
           color: #ffffff;
         }
 
-        /* Form Container Shine Effect */
         .form-container::before {
           content: "";
           position: absolute;
@@ -382,7 +378,7 @@ const SignUp = () => {
           left: -150%;
           width: 150%;
           height: 100%;
-          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), rgba(255, 215, 0, 0.3), transparent);
+          background: linear-gradient(90deg, transparent, rgb(32, 182, 2), rgb(123, 228, 130), transparent);
           animation: form-shine 10s ease-out infinite;
           z-index: 1;
         }
@@ -392,7 +388,6 @@ const SignUp = () => {
           z-index: 2;
         }
 
-        /* Button shine effect */
         .group:hover .group-hover:translate-x-full {
           transform: translateX(100%);
         }
