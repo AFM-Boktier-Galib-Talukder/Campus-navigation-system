@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import FindRouteSection from "../components/FindRouteSection";
+import NavigationComponent from "../components/NavigationComponent";
 
 function Navigation() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -17,9 +18,7 @@ function Navigation() {
     const fetchUserData = async () => {
       if (location.state?.userId) {
         try {
-          const response = await fetch(
-            `http://localhost:1490/api/signup/${location.state.userId}`
-          );
+          const response = await fetch(`http://localhost:1490/api/signup/${location.state.userId}`);
           if (response.ok) {
             const user = await response.json();
             setUserData(user);

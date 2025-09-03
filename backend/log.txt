@@ -2378,3 +2378,101 @@
 1756842988818 : ::1 GET : /api/floor/search
 
 1756842990551 : ::1 GET : /api/floor/path
+
+1756908846160 : ::1 GET : /api/facultyDesk
+
+1756908846292 : ::1 GET : /api/facultyDesk
+
+1756908849268 : ::1 GET : /api/facultyDesk
+
+1756908849301 : ::1 GET : /api/facultyDesk
+
+1756908852831 : ::1 GET : /api/facultyDeskPath/search
+
+1756908854771 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756908856909 : ::1 GET : /api/facultyDeskPath/search
+
+1756908861360 : ::1 GET : /api/facultyDeskPath/search
+
+1756908864345 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756908873413 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756908879382 : ::1 GET : /api/facultyDeskPath/search
+
+1756908882034 : ::1 GET : /api/facultyDeskPath/search
+
+1756908885144 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756908907361 : ::1 GET : /api/facultyDeskPath/search
+
+1756908912529 : ::1 GET : /api/facultyDeskPath/search
+
+1756908912927 : ::1 GET : /api/facultyDeskPath/search
+
+1756908915373 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756909016336 : ::1 POST : /api/facultyDeskPath/find-path
+
+1756909194090 : ::1 GET : /api/facultyDesk
+
+1756909194130 : ::1 GET : /api/facultyDesk
+
+1756909202540 : ::1 GET : /api/facultyDesk
+
+1756909202552 : ::1 GET : /api/facultyDesk
+
+1756909213954 : ::1 GET : /api/billboards
+
+1756909213970 : ::1 GET : /api/billboards
+
+1756909318158 : ::1 GET : /api/billboards
+
+1756909318169 : ::1 GET : /api/billboards
+
+1756909337783 : ::1 GET : /api/billboards
+
+1756909337790 : ::1 GET : /api/billboards
+
+1756909342083 : ::1 GET : /api/billboards
+
+1756909342111 : ::1 GET : /api/billboards
+
+1756909360272 : ::1 GET : /api/billboards
+
+1756909360281 : ::1 GET : /api/billboards
+
+1756909364477 : ::1 GET : /api/billboards
+
+1756909364490 : ::1 GET : /api/billboards
+
+1756909367697 : ::1 GET : /api/floor/search
+
+1756909371643 : ::1 GET : /api/floor/search
+
+1756909374742 : ::1 GET : /api/floor/path
+
+1756909377051 : ::1 GET : /api/billboards
+
+1756909377059 : ::1 GET : /api/billboards
+
+1756909447879 : ::1 GET : /api/facultyDesk
+
+1756909447934 : ::1 GET : /api/facultyDesk
+
+1756909461280 : ::1 GET : /api/billboards
+
+1756909461296 : ::1 GET : /api/billboards
+
+1756909466525 : ::1 GET : /api/floor/search
+
+1756909470692 : ::1 GET : /api/floor/search
+
+1756909473790 : ::1 GET : /api/floor/path
+
+1756909483672 : ::1 GET : /api/floor/search
+
+1756909491571 : ::1 GET : /api/floor/search
+
+1756909494085 : ::1 GET : /api/floor/path
