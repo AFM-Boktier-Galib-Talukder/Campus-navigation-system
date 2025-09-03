@@ -105,10 +105,10 @@ function DotEditModal({ isOpen, onClose, dotData, onSave }) {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto shadow-2xl border border-orange-200">
+      <div className="bg-white rounded-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto shadow-2xl border border-green-200">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-xl flex items-center justify-center shadow-lg">
+          <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-400 rounded-xl flex items-center justify-center shadow-lg">
             <svg
               className="w-7 h-7 text-white"
               fill="currentColor"
@@ -142,7 +142,7 @@ function DotEditModal({ isOpen, onClose, dotData, onSave }) {
               type="text"
               value={connectionInput}
               onChange={(e) => handleConnectionChange(e.target.value)}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all ${
                 errors.connection ? "border-red-500" : "border-gray-300"
               }`}
               placeholder="Enter comma-separated integers (e.g., 11, 12, 13)"
@@ -167,7 +167,7 @@ function DotEditModal({ isOpen, onClose, dotData, onSave }) {
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, left: e.target.value }))
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all"
                 placeholder="Room name or empty"
               />
             </div>
@@ -182,7 +182,7 @@ function DotEditModal({ isOpen, onClose, dotData, onSave }) {
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, right: e.target.value }))
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all"
                 placeholder="Room name or empty"
               />
             </div>
@@ -198,7 +198,7 @@ function DotEditModal({ isOpen, onClose, dotData, onSave }) {
                 type="text"
                 value={formData.up === null ? "" : formData.up}
                 onChange={(e) => handleUpDownChange("up", e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all ${
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all ${
                   errors.up ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Dot number or leave empty for null"
@@ -216,7 +216,7 @@ function DotEditModal({ isOpen, onClose, dotData, onSave }) {
                 type="text"
                 value={formData.down === null ? "" : formData.down}
                 onChange={(e) => handleUpDownChange("down", e.target.value)}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all ${
+                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all ${
                   errors.down ? "border-red-500" : "border-gray-300"
                 }`}
                 placeholder="Dot number or leave empty for null"

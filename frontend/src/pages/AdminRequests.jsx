@@ -65,7 +65,7 @@ function AdminRequests() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50/90 to-emerald-50/90 font-inria">
       <AdminSidebar
         isExpanded={isSidebarExpanded}
         onMouseEnter={() => setIsSidebarExpanded(true)}
@@ -80,7 +80,7 @@ function AdminRequests() {
       >
         <Header title="Admin - Requests" />
         <div className="p-8">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-orange-200/50">
+          <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-200/50">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               User Requests
             </h2>
@@ -94,7 +94,7 @@ function AdminRequests() {
                   <button
                     key={report._id || report.id}
                     onClick={() => setSelectedReport(report)}
-                    className="group text-left w-full bg-white border border-orange-200 rounded-2xl p-5 shadow hover:shadow-md transition-all hover:-translate-y-0.5"
+                    className="group text-left w-full bg-green-50/80 backdrop-blur-sm border border-green-200 rounded-2xl p-5 shadow hover:shadow-md transition-all hover:-translate-y-0.5"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex-1">
@@ -104,7 +104,7 @@ function AdminRequests() {
                         <div className="text-xs text-gray-500 truncate">
                           {report.userEmail || "N/A"}
                         </div>
-                        <div className="mt-2 text-xs font-medium text-orange-600">
+                        <div className="mt-2 text-xs font-medium text-green-600">
                           {prettyType(report.type)}
                         </div>
                         <div className="mt-1 text-base font-bold text-gray-800 line-clamp-2">
@@ -123,7 +123,7 @@ function AdminRequests() {
       {selectedReport && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-black/30" onClick={closeModal} />
-          <div className="relative bg-white rounded-2xl shadow-2xl border border-orange-200/60 w-[92%] max-w-2xl p-6">
+          <div className="relative bg-gradient-to-br from-green-50/95 to-emerald-50/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-green-200/60 w-[92%] max-w-2xl p-6">
             <div className="pr-2">
               <h3 className="text-xl font-bold text-gray-800 mb-4">
                 Request Details
@@ -149,7 +149,7 @@ function AdminRequests() {
                   <span className="font-semibold w-36 text-gray-700">
                     Request Type:
                   </span>
-                  <span className="text-orange-600 font-medium">
+                  <span className="text-green-600 font-medium">
                     {prettyType(selectedReport.type)}
                   </span>
                 </div>

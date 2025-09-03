@@ -198,7 +198,7 @@ function AdminEvents() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50/90 to-emerald-50/90 font-inria">
       <AdminSidebar
         isExpanded={isSidebarExpanded}
         onMouseEnter={() => setIsSidebarExpanded(true)}
@@ -226,7 +226,7 @@ function AdminEvents() {
           </div>
 
           {/* Billboard Form */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-orange-200/50">
+          <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-200/50">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* First Row - Title and Venue */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -243,7 +243,7 @@ function AdminEvents() {
                     name="title"
                     value={formData.title}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
                     placeholder="Enter event title"
                     required
                   />
@@ -262,7 +262,7 @@ function AdminEvents() {
                     name="venue"
                     value={formData.venue}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
                     placeholder="Enter venue location"
                     required
                   />
@@ -284,7 +284,7 @@ function AdminEvents() {
                     name="date"
                     value={formData.date}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -302,7 +302,7 @@ function AdminEvents() {
                     name="time"
                     value={formData.time}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
                     required
                   />
                 </div>
@@ -320,7 +320,7 @@ function AdminEvents() {
                     name="hostedBy"
                     value={formData.hostedBy}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm"
                     placeholder="Organization or person name"
                     required
                   />
@@ -341,7 +341,7 @@ function AdminEvents() {
                   value={formData.description}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm resize-none"
+                  className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm resize-none"
                   placeholder="Provide detailed information about the event..."
                   required
                 />
@@ -357,7 +357,7 @@ function AdminEvents() {
                   <button
                     type="button"
                     onClick={handleChooseFile}
-                    className="w-full px-4 py-3 border border-orange-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm hover:bg-orange-50 text-left flex items-center justify-between"
+                    className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all bg-white/80 backdrop-blur-sm hover:bg-green-50 text-left flex items-center justify-between"
                   >
                     <span className="text-gray-700">
                       {selectedImageData
@@ -365,7 +365,7 @@ function AdminEvents() {
                         : "Choose from Event Requests"}
                     </span>
                     <svg
-                      className="w-5 h-5 text-orange-500"
+                      className="w-5 h-5 text-green-500"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -416,7 +416,7 @@ function AdminEvents() {
               <div className="flex justify-center pt-4">
                 <button
                   type="submit"
-                  className="inline-flex bg-gradient-to-br from-red-400 to-yellow-400 text-white py-4 px-8 rounded-xl font-semibold text-base hover:from-red-500 hover:to-yellow-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl border border-orange-300"
+                  className="inline-flex bg-gradient-to-br from-green-400 to-emerald-400 text-white py-4 px-8 rounded-xl font-semibold text-base hover:from-green-500 hover:to-emerald-500 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl border border-green-300"
                 >
                   Create Billboard
                 </button>
@@ -433,7 +433,7 @@ function AdminEvents() {
             className="absolute inset-0 bg-black/30"
             onClick={() => setShowImageModal(false)}
           />
-          <div className="relative bg-white rounded-2xl shadow-2xl border border-orange-200/60 w-[95%] max-w-4xl max-h-[90vh] overflow-hidden">
+          <div className="relative bg-gradient-to-br from-green-50/95 to-emerald-50/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-green-200/60 w-[95%] max-w-4xl max-h-[90vh] overflow-hidden">
             <div className="p-6 border-b border-gray-200">
               <h3 className="text-xl font-bold text-gray-800">
                 Select Event Image

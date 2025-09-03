@@ -133,7 +133,7 @@ function AdminDashboard() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50/90 to-emerald-50/90 font-inria">
       <AdminSidebar
         isExpanded={isSidebarExpanded}
         onMouseEnter={() => setIsSidebarExpanded(true)}
@@ -155,8 +155,8 @@ function AdminDashboard() {
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-6">
               {/* Left side: Instruction and dots count */}
               <div className="flex-shrink-0">
-                <div className="bg-gradient-to-r from-orange-100 to-yellow-100 border border-orange-200 rounded-lg px-4 py-3 flex items-center gap-3 shadow-sm hover:shadow-md transition-all duration-200 mb-3 w-fit">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="bg-gradient-to-r from-green-100 to-emerald-100 border border-green-200 rounded-lg px-4 py-3 flex items-center gap-3 shadow-sm hover:shadow-md transition-all duration-200 mb-3 w-fit">
+                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-3 h-3 text-white"
                       fill="currentColor"
@@ -169,7 +169,7 @@ function AdminDashboard() {
                       />
                     </svg>
                   </div>
-                  <span className="text-orange-800 font-medium text-sm whitespace-nowrap">
+                  <span className="text-green-800 font-medium text-sm whitespace-nowrap">
                     💡 Click on any card below to edit the dot information
                   </span>
                 </div>
@@ -184,7 +184,7 @@ function AdminDashboard() {
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg
-                      className="h-5 w-5 text-orange-500"
+                      className="h-5 w-5 text-green-500"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -199,7 +199,7 @@ function AdminDashboard() {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all duration-200 shadow-sm hover:shadow-md"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-xl leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 shadow-sm hover:shadow-md"
                     placeholder="Search by rooms..."
                   />
                   {searchQuery && (
@@ -229,7 +229,7 @@ function AdminDashboard() {
           <div className="mb-6">
             {isLoading ? (
               <div className="flex items-center justify-center py-12">
-                <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
                 <span className="ml-3 text-gray-600">
                   Loading floor data...
                 </span>
@@ -240,14 +240,14 @@ function AdminDashboard() {
                   <div
                     key={dot.dot}
                     onClick={() => handleDotClick(dot)}
-                    className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-orange-200/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group hover:border-orange-300"
+                    className="bg-green-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-green-200/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group hover:border-green-300"
                   >
                     {/* Dot Title */}
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-bold text-orange-600">
+                      <h3 className="text-xl font-bold text-green-600">
                         Dot {dot.dot}
                       </h3>
-                      <div className="w-8 h-8 bg-gradient-to-br from-orange-400 to-red-400 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all">
+                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-400 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all">
                         <svg
                           className="w-4 h-4 text-white"
                           fill="currentColor"
@@ -272,7 +272,7 @@ function AdminDashboard() {
                           dot.connection.map((conn, idx) => (
                             <span
                               key={idx}
-                              className="px-2 py-1 bg-orange-100 text-orange-700 rounded-md text-xs font-medium"
+                              className="px-2 py-1 bg-green-100 text-green-700 rounded-md text-xs font-medium"
                             >
                               {conn}
                             </span>

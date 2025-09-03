@@ -43,21 +43,22 @@ function AdminSidebar({
 
   return (
     <nav
-      className={`fixed left-0 top-0 h-full bg-gradient-to-br from-orange-50 to-yellow-50 shadow-2xl transition-all duration-500 ease-in-out z-50 overflow-hidden border-r border-orange-200/30 ${
+      className={`fixed left-0 top-0 h-full bg-gradient-to-br from-green-500 to-lime-50 shadow-2xl transition-all duration-500 ease-in-out z-50 overflow-hidden border-r border-green-200/30 ${
         isExpanded ? "w-70" : "w-20"
       }`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="h-32 text-center border-b border-orange-200/30 flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100/50 to-yellow-100/50">
+      {/* Logo Section - Fixed Height */}
+      <div className="h-32 text-center border-b border-green-200/30 flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-100/50 to-lime-100/50">
         <div
-          className={`flex items-center transition-all duration-500 ease-in-out ${
+          className={`flex items-center justify-center transition-all duration-500 ease-in-out ${
             isExpanded
               ? "w-full justify-start px-2 gap-1"
               : "w-full justify-center"
           }`}
         >
-          <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-yellow-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0">
+          <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-lime-400 rounded-2xl flex items-center justify-center text-white shadow-lg flex-shrink-0 p-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 64 64"
@@ -84,18 +85,19 @@ function AdminSidebar({
               isExpanded ? "opacity-100 max-w-48" : "opacity-0 max-w-0"
             }`}
           >
-            <div className="text-2xl font-bold font-inknut whitespace-nowrap">
-              <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent">
-                ADMIN
+            <div className="text-xl font-bold font-inknut whitespace-nowrap">
+              <span className="bg-gradient-to-br from-green-600 to-lime-300 bg-clip-text text-transparent">
+                ADMIN PANEL
               </span>
             </div>
-            <div className="text-orange-400 text-xs uppercase tracking-wider whitespace-nowrap">
-              Dashboard
+            <div className="text-green-600 text-xs uppercase tracking-wider whitespace-nowrap">
+              Management
             </div>
           </div>
         </div>
       </div>
 
+      {/* Navigation Menu - Takes remaining space */}
       <div
         className="flex flex-col h-full"
         style={{ height: "calc(100% - 8rem)" }}
@@ -110,13 +112,13 @@ function AdminSidebar({
             >
               <button
                 onClick={() => onNavClick(item.id)}
-                className={`${
+                className={`w-full rounded-2xl transition-all duration-500 ease-in-out hover:bg-green-200/50 hover:translate-x-2 hover:scale-105 flex items-center ${
                   isExpanded
                     ? "w-full p-4 justify-start"
                     : "h-12 w-12 justify-center p-0"
-                } rounded-2xl flex items-center transition-colors duration-200 ease-out hover:bg-orange-200/50 ${
+                } ${
                   activeNavItem === item.id
-                    ? "bg-gradient-to-r from-red-400 to-yellow-400 text-white shadow-lg"
+                    ? "bg-gradient-to-r from-green-600 to-lime-400 text-white shadow-lg"
                     : "text-gray-700 hover:text-gray-900"
                 }`}
               >
@@ -137,14 +139,19 @@ function AdminSidebar({
           ))}
         </ul>
 
+        {/* Footer Section - Fixed at bottom, only visible when expanded */}
         <div
-          className={`border-t border-orange-200/30 bg-gradient-to-br from-orange-100/30 to-yellow-100/30 p-4 transition-all duration-500 ease-in-out ${
+          className={`border-t border-green-200/30 bg-gradient-to-br from-green-100/30 to-lime-100/30 p-4 transition-all duration-500 ease-in-out ${
             isExpanded ? "opacity-100" : "opacity-0"
           }`}
         >
           <div className="text-center">
             <div className="text-gray-600 text-xs mb-2">© 2025 CAMPUS-NAV</div>
             <div className="text-gray-500 text-xs">Admin Panel</div>
+            <div className="text-gray-500 text-xs">
+              Contact admin@campusnav.com
+            </div>
+            <div className="text-gray-400 text-xs mt-1">Version 1.0.0</div>
           </div>
         </div>
       </div>
