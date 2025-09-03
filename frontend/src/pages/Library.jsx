@@ -175,7 +175,7 @@ function Library() {
           </div>
 
           {/* Right Column - Find Your Route Section */}
-          <FindRouteSection 
+          <FindRouteSection
             apiBaseOverride="http://localhost:1490/api/library"
             onPathFound={setRouteResult}
           />

@@ -1,12 +1,13 @@
 const FloorDesign = require('../models/floorDesign.model')
+const { buildGraph } = require('../utils/graphBuilder.utils')
+const { findShortestPath } = require('../utils/pathfinder.utils')
+const { generateDirections } = require('../utils/directionGenerator.utils')
 const {
-  buildGraph,
-  findShortestPath,
-  generateDirections,
-  generateDistance,
-} = require('../utils/pathfinder.utils')
+  pathDistance,
+  generateTime,
+} = require('../utils/distanceCalculator.utils')
 const { floor_jump } = require('../utils/floor_jump.utils')
-const { findDotForRoom } = require('../utils/dot_finder.utils')
+const { findSingleDot } = require('../utils/dot_finder.utils')
 const { resolveAmenityDestination } = require('../utils/amenity_finder.utils')
 
 /**
@@ -27,7 +28,7 @@ async function getAmenityPath(req, res) {
     let startDot = isNumericStart ? parseInt(start) : null
 
     if (startDot === null) {
-      startDot = await findDotForRoom(start)
+      startDot = await findSingleDot(FloorDesign, start)
     }
 
     if (startDot === null) {
@@ -71,12 +72,14 @@ async function getAmenityPath(req, res) {
     }
 
     // Generate response data
-    const distance = generateDistance(path)
+    const distance = pathDistance(path)
+    const time = generateTime(path)
     const directions = generateDirections(graph, path)
 
     res.json({
       path,
-      distance,
+      distance: `${distance} meters`,
+      time,
       directions,
       startDot,
       endDot,

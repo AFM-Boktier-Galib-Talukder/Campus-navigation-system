@@ -288,7 +288,7 @@ function AmenitiesRouteSection({
                         className={`w-8 h-8 flex items-center justify-center ${
                           transportOption === option.id
                             ? "text-white"
-                            : "text-orange-500"
+                            : "text-green-500"
                         }`}
                       >
                         {option.icon}
@@ -312,10 +312,10 @@ function AmenitiesRouteSection({
             <button
               type="submit"
               disabled={isSubmitting || !selectedAmenity}
-              className={`w-full py-4 px-6 rounded-xl font-semibold text-base transform transition-all duration-300 shadow-lg border border-orange-300 ${
+              className={`w-full py-4 px-6 rounded-xl font-semibold text-base transform transition-all duration-300 shadow-lg border border-green-300 ${
                 !selectedAmenity || isSubmitting
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-gradient-to-br from-red-400 to-yellow-400 text-white hover:from-red-500 hover:to-yellow-500 hover:-translate-y-1 hover:shadow-xl"
+                  : "bg-gradient-to-br from-green-400 to-emerald-400 text-white hover:from-green-500 hover:to-emerald-500 hover:-translate-y-1 hover:shadow-xl"
               }`}
             >
               {isSubmitting
