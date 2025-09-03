@@ -1,15 +1,12 @@
 const mongoose = require('mongoose')
 
-const FloorSchema = new mongoose.Schema({
+const FacultyDeskSchema = new mongoose.Schema({
   dot: { type: Number, required: true, unique: true },
   connection: { type: [Number], required: true },
   left: { type: String, default: '' },
   right: { type: String, default: '' },
-  up: { type: Number, default: null },
-  down: { type: Number, default: null },
 })
 
-const FloorDesign = mongoose.model('floor', FloorSchema)
+const FacultyDeskDesign = mongoose.model('facultyDesk', FacultyDeskSchema)
 
-module.exports = FloorDesign
-
+module.exports = FacultyDeskDesign

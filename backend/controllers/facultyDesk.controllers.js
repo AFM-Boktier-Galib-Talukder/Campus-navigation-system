@@ -1,6 +1,5 @@
 const Faculty = require('../models/facultyDesk.model')
 
-// Get all faculty members
 const getAllFaculty = async (req, res) => {
   try {
     const faculty = await Faculty.find().sort({ department: 1, faculty: 1 })
@@ -10,7 +9,6 @@ const getAllFaculty = async (req, res) => {
   }
 }
 
-// Get faculty by ID
 const getFacultyById = async (req, res) => {
   try {
     const faculty = await Faculty.findById(req.params.id)
@@ -23,7 +21,6 @@ const getFacultyById = async (req, res) => {
   }
 }
 
-// Create new faculty member
 const createFaculty = async (req, res) => {
   try {
     const newFaculty = new Faculty(req.body)
@@ -34,7 +31,6 @@ const createFaculty = async (req, res) => {
   }
 }
 
-// Update faculty member
 const updateFaculty = async (req, res) => {
   try {
     const updatedFaculty = await Faculty.findByIdAndUpdate(
@@ -51,7 +47,6 @@ const updateFaculty = async (req, res) => {
   }
 }
 
-// Delete faculty member
 const deleteFaculty = async (req, res) => {
   try {
     const deletedFaculty = await Faculty.findByIdAndDelete(req.params.id)

@@ -9,7 +9,6 @@ const {
   GetUsersByEmail,
 } = require('../controllers/signup.controller')
 
-//Routes
 signUpRouter.route('/').get(GetAllUsers).post(CreateNewUser)
 
 signUpRouter

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import FindRouteSection from "../components/FindRouteSection";
+import NavigationComponent from "../components/NavigationComponent";
+import FacultyDeskSearch from "../components/FacultyDeskSearch";
 
 function FacultyDesk() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(false);
@@ -12,10 +13,11 @@ function FacultyDesk() {
   const [filteredFaculty, setFilteredFaculty] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
+  const [pathData, setPathData] = useState(null);
+  const [navigationSteps, setNavigationSteps] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get user data from location state or fetch from API
   useEffect(() => {
     const fetchUserData = async () => {
       if (location.state?.userId) {
@@ -50,7 +52,6 @@ function FacultyDesk() {
     fetchUserData();
   }, [location.state?.userId]);
 
-  // Fetch faculty data
   useEffect(() => {
     const fetchFacultyData = async () => {
       try {
@@ -72,7 +73,6 @@ function FacultyDesk() {
     fetchFacultyData();
   }, []);
 
-  // Handle search functionality
   useEffect(() => {
     if (searchTerm === "") {
       setFilteredFaculty(facultyData);
@@ -114,13 +114,36 @@ function FacultyDesk() {
   };
 
   const handleFacultyCardClick = (faculty) => {
-    navigate("/navigation", {
-      state: {
-        destination: faculty.office,
-        facultyName: faculty.faculty,
-        department: faculty.department,
-      },
-    });
+    const endInitial = faculty.initial;
+    findPath("0", endInitial);
+  };
+
+  const findPath = async (startInitial, endInitial) => {
+    try {
+      const response = await fetch("http://localhost:1490/api/facultyDeskPath/find-path", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          startInitial,
+          endInitial,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setNavigationSteps(data.steps);
+        setPathData({
+          distance: data.distance,
+          time: data.time,
+        });
+      } else {
+        console.error("Failed to find path");
+      }
+    } catch (error) {
+      console.error("Error finding path:", error);
+    }
   };
 
   const getInitialLetter = (facultyName) => {
@@ -130,8 +153,7 @@ function FacultyDesk() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50 font-inria">
-      {/* Collapsible Sidebar */}
+    <div className="flex min-h-screen bg-gradient-to-br font-inria">
       <Sidebar
         isExpanded={isSidebarExpanded}
         onMouseEnter={() => setIsSidebarExpanded(true)}
@@ -140,34 +162,13 @@ function FacultyDesk() {
         onNavClick={handleNavClick}
       />
 
-      {/* Main Content */}
-      <div
-        className={`flex-1 transition-all duration-300 ${
-          isSidebarExpanded ? "ml-70" : "ml-20"
-        }`}
-      >
-        {/* Header */}
+      <div className={`flex-1 transition-all duration-150 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
         <Header userData={userData} title="Faculty Desk" />
 
-        {/* Main Content Area - Two Column Layout */}
         <div className="flex">
-          {/* Left Column - Main Content */}
           <div className="flex-1 p-8">
-            {/* Faculty Desk Content */}
-
             <div className="mb-8">
-              <div className="text-2xl mb-3 font-bold font-inknut whitespace-nowrap">
-                <span className="bg-gradient-to-r from-red-400 to-yellow-400 bg-clip-text text-transparent">
-                  Faculty Desk
-                </span>
-              </div>
-              <p className="text-orange-400 mb-6">
-                Access faculty information, office locations, and contact
-                details.
-              </p>
-
-              {/* Search Bar */}
-              <div className="relative mb-6">
+              <div className="relative mb-6 pr-4">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <svg
                     className="h-5 w-5 text-gray-400"
@@ -188,81 +189,81 @@ function FacultyDesk() {
                   placeholder="Search by faculty name, initials, or department..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-orange-200 rounded-xl focus:ring-2 focus:ring-orange-400 focus:outline-none focus:border-transparent bg-white/80 backdrop-blur-sm"
+                  className="w-full pl-10 pr-4 py-3 border border-green-200 rounded-xl focus:ring-2 focus:ring-green-400 focus:outline-none focus:border-transparent bg-white/80 backdrop-blur-sm"
                 />
               </div>
             </div>
 
-            {/* Loading State */}
             {loading && (
               <div className="flex items-center justify-center py-12">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
               </div>
             )}
 
-            {/* No Results */}
             {!loading && filteredFaculty.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">
-                  No faculty members found matching your search.
-                </p>
+                <p className="text-gray-600 text-lg">No faculty members found matching your search.</p>
               </div>
             )}
 
-            {/* Faculty Information Cards */}
             {!loading && filteredFaculty.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredFaculty.map((faculty, index) => (
-                  <div
-                    key={index}
-                    onClick={() => handleFacultyCardClick(faculty)}
-                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-orange-200/50 hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer group"
-                  >
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-xl font-bold text-gray-800 group-hover:text-orange-600 transition-colors">
-                        {faculty.department}
-                      </h3>
-                      <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-yellow-400 rounded-lg flex items-center justify-center">
-                        <span className="text-white text-lg font-bold">
-                          {getInitialLetter(faculty.faculty)}
+              <div className="h-[1050px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-green-300 scrollbar-track-green-50">
+                <div className="grid grid-cols-2 gap-6">
+                  {filteredFaculty.map((faculty, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleFacultyCardClick(faculty)}
+                      className="bg-white/80 backdrop-blur-sm hover:bg-gradient-to-br hover:from-green-600 hover:to-lime-300 rounded-2xl p-6 shadow-lg border border-green-200/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1 cursor-pointer group"
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-xl font-bold text-gray-800 group-hover:text-white transition-colors duration-150 flex-1 mr-4">
+                          {faculty.department}
+                        </h3>
+                        <div className="w-12 h-12 bg-green-500  group-hover:bg-white rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-150">
+                          <span className="text-white group-hover:text-green-400 text-lg font-bold transition-colors duration-150">
+                            {getInitialLetter(faculty.faculty)}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-1 gap-2">
+                          <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Faculty:</span>
+                            <span className="ml-2">{faculty.faculty}</span>
+                          </p>
+                          <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Initial:</span>
+                            <span className="ml-2">{faculty.initial}</span>
+                          </p>
+                          <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Office:</span>
+                            <span className="ml-2">{faculty.office}</span>
+                          </p>
+                          <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150 break-all">
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Email:</span>
+                            <span className="ml-2 text-sm">{faculty.email}</span>
+                          </p>
+                          <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-150">
+                            <span className="font-semibold text-gray-800 group-hover:text-white transition-colors duration-150">Phone:</span>
+                            <span className="ml-2">{faculty.phone}</span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="mt-6 text-center pt-4 border-t border-green-100 group-hover:border-white/30 transition-colors duration-150">
+                        <span className="text-sm text-green-600 group-hover:text-white font-medium transition-colors duration-150">
+                          Click to navigate to office →
                         </span>
                       </div>
                     </div>
-                    <div className="space-y-2">
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Faculty:</span>{" "}
-                        {faculty.faculty}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Initial:</span>{" "}
-                        {faculty.initial}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Office:</span>{" "}
-                        {faculty.office}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Email:</span>{" "}
-                        {faculty.email}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Phone:</span>{" "}
-                        {faculty.phone}
-                      </p>
-                    </div>
-                    <div className="mt-4 text-center">
-                      <span className="text-sm text-orange-600 group-hover:text-orange-800 font-medium">
-                        Click to navigate to office →
-                      </span>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
           </div>
-
-          {/* Right Column - Find Your Route Section */}
-          <FindRouteSection />
+          <div className="flex-1 p-3 flex flex-col">
+            <FacultyDeskSearch onFindPath={findPath} />
+            <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
+          </div>
         </div>
       </div>
     </div>

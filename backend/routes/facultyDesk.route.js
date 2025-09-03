@@ -8,7 +8,6 @@ const {
   deleteFaculty,
 } = require('../controllers/facultyDesk.controllers')
 
-// Routes
 router.get('/', getAllFaculty)
 router.get('/:id', getFacultyById)
 router.post('/', createFaculty)
