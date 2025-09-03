@@ -107,7 +107,7 @@ function Amenities() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50/90 to-emerald-50/90 font-inria">
       {/* Collapsible Sidebar */}
       <Sidebar
         isExpanded={isSidebarExpanded}
@@ -157,29 +157,33 @@ function Amenities() {
                 <div
                   key={amenity.id}
                   onClick={() => handleAmenitySelect(amenity)}
-                  className={`bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-md border-2 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1 ${
+                  className={`bg-white/80 backdrop-blur-sm hover:bg-gradient-to-br hover:from-green-600 hover:to-lime-300 rounded-xl p-6 shadow-lg border border-green-200/50 hover:shadow-xl transition-all duration-150 hover:-translate-y-1 cursor-pointer group ${
                     selectedAmenity?.id === amenity.id
-                      ? "border-green-500 bg-green-50/50 shadow-lg scale-105"
-                      : "border-green-200/50 hover:border-green-300"
+                      ? "bg-gradient-to-br from-green-600 to-lime-300 border-green-500 shadow-xl"
+                      : ""
                   }`}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <h3
-                      className={`text-xl font-semibold transition-colors ${
+                      className={`text-xl font-bold transition-colors duration-150 ${
                         selectedAmenity?.id === amenity.id
-                          ? "text-green-600"
-                          : "text-gray-800"
+                          ? "text-white"
+                          : "text-gray-800 group-hover:text-white"
                       }`}
                     >
                       {amenity.name}
                     </h3>
                     <div className="text-3xl">{amenity.icon}</div>
                   </div>
-                  <p className="text-gray-600 mb-4">{amenity.description}</p>
+                  <p className={`mb-4 transition-colors duration-150 ${
+                    selectedAmenity?.id === amenity.id
+                      ? "text-white/90"
+                      : "text-gray-600 group-hover:text-white/90"
+                  }`}>{amenity.description}</p>
 
                   {selectedAmenity?.id === amenity.id && (
-                    <div className="mt-4 p-3 bg-green-100 rounded-lg border border-green-200">
-                      <div className="flex items-center gap-2 text-green-700">
+                    <div className="mt-4 p-3 bg-white/20 rounded-lg border border-white/30">
+                      <div className="flex items-center gap-2 text-white">
                         <svg
                           className="w-4 h-4"
                           fill="currentColor"

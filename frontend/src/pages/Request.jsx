@@ -207,7 +207,7 @@ function Request() {
   ];
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50/90 to-emerald-50/90 font-inria">
       {/* Collapsible Sidebar */}
       <Sidebar
         isExpanded={isSidebarExpanded}
@@ -230,17 +230,31 @@ function Request() {
         <div className="p-8">
           {/* Request Content */}
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Submit a Request
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Submit requests for support, facilities, or general inquiries.
-            </p>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-400 rounded-lg flex items-center justify-center shadow-lg">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold text-green-600 mb-1">
+                  Submit a Request
+                </h2>
+                <p className="text-gray-600 text-lg">
+                  Submit requests for support, facilities, or general inquiries.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Request Form - full width */}
           <div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-200/50">
+            <div className="bg-gradient-to-br from-green-50/90 to-emerald-50/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-200/50">
               <form onSubmit={handleSubmitRequest} className="space-y-6">
                 {/* Request Type */}
                 <div>
@@ -252,22 +266,22 @@ function Request() {
                       <div
                         key={type.id}
                         onClick={() => setRequestType(type.id)}
-                        className={`p-2 border-2 rounded-xl cursor-pointer transition-all text-center select-none ${
+                        className={`p-2 border-2 rounded-xl cursor-pointer transition-all duration-150 text-center select-none hover:shadow-xl hover:-translate-y-1 group ${
                           requestType === type.id
-                            ? "bg-gradient-to-br from-green-400 to-emerald-400 border-green-500 text-white"
-                            : "border-green-300 hover:border-green-400 hover:bg-green-50"
+                            ? "bg-gradient-to-br from-green-600 to-lime-300 border-green-500 text-white shadow-xl -translate-y-1"
+                            : "border-green-300 hover:border-green-400 hover:bg-gradient-to-br hover:from-green-600 hover:to-lime-300 hover:text-white"
                         }`}
                       >
                         <div
-                          className={`flex items-center justify-center mb-1 ${
+                          className={`flex items-center justify-center mb-1 transition-colors duration-150 ${
                             requestType === type.id
                               ? "text-white"
-                              : "text-gray-700"
+                              : "text-gray-700 group-hover:text-white"
                           }`}
                         >
                           {type.icon}
                         </div>
-                        <div className="text-xs font-medium truncate">
+                        <div className="text-xs font-medium truncate transition-colors duration-150 group-hover:text-white">
                           {type.label}
                         </div>
                       </div>
@@ -344,10 +358,12 @@ function Request() {
                 {/* Submit Button */}
                 <div className="flex justify-center">
                   <button
+                    style={{ fontFamily: "'Inknut Antiqua', serif" }}
                     type="submit"
-                    className="inline-flex bg-gradient-to-br from-green-400 to-emerald-400 text-white py-3 px-6 rounded-xl font-semibold text-base hover:from-green-500 hover:to-emerald-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg hover:shadow-xl border border-green-300"
+                    className="w-64 text-yellow-300 text-xl cursor-pointer bg-gradient-to-r from-lime-400 to-green-600 py-3 px-6 rounded-md hover:from-green-600 hover:to-lime-400 transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 relative overflow-hidden group button-shine"
                   >
                     Submit Request
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-3000 ease-out"></div>
                   </button>
                 </div>
               </form>

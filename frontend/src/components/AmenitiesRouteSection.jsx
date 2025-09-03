@@ -139,11 +139,11 @@ function AmenitiesRouteSection({
 
   return (
     <div className="w-96 p-8 border-l border-green-200/30 bg-gradient-to-br from-green-50/50 to-emerald-50/50 backdrop-blur-sm">
-      <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-green-200/50 sticky top-8">
+      <div className="bg-gradient-to-br from-green-600 to-lime-400 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-green-600/50 sticky top-8">
         {/* Section Header */}
-        <div className="p-6 border-b border-green-200/30 bg-gradient-to-r from-green-50/50 to-emerald-50/50">
+        <div className="p-6 border-b border-green-200/30 bg-gradient-to-r from-green-700 to-lime-500">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-400 rounded-lg flex items-center justify-center shadow-lg">
+            <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-lime-400 rounded-lg flex items-center justify-center shadow-lg">
               <svg
                 className="w-5 h-5 text-white"
                 fill="currentColor"
@@ -156,23 +156,23 @@ function AmenitiesRouteSection({
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-800">
+            <h3 className="text-xl font-bold text-white">
               Find Route to Amenity
             </h3>
           </div>
-          <p className="text-gray-600 text-sm">
+          <p className="text-white/80 text-sm">
             Navigate to your selected amenity
           </p>
         </div>
 
         {/* Route Search Form */}
-        <form className="p-6" onSubmit={handleFindRoute}>
+        <form className="p-6 bg-gradient-to-br from-green-600 to-lime-400" onSubmit={handleFindRoute}>
           <div className="space-y-6">
             {/* Selected Amenity Display */}
             <div>
-              <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <label className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
                 <svg
-                  className="w-4 h-4 text-green-500"
+                  className="w-4 h-4 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -184,7 +184,7 @@ function AmenitiesRouteSection({
                 </svg>
                 Destination
               </label>
-              <div className="w-full px-4 py-3 border border-green-300 rounded-lg bg-green-50/50 text-gray-700 text-sm flex items-center justify-between">
+              <div className="w-full px-4 py-3 border border-white/30 rounded-lg bg-white/80 backdrop-blur-sm text-gray-700 text-sm flex items-center justify-between">
                 <span>
                   {selectedAmenity
                     ? selectedAmenity.name
@@ -198,10 +198,10 @@ function AmenitiesRouteSection({
             <div>
               <label
                 htmlFor="start-point"
-                className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2"
+                className="text-sm font-semibold text-white mb-2 flex items-center gap-2"
               >
                 <svg
-                  className="w-4 h-4 text-green-500"
+                  className="w-4 h-4 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -228,20 +228,20 @@ function AmenitiesRouteSection({
                 onBlur={() => {
                   setTimeout(() => setShowStartDropdown(false), 120);
                 }}
-                className="w-full px-4 py-3 border border-green-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm"
+                className="w-full px-4 py-3 border border-white/30 rounded-lg focus:ring-2 focus:ring-white/50 focus:border-white/50 focus:outline-none transition-all text-sm bg-white/80 backdrop-blur-sm placeholder-gray-500 text-gray-700"
                 placeholder="Type room and select..."
                 required
                 disabled={!selectedAmenity}
               />
               {showStartDropdown &&
                 (startSuggestions.length > 0 || startNoResults) && (
-                  <div className="mt-2 border border-green-200 rounded-lg bg-white shadow-sm max-h-48 overflow-auto">
+                  <div className="mt-2 border border-white/30 rounded-lg bg-white/90 backdrop-blur-sm shadow-sm max-h-48 overflow-auto">
                     {startSuggestions.map((s) => (
                       <button
                         key={`${s.label}-${s.dot}`}
                         type="button"
                         onMouseDown={() => handleSelectStart(s.label, s.dot)}
-                        className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm"
+                        className="w-full text-left px-4 py-2 hover:bg-green-50 text-sm text-gray-800"
                       >
                         {s.label}
                       </button>
@@ -257,9 +257,9 @@ function AmenitiesRouteSection({
 
             {/* Transport Options */}
             <div>
-              <label className="text-sm font-semibold text-gray-700 mb-2 flex items-center gap-2">
+              <label className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
                 <svg
-                  className="w-4 h-4 text-green-500"
+                  className="w-4 h-4 text-white"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -274,8 +274,8 @@ function AmenitiesRouteSection({
                     onClick={() => setTransportOption(option.id)}
                     className={`flex-1 text-center p-4 border-2 rounded-xl cursor-pointer transition-all duration-300 ${
                       transportOption === option.id
-                        ? "bg-gradient-to-br from-green-400 to-emerald-400 border-green-500 text-white shadow-lg transform scale-105"
-                        : "border-green-300 hover:border-green-400 hover:bg-green-50 text-gray-700"
+                        ? "bg-white/30 border-white text-white shadow-lg transform scale-105"
+                        : "border-white/30 hover:border-white/50 hover:bg-white/10 text-white/80"
                     } ${
                       !selectedAmenity ? "opacity-50 cursor-not-allowed" : ""
                     }`}
@@ -288,7 +288,7 @@ function AmenitiesRouteSection({
                         className={`w-8 h-8 flex items-center justify-center ${
                           transportOption === option.id
                             ? "text-white"
-                            : "text-green-500"
+                            : "text-white/80"
                         }`}
                       >
                         {option.icon}
@@ -298,7 +298,7 @@ function AmenitiesRouteSection({
                       className={`text-sm font-medium ${
                         transportOption === option.id
                           ? "text-white"
-                          : "text-gray-700"
+                          : "text-white/80"
                       }`}
                     >
                       {option.label}
@@ -310,19 +310,21 @@ function AmenitiesRouteSection({
 
             {/* Find Route Button */}
             <button
+              style={{ fontFamily: "'Inknut Antiqua', serif" }}
               type="submit"
               disabled={isSubmitting || !selectedAmenity}
-              className={`w-full py-4 px-6 rounded-xl font-semibold text-base transform transition-all duration-300 shadow-lg border border-green-300 ${
+              className={`w-full text-yellow-300 text-xl cursor-pointer bg-gradient-to-r from-lime-400 to-green-600 py-3 px-6 rounded-md hover:from-green-600 hover:to-lime-400 transition duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 relative overflow-hidden group button-shine ${
                 !selectedAmenity || isSubmitting
-                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-gradient-to-br from-green-400 to-emerald-400 text-white hover:from-green-500 hover:to-emerald-500 hover:-translate-y-1 hover:shadow-xl"
+                  ? "opacity-50 cursor-not-allowed"
+                  : ""
               }`}
             >
               {isSubmitting
                 ? "Finding..."
                 : selectedAmenity
                 ? "Find Route"
-                : "Select Amenity First"}
+                : "Select Amenity"}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-3000 ease-out"></div>
             </button>
           </div>
         </form>

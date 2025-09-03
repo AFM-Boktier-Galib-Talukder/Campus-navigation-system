@@ -153,7 +153,7 @@ function FacultyDesk() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br font-inria">
+    <div className="flex min-h-screen bg-gradient-to-br from-green-50/90 to-emerald-50/90 font-inria">
       <Sidebar
         isExpanded={isSidebarExpanded}
         onMouseEnter={() => setIsSidebarExpanded(true)}

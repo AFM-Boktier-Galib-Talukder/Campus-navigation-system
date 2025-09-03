@@ -104,7 +104,7 @@ function BillboardShowcase() {
   };
 
   return (
-    <div className="w-full bg-gradient-to-br from-green-50/50 to-emerald-50/50 backdrop-blur-sm">
+    <div className="w-full bg-gradient-to-br from-green-50/90 to-emerald-50/90 backdrop-blur-sm">
       <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl overflow-hidden border border-green-200/50">
         {/* Section Header */}
         <div className="p-6 border-b border-green-200/30 bg-gradient-to-r from-green-50/50 to-emerald-50/50">
