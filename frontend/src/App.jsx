@@ -1,9 +1,6 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { SessionProvider } from "./components/SessionContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 import SignUp from "./pages/Signup";
 import Login from "./pages/Login";
 import Homepage from "./pages/HomePage";
@@ -19,23 +16,90 @@ import AdminRequests from "./pages/AdminRequests";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to="/landingPage" replace />} />
-        <Route path="/landingPage" element={<LandingPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/homepage" element={<Homepage />} />
-        <Route path="/faculty-desk" element={<FacultyDesk />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/amenities" element={<Amenities />} />
-        <Route path="/request" element={<Request />} />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/events" element={<AdminEvents />} />
-        <Route path="/admin/request" element={<AdminRequests />} />
-        <Route path="/navigation" element={<Navigation />} />
-      </Routes>
-    </Router>
+    <SessionProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigate to="/landingPage" replace />} />
+          <Route path="/landingPage" element={<LandingPage />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes */}
+          <Route
+            path="/homepage"
+            element={
+              <ProtectedRoute>
+                <Homepage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/faculty-desk"
+            element={
+              <ProtectedRoute>
+                <FacultyDesk />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/library"
+            element={
+              <ProtectedRoute>
+                <Library />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/amenities"
+            element={
+              <ProtectedRoute>
+                <Amenities />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/request"
+            element={
+              <ProtectedRoute>
+                <Request />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/navigation"
+            element={
+              <ProtectedRoute>
+                <Navigation />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin-dashboard"
+            element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/events"
+            element={
+              <ProtectedRoute>
+                <AdminEvents />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin/request"
+            element={
+              <ProtectedRoute>
+                <AdminRequests />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </Router>
+    </SessionProvider>
   );
 }
 

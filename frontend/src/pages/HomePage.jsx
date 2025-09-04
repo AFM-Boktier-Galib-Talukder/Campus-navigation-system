@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useSession } from "../components/SessionContext";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import FindRouteSection from "../components/FindRouteSection";
@@ -12,36 +13,35 @@ function HomePage() {
   const [routeResult, setRouteResult] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const { userData: sessionData, logout } = useSession();
 
-  // Get user data from location state or fetch from API
+  // Get user data from session or fetch from API
   useEffect(() => {
     const fetchUserData = async () => {
-      if (location.state?.userId) {
-        try {
-          // Fetch user data from API using userId
-          const response = await fetch(
-            `http://localhost:1490/api/signup/${location.state.userId}`
-          );
-          if (response.ok) {
-            const user = await response.json();
-            setUserData(user);
-          } else {
-            // Set default user data if fetch fails
-            setUserData({
-              name: "User",
-              email: "user@example.com",
-            });
-          }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
+      const userId = sessionData?.userId || location.state?.userId || localStorage.getItem("userId");
+
+      if (!userId) {
+        // If no userId, logout and redirect
+        logout();
+        return;
+      }
+
+      try {
+        // Fetch user data from API using userId
+        const response = await fetch(`http://localhost:1490/api/signup/${userId}`);
+        if (response.ok) {
+          const user = await response.json();
+          setUserData(user);
+        } else {
           // Set default user data if fetch fails
           setUserData({
             name: "User",
             email: "user@example.com",
           });
         }
-      } else {
-        // Set default user data if no userId
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+        // Set default user data if fetch fails
         setUserData({
           name: "User",
           email: "user@example.com",
@@ -50,7 +50,7 @@ function HomePage() {
     };
 
     fetchUserData();
-  }, [location.state?.userId]);
+  }, [sessionData, location.state?.userId, logout]);
 
   const handleNavClick = (itemId) => {
     setActiveNavItem(itemId);
@@ -90,11 +90,7 @@ function HomePage() {
       />
 
       {/* Main Content */}
-      <div
-        className={`flex-1 transition-all duration-300 ${
-          isSidebarExpanded ? "ml-70" : "ml-20"
-        }`}
-      >
+      <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
         {/* Header */}
         <Header userData={userData} title="Welcome to CAMPUS-NAV" />
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useSession } from "../components/SessionContext";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import FindRouteSection from "../components/FindRouteSection";
@@ -13,31 +14,31 @@ function Navigation() {
   const [pathData, setPathData] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const { userData: sessionData, logout } = useSession();
 
   useEffect(() => {
     const fetchUserData = async () => {
-      if (location.state?.userId) {
-        try {
-          const response = await fetch(
-            `http://localhost:1490/api/signup/${location.state.userId}`
-          );
-          if (response.ok) {
-            const user = await response.json();
-            setUserData(user);
-          } else {
-            setUserData({
-              name: "User",
-              email: "user@example.com",
-            });
-          }
-        } catch (error) {
-          console.error("Error fetching user data:", error);
+      const userId = sessionData?.userId || location.state?.userId || localStorage.getItem("userId");
+
+      if (!userId) {
+        // If no userId, logout and redirect
+        logout();
+        return;
+      }
+
+      try {
+        const response = await fetch(`http://localhost:1490/api/signup/${userId}`);
+        if (response.ok) {
+          const user = await response.json();
+          setUserData(user);
+        } else {
           setUserData({
             name: "User",
             email: "user@example.com",
           });
         }
-      } else {
+      } catch (error) {
+        console.error("Error fetching user data:", error);
         setUserData({
           name: "User",
           email: "user@example.com",
@@ -46,7 +47,7 @@ function Navigation() {
     };
 
     fetchUserData();
-  }, [location.state?.userId]);
+  }, [sessionData, location.state?.userId, logout]);
 
   const handlePathFound = (data) => {
     if (data.error) {
@@ -164,18 +165,11 @@ function Navigation() {
         onNavClick={handleNavClick}
       />
 
-      <div
-        className={`flex-1 transition-all duration-300 ${
-          isSidebarExpanded ? "ml-70" : "ml-20"
-        }`}
-      >
+      <div className={`flex-1 transition-all duration-300 ${isSidebarExpanded ? "ml-70" : "ml-20"}`}>
         <Header userData={userData} title="Navigation" />
 
         <div className="flex">
-          <NavigationComponent
-            navigationSteps={navigationSteps}
-            pathData={pathData}
-          />
+          <NavigationComponent navigationSteps={navigationSteps} pathData={pathData} />
 
           <FindRouteSection onPathFound={handlePathFound} />
         </div>

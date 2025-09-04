@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSession } from "../components/SessionContext";
 import axios from "axios";
 import welcomeBoy from "../assets/zoroLogin.png";
 
@@ -11,6 +12,7 @@ const Login = () => {
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+  const { login } = useSession();
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -33,10 +35,14 @@ const Login = () => {
 
       if (loginResponse.data.status === "Success") {
         try {
+          // Initialize session management
+          login(loginResponse.data.userId, { role: loginResponse.data.role });
+
           // Per-tab storage to prevent cross-tab user bleed
           sessionStorage.setItem("userId", loginResponse.data.userId);
           // Also mirror to localStorage for backward compatibility with existing pages
           localStorage.setItem("userId", loginResponse.data.userId);
+
           // Preload and cache user profile (sessionStorage preferred)
           try {
             const userResp = await axios.get(`http://localhost:1490/api/signup/${loginResponse.data.userId}`);
@@ -46,6 +52,7 @@ const Login = () => {
             }
           } catch (_) {}
         } catch (_) {}
+
         if (loginResponse.data.role === "admin") {
           navigate("/admin-dashboard", { state: { userId: loginResponse.data.userId } });
         } else {

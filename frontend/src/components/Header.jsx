@@ -1,9 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
-import ImdadTypewriter from "./ImdadTypewriter";
 import { useNavigate } from "react-router-dom";
+import { useSession } from "./SessionContext";
+import ImdadTypewriter from "./ImdadTypewriter";
 
 function Header({ userData, title }) {
   const navigate = useNavigate();
+  const { logout } = useSession();
   const [resolvedUser, setResolvedUser] = useState(userData);
 
   useEffect(() => {
@@ -59,13 +61,14 @@ function Header({ userData, title }) {
       isMounted = false;
     };
   }, [userData]);
+
   const slogans = useMemo(
     () => [
       "Navigate CAMPUS like a pro.",
       "Your campus, your compass.",
       "Find your way, the CAMPUS way.",
       "Where every path leads to learning.",
-      "From classroom to café — we’ve got you.",
+      "From classroom to café – we've got you.",
       "Discover CAMPUS, step by step.",
       "Campus life, simplified.",
       "Your guide to every corner of CAMPUS.",
@@ -74,6 +77,12 @@ function Header({ userData, title }) {
     ],
     []
   );
+
+  // Handle logout functionality
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   // Rotation is handled by ImdadTypewriter
 
@@ -103,11 +112,20 @@ function Header({ userData, title }) {
           <div className="text-lime-400/90 text-sm">{resolvedUser?.email || "user@example.com"}</div>
         </div>
       </div>
+
+      {/* Updated Logout Button */}
       <button
-        onClick={() => navigate("/login")}
-        className="text-white bg-gradient-to-br from-green-600 to-lime-300 backdrop-blur-sm m-4 pt-6 pr-4 pl-4 items-center pb-6 rounded-2xl cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl border-2 border-white shadow-lg z-10"
+        onClick={handleLogout}
+        className="text-white bg-gradient-to-br from-green-600 to-lime-300 hover:from-red-500 hover:to-red-500 backdrop-blur-sm m-4 pt-6 pr-4 pl-4 items-center pb-6 rounded-2xl cursor-pointer transition-all hover:-translate-y-1 hover:shadow-xl border-2 border-white shadow-lg z-10"
+        title="Logout"
       >
-        <i className="fas fa-sign-in-alt"></i>
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fillRule="evenodd"
+            d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+            clipRule="evenodd"
+          />
+        </svg>
       </button>
 
       <style jsx>{`
